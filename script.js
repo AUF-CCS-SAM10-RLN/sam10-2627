@@ -4,7 +4,6 @@ const modules = [
     summary: "Systems theory, operating systems, enterprise infrastructure, and AWS foundations.",
     topics: [
       "Systems Theory",
-      "Computer Systems and IT Infrastructure",
       "Operating Systems Fundamentals",
       "Client-Server Architecture",
       "Roles and Responsibilities of Systems Administrators",
@@ -34,7 +33,6 @@ const modules = [
       "Cloud Computing Models",
       "Distributed Systems",
       "Virtualization Theory",
-      "Hypervisors",
       "Containers vs Virtual Machines",
       "AWS Compute Overview",
       "AWS Pricing and Billing"
@@ -63,11 +61,9 @@ const modules = [
       "Authentication",
       "Authorization",
       "Role-Based Access Control (RBAC)",
-      "Attribute-Based Access Control (ABAC)",
       "Principle of Least Privilege",
       "AWS IAM",
-      "Multi-Factor Authentication",
-      "Identity Federation"
+      "Multi-Factor Authentication"
     ],
     checks: [
       "Explain authentication and authorization mechanisms used in secure computing environments.",
@@ -93,16 +89,11 @@ const modules = [
       "OSI Model",
       "TCP/IP",
       "Routing",
-      "Switching",
       "DNS",
-      "Firewalls",
       "Amazon VPC",
       "Subnets",
       "Route Tables",
-      "Internet Gateway",
-      "NAT Gateway",
-      "Security Groups",
-      "Network ACLs"
+      "Security Groups"
     ],
     checks: [
       "Explain networking concepts that underpin cloud infrastructure.",
@@ -129,9 +120,7 @@ const modules = [
       "Amazon Machine Images",
       "Instance Types",
       "Launch Templates",
-      "Elastic IP",
       "Infrastructure Provisioning",
-      "Introduction to Infrastructure as Code",
       "AWS CloudFormation Fundamentals"
     ],
     checks: [
@@ -161,7 +150,6 @@ const modules = [
       "Users and Groups",
       "Permissions",
       "Process Management",
-      "Package Management",
       "SSH",
       "Systems Manager"
     ],
@@ -190,12 +178,10 @@ const modules = [
       "Object Storage",
       "Block Storage",
       "File Storage",
-      "RAID",
       "Storage Performance",
       "Amazon S3",
       "Amazon EBS",
-      "Amazon EFS",
-      "Storage Lifecycle Policies"
+      "Amazon EFS"
     ],
     checks: [
       "Differentiate block, object, and file storage architectures.",
@@ -223,7 +209,6 @@ const modules = [
       "ACID",
       "CAP Theorem",
       "Amazon RDS",
-      "Amazon Aurora",
       "DynamoDB",
       "Database Backup"
     ],
@@ -251,7 +236,6 @@ const modules = [
       "Multi-tier Architecture",
       "Web Servers",
       "Reverse Proxy",
-      "Load Distribution",
       "Elastic Load Balancer",
       "Route 53",
       "AWS Certificate Manager",
@@ -281,12 +265,10 @@ const modules = [
       "Observability",
       "Performance Metrics",
       "Capacity Planning",
-      "Performance Tuning",
       "Log Management",
       "Amazon CloudWatch",
       "CloudTrail",
-      "AWS Config",
-      "SNS"
+      "AWS Config"
     ],
     checks: [
       "Explain the role of monitoring and observability in systems administration.",
@@ -316,7 +298,6 @@ const modules = [
       "AWS KMS",
       "Secrets Manager",
       "GuardDuty",
-      "AWS Inspector",
       "AWS WAF"
     ],
     checks: [
@@ -347,8 +328,7 @@ const modules = [
       "Auto Scaling",
       "Elastic Load Balancer",
       "Multi-AZ",
-      "Health Checks",
-      "Infrastructure Scaling Strategies"
+      "Health Checks"
     ],
     checks: [
       "Explain the principles of high availability, scalability, and fault tolerance.",
@@ -378,8 +358,7 @@ const modules = [
       "Backup Strategies",
       "AWS Backup",
       "Snapshots",
-      "Cross-Region Replication",
-      "Versioning"
+      "Cross-Region Replication"
     ],
     checks: [
       "Explain the principles of backup, disaster recovery, and business continuity.",
@@ -408,15 +387,10 @@ const modules = [
       "Incident Management",
       "Problem Management",
       "Change Management",
-      "Configuration Management",
       "Root Cause Analysis",
-      "ITIL Fundamentals",
-      "Service Level Agreements",
       "Operational Runbooks",
       "AWS Systems Manager",
-      "Patch Manager",
-      "Automation Documents",
-      "Trusted Advisor"
+      "Automation Documents"
     ],
     checks: [
       "Explain the principles of systems maintenance and IT service management.",
@@ -446,11 +420,9 @@ const modules = [
       "Reliability",
       "Performance Efficiency",
       "Cost Optimization",
-      "Sustainability",
       "AWS Well-Architected Framework",
       "AWS Well-Architected Tool",
-      "AWS Cost Explorer",
-      "Trusted Advisor"
+      "AWS Cost Explorer"
     ],
     checks: [
       "Explain architectural quality attributes for cloud systems.",
