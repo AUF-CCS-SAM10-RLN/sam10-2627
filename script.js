@@ -366,6 +366,37 @@ const modules = [
       ],
       answer: "Vertical scaling adds capacity to a single node, while horizontal scaling adds more nodes"
     }
+  },
+  {
+    title: "Backup, Disaster Recovery, and Business Continuity",
+    summary: "Business continuity, disaster recovery, RPO, RTO, backups, replication, versioning, and AWS data protection strategy.",
+    topics: [
+      "Business Continuity",
+      "Disaster Recovery",
+      "Recovery Point Objective (RPO)",
+      "Recovery Time Objective (RTO)",
+      "Backup Strategies",
+      "AWS Backup",
+      "Snapshots",
+      "Cross-Region Replication",
+      "Versioning"
+    ],
+    checks: [
+      "Explain the principles of backup, disaster recovery, and business continuity.",
+      "Differentiate backup strategies based on organizational requirements.",
+      "Explain how AWS backup services support data protection and disaster recovery.",
+      "Analyze disaster recovery plans using RPO and RTO metrics.",
+      "Evaluate organizational continuity strategies for cloud environments."
+    ],
+    quiz: {
+      question: "What does Recovery Time Objective (RTO) describe?",
+      options: [
+        "The target time to restore a service after disruption",
+        "The amount of data that can be lost before backup is required",
+        "The number of regions an application can run in"
+      ],
+      answer: "The target time to restore a service after disruption"
+    }
   }
 ];
 
@@ -425,6 +456,10 @@ const flashcards = [
   {
     question: "Why are Multi-AZ and health checks important in resilient architectures?",
     answer: "They help workloads continue operating during failures by spreading resources and detecting unhealthy components for recovery or rerouting."
+  },
+  {
+    question: "What is the difference between RPO and RTO?",
+    answer: "RPO defines acceptable data loss measured in time, while RTO defines acceptable service recovery time after an outage."
   }
 ];
 
