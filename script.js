@@ -85,6 +85,41 @@ const modules = [
       ],
       answer: "Grant only the permissions required to complete a task"
     }
+  },
+  {
+    title: "Computer Networks and Cloud Networking",
+    summary: "Networking models, routing, DNS, VPC design, gateways, and cloud network security controls.",
+    topics: [
+      "OSI Model",
+      "TCP/IP",
+      "Routing",
+      "Switching",
+      "DNS",
+      "Firewalls",
+      "Amazon VPC",
+      "Subnets",
+      "Route Tables",
+      "Internet Gateway",
+      "NAT Gateway",
+      "Security Groups",
+      "Network ACLs"
+    ],
+    checks: [
+      "Explain networking concepts that underpin cloud infrastructure.",
+      "Differentiate the functions of the OSI and TCP/IP networking models.",
+      "Analyze the components of Amazon Virtual Private Cloud (VPC) in relation to traditional network architectures.",
+      "Explain how routing, subnets, gateways, and DNS enable secure cloud communication.",
+      "Evaluate cloud networking designs based on networking and security principles."
+    ],
+    quiz: {
+      question: "What makes a subnet public in Amazon VPC?",
+      options: [
+        "Its route table sends internet-bound traffic to an internet gateway",
+        "It has more IP addresses than a private subnet",
+        "It automatically allows all inbound traffic"
+      ],
+      answer: "Its route table sends internet-bound traffic to an internet gateway"
+    }
   }
 ];
 
@@ -108,12 +143,17 @@ const flashcards = [
   {
     question: "How is RBAC different from ABAC?",
     answer: "RBAC grants access based on roles, while ABAC uses attributes such as user, resource, or environment details."
+  },
+  {
+    question: "What is the main purpose of a NAT gateway?",
+    answer: "It allows resources in private subnets to reach the internet outbound without accepting unsolicited inbound connections."
   }
 ];
 
 const progressKey = "sam10-progress";
 const moduleList = document.querySelector("#module-list");
 const moduleTemplate = document.querySelector("#module-template");
+const moduleTabs = document.querySelector("#module-tabs");
 const searchInput = document.querySelector("#module-search");
 const resetProgressButton = document.querySelector("#reset-progress");
 const moduleCount = document.querySelector("#module-count");
@@ -233,8 +273,24 @@ function createQuiz(module) {
 function renderModules() {
   const progress = loadProgress();
   moduleList.textContent = "";
+  if (moduleTabs) {
+    moduleTabs.textContent = "";
+  }
 
   modules.forEach((module, moduleIndex) => {
+    if (moduleTabs) {
+      const tabButton = document.createElement("button");
+      tabButton.type = "button";
+      tabButton.className = "tab-button";
+      tabButton.setAttribute("role", "tab");
+      tabButton.setAttribute("aria-selected", "false");
+      tabButton.setAttribute("aria-controls", `topic-${moduleIndex + 1}`);
+      tabButton.dataset.tabTarget = `topic-${moduleIndex + 1}`;
+      tabButton.textContent = `Topic ${moduleIndex + 1}`;
+      tabButton.dataset.search = [module.title, module.summary, ...module.topics, ...module.checks].join(" ").toLowerCase();
+      moduleTabs.append(tabButton);
+    }
+
     const fragment = moduleTemplate.content.cloneNode(true);
     const card = fragment.querySelector(".module-card");
     const toggle = fragment.querySelector(".module-toggle");
@@ -249,7 +305,6 @@ function renderModules() {
     const options = fragment.querySelector(".quiz-options");
     const feedbackSlot = fragment.querySelector(".quiz-feedback");
 
-    card.id = `topic-${moduleIndex + 1}`;
     title.textContent = module.title;
     summary.textContent = module.summary;
     order.textContent = `M${String(moduleIndex + 1).padStart(2, "0")}`;
@@ -280,43 +335,114 @@ function renderModules() {
       ...module.checks
     ].join(" ").toLowerCase();
 
-    moduleList.append(fragment);
+    const panel = document.createElement("section");
+    panel.className = "tab-panel";
+    panel.id = `topic-${moduleIndex + 1}`;
+    panel.setAttribute("role", "tabpanel");
+    panel.dataset.search = card.dataset.search;
+    panel.append(fragment);
+    moduleList.append(panel);
   });
 
   updateProgressDisplays(progress);
+  initTabs();
   syncHashTarget();
 }
 
 function filterModules() {
   const query = searchInput.value.trim().toLowerCase();
 
-  document.querySelectorAll(".module-card").forEach((card) => {
-    const matches = !query || card.dataset.search.includes(query);
-    card.classList.toggle("is-hidden", !matches);
+  document.querySelectorAll("#module-list .tab-panel").forEach((panel) => {
+    const matches = !query || panel.dataset.search.includes(query);
+    panel.hidden = !matches;
   });
+
+  if (moduleTabs) {
+    moduleTabs.querySelectorAll(".tab-button").forEach((button) => {
+      const matches = !query || button.dataset.search.includes(query);
+      button.hidden = !matches;
+    });
+
+    const activeButton = moduleTabs.querySelector(".tab-button.is-active:not([hidden])");
+    if (!activeButton) {
+      const firstVisible = moduleTabs.querySelector(".tab-button:not([hidden])");
+      if (firstVisible) {
+        activateTab(firstVisible.closest(".tab-container"), firstVisible.dataset.tabTarget, false);
+      }
+    }
+  }
 }
 
 function syncHashTarget() {
   const hash = window.location.hash;
-  if (!hash || !hash.startsWith("#topic-")) {
+  if (!hash) {
     return;
   }
 
-  const targetCard = document.querySelector(hash);
-  if (!targetCard) {
+  const targetPanel = document.querySelector(hash);
+  if (!targetPanel) {
     return;
   }
 
-  const toggle = targetCard.querySelector(".module-toggle");
-  const body = targetCard.querySelector(".module-body");
-
-  if (toggle && body) {
-    toggle.setAttribute("aria-expanded", "true");
-    body.hidden = false;
+  const container = targetPanel.closest(".tab-container");
+  if (container) {
+    activateTab(container, hash.slice(1), false);
   }
 
   requestAnimationFrame(() => {
-    targetCard.scrollIntoView({ block: "start", behavior: "smooth" });
+    targetPanel.scrollIntoView({ block: "start", behavior: "smooth" });
+  });
+}
+
+function activateTab(container, targetId, updateHash = true) {
+  if (!container) {
+    return;
+  }
+
+  const buttons = container.querySelectorAll(".tab-button");
+  const panels = container.querySelectorAll(".tab-panel");
+
+  buttons.forEach((button) => {
+    const isActive = button.dataset.tabTarget === targetId;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-selected", String(isActive));
+  });
+
+  panels.forEach((panel) => {
+    const isActive = panel.id === targetId;
+    panel.classList.toggle("is-active", isActive);
+    panel.hidden = !isActive;
+  });
+
+  if (updateHash) {
+    history.replaceState(null, "", `#${targetId}`);
+  }
+}
+
+function initTabs() {
+  document.querySelectorAll(".tab-container").forEach((container) => {
+    const buttons = container.querySelectorAll(".tab-button");
+    if (!buttons.length) {
+      return;
+    }
+
+    buttons.forEach((button) => {
+      if (button.dataset.tabBound === "true") {
+        return;
+      }
+
+      button.dataset.tabBound = "true";
+      button.addEventListener("click", () => {
+        activateTab(container, button.dataset.tabTarget);
+      });
+    });
+
+    const currentHash = window.location.hash.replace("#", "");
+    const hashButton = currentHash
+      ? container.querySelector(`.tab-button[data-tab-target="${currentHash}"]`)
+      : null;
+    const activeButton = hashButton || container.querySelector(".tab-button.is-active") || buttons[0];
+    activateTab(container, activeButton.dataset.tabTarget, false);
   });
 }
 
@@ -369,6 +495,11 @@ if (flashcard) {
 
 if (moduleList && moduleTemplate) {
   renderModules();
+}
+
+if (!moduleList) {
+  initTabs();
+  syncHashTarget();
 }
 
 if (flashcard) {

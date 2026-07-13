@@ -31,9 +31,10 @@
         <a class="nav-link" href="lectures.html#topic-1">Topic 1</a>
         <a class="nav-link" href="lectures.html#topic-2">Topic 2</a>
         <a class="nav-link" href="lectures.html#topic-3">Topic 3</a>
+        <a class="nav-link" href="lectures.html#topic-4">Topic 4</a>
         <a class="nav-link" href="labs.html">Labs</a>
         <a class="nav-link" href="aws-console.html">AWS Demo</a>
-        <span class="console-chip">3 Topics</span>
+        <span class="console-chip">4 Topics</span>
         <a class="nav-link" href="index.html">Home</a>
       </div>
     </header>
@@ -52,11 +53,12 @@
           <a class="sidebar-link" href="#topic-1">Topic 1</a>
           <a class="sidebar-link" href="#topic-2">Topic 2</a>
           <a class="sidebar-link" href="#topic-3">Topic 3</a>
+          <a class="sidebar-link" href="#topic-4">Topic 4</a>
         </div>
         <div class="sidebar-group">
           <p class="sidebar-title">Study controls</p>
           <p class="sidebar-note">
-            Use search, completion checklists, quizzes, and flashcards to review the two published lectures.
+            Use search, completion checklists, quizzes, and flashcards to review one lecture topic at a time.
           </p>
         </div>
       </aside>
@@ -67,11 +69,11 @@
             <p class="eyebrow">Lecture modules</p>
             <h1>SAM10 lecture topics</h1>
             <p class="section-copy">
-              This page consolidates all current lecture content for SAM10. Topics 1, 2, and 3 are currently published.
+              This page consolidates all current lecture content for SAM10. Topics 1, 2, 3, and 4 are currently published in individual tabs.
             </p>
           </div>
           <div class="page-banner-actions">
-            <a class="primary-button" href="#module-list">Browse lectures</a>
+            <a class="primary-button" href="#module-tabs">Browse lectures</a>
             <a class="secondary-button" href="labs.html">Go to labs</a>
             <button class="secondary-button" id="reset-progress" type="button">Reset progress</button>
           </div>
@@ -86,7 +88,7 @@
           <article class="metric-card">
             <p class="metric-label">Subtopics</p>
             <h2 id="topic-count">0</h2>
-            <p class="metric-copy">Combined concepts across both lecture topics.</p>
+            <p class="metric-copy">Combined concepts across the four lecture topics.</p>
           </article>
           <article class="metric-card">
             <p class="metric-label">Completion</p>
@@ -101,13 +103,13 @@
           <div class="panel">
             <p class="toolbar-title">Coverage</p>
             <p class="panel-copy">
-              Topic 1 establishes systems administration foundations and Topic 2 moves into cloud and virtualization fundamentals.
+              Topics move from systems administration foundations to cloud, identity, governance, and cloud networking.
             </p>
           </div>
           <div class="panel">
             <p class="toolbar-title">Review mode</p>
             <p class="panel-copy">
-              Expand each lecture to review topics, track outcomes, and answer a short quiz.
+              Select a tab to focus on one lecture topic, then review outcomes and answer the short quiz.
             </p>
           </div>
         </section>
@@ -117,13 +119,16 @@
           <h2>Published topic modules</h2>
         </section>
 
-        <section id="module-list" class="module-list" aria-live="polite"></section>
+        <section class="tab-container" data-tab-group="lectures">
+          <div id="module-tabs" class="tab-list" role="tablist" aria-label="Lecture topics"></div>
+          <section id="module-list" class="tab-panels" aria-live="polite"></section>
+        </section>
 
         <section class="study-grid">
           <article class="study-card">
             <p class="section-label">Flashcards</p>
             <h2>Core review prompts</h2>
-            <p class="study-copy">Quick checks drawn only from Topics 1 and 2.</p>
+            <p class="study-copy">Quick checks drawn only from Topics 1 through 4.</p>
             <div id="flashcard" class="flashcard" tabindex="0" role="button" aria-pressed="false">
               <p class="flashcard-face flashcard-question"></p>
               <p class="flashcard-face flashcard-answer"></p>
@@ -139,10 +144,9 @@
             <h2>What students should leave with</h2>
             <ul class="outcome-list">
               <li>Explain systems administration using systems theory and operating system concepts.</li>
-              <li>Compare on-premises and cloud infrastructure using AWS global infrastructure concepts.</li>
               <li>Explain how distributed systems and virtualization enable cloud computing.</li>
-              <li>Interpret AWS compute options and pricing trade-offs for infrastructure planning.</li>
               <li>Evaluate IAM and governance choices using least-privilege and secure access principles.</li>
+              <li>Evaluate VPC, subnetting, routing, and cloud-network security designs against networking principles.</li>
             </ul>
           </article>
         </section>
@@ -152,7 +156,7 @@
 
   <template id="module-template">
     <article class="module-card">
-      <button class="module-toggle" type="button" aria-expanded="false">
+      <button class="module-toggle" type="button" aria-expanded="true">
         <span class="module-order"></span>
         <span class="module-heading">
           <span class="module-title"></span>
@@ -161,7 +165,7 @@
         <span class="module-progress"></span>
       </button>
 
-      <div class="module-body" hidden>
+      <div class="module-body">
         <div class="module-columns">
           <section>
             <h3>Key topics</h3>

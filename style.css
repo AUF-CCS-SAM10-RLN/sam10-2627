@@ -328,6 +328,7 @@ a {
 .study-grid,
 .module-columns,
 .lab-grid,
+.tab-list,
 .aws-overview,
 .aws-panel-grid,
 .aws-service-grid,
@@ -342,6 +343,43 @@ a {
 .quick-links,
 .aws-overview {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.tab-container {
+  display: grid;
+  gap: 1rem;
+}
+
+.tab-list {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.tab-button {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--aws-border-strong);
+  border-radius: 14px;
+  background: var(--aws-surface);
+  color: var(--aws-text);
+  text-align: left;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.tab-button:hover {
+  transform: translateY(-1px);
+}
+
+.tab-button.is-active {
+  background: var(--aws-blue);
+  border-color: var(--aws-blue);
+  color: #eff6ff;
+}
+
+.tab-panels {
+  display: grid;
+}
+
+.tab-panel[hidden] {
+  display: none;
 }
 
 .toolbar {

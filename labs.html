@@ -32,8 +32,9 @@
         <a class="nav-link" href="labs.html#lab-1">Topic 1 Lab</a>
         <a class="nav-link" href="labs.html#lab-2">Topic 2 Lab</a>
         <a class="nav-link" href="labs.html#lab-3">Topic 3 Lab</a>
+        <a class="nav-link" href="labs.html#lab-4">Topic 4 Lab</a>
         <a class="nav-link" href="aws-console.html">AWS Demo</a>
-        <span class="console-chip">3 Labs</span>
+        <span class="console-chip">4 Labs</span>
         <a class="nav-link" href="index.html">Home</a>
       </div>
     </header>
@@ -52,11 +53,12 @@
           <a class="sidebar-link" href="#lab-1">Topic 1 Lab</a>
           <a class="sidebar-link" href="#lab-2">Topic 2 Lab</a>
           <a class="sidebar-link" href="#lab-3">Topic 3 Lab</a>
+          <a class="sidebar-link" href="#lab-4">Topic 4 Lab</a>
         </div>
         <div class="sidebar-group">
           <p class="sidebar-title">Use</p>
           <p class="sidebar-note">
-            These labs complement the two confirmed lecture topics only. No unpublished topics are shown.
+            Each lab now lives in its own tab so students can focus on one practical activity at a time.
           </p>
         </div>
       </aside>
@@ -67,289 +69,98 @@
             <p class="eyebrow">Laboratory activities</p>
             <h1>SAM10 hands-on activities</h1>
             <p class="section-copy">
-              Practical exercises aligned to the two published lecture topics: foundations of systems administration,
-              and cloud computing with virtualization fundamentals.
+              Practical exercises aligned to the four published lecture topics. Select a tab to open one lab at a time.
             </p>
           </div>
           <div class="page-banner-actions">
-            <a class="primary-button" href="#lab-1">Open labs</a>
+            <a class="primary-button" href="#lab-tabs">Open labs</a>
             <a class="secondary-button" href="lectures.html">Back to lectures</a>
             <a class="secondary-button" href="aws-console.html">AWS demo</a>
           </div>
         </section>
 
-        <section class="module-list">
-          <article class="module-card lab-card" id="lab-1">
-            <div class="lab-header">
-              <div>
-                <p class="lab-tag">Topic 1</p>
-                <h3>Foundations of Systems Administration Lab</h3>
-                <p class="module-summary">
-                  Build and analyze a basic cloud-based system using core infrastructure and AWS concepts.
-                </p>
-              </div>
-              <p class="lab-duration">3 hours</p>
-            </div>
+        <section class="tab-container" data-tab-group="labs">
+          <div id="lab-tabs" class="tab-list" role="tablist" aria-label="Laboratory activities">
+            <button class="tab-button is-active" type="button" role="tab" aria-selected="true" aria-controls="lab-1" data-tab-target="lab-1">Topic 1 Lab</button>
+            <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="lab-2" data-tab-target="lab-2">Topic 2 Lab</button>
+            <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="lab-3" data-tab-target="lab-3">Topic 3 Lab</button>
+            <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="lab-4" data-tab-target="lab-4">Topic 4 Lab</button>
+          </div>
 
-            <div class="lab-grid">
-              <section class="lab-section">
-                <h3>Goal</h3>
-                <p class="panel-copy">
-                  Apply systems administration concepts by identifying system components, mapping client-server
-                  relationships, and examining how AWS infrastructure and the Shared Responsibility Model affect administration.
-                </p>
-              </section>
-              <section class="lab-section">
-                <h3>Required outputs</h3>
-                <ul class="outcome-list">
-                  <li>One labeled on-premises infrastructure diagram</li>
-                  <li>One labeled AWS-based infrastructure diagram</li>
-                  <li>One comparison table with at least 4 differences between on-premises and cloud infrastructure</li>
-                  <li>One completed shared responsibility worksheet with at least 6 items classified correctly</li>
-                  <li>One reflection paragraph of 120 to 180 words</li>
-                </ul>
-              </section>
-              <section class="lab-section">
-                <h3>Assessable tasks</h3>
-                <ol class="lab-list">
-                  <li>Identify and label at least 6 components in a simple on-premises environment: client, server, operating system, network, storage, administrator.</li>
-                  <li>Redraw the same environment in AWS terms and include at least 1 Region and 2 Availability Zones.</li>
-                  <li>Write a comparison table that explains at least 4 differences between traditional infrastructure and AWS cloud infrastructure.</li>
-                  <li>Classify at least 6 responsibilities under either AWS or customer responsibility, with at least 5 correct classifications required for completion.</li>
-                  <li>Use the AWS console demo or AWS documentation to identify where Region and service navigation appear in the interface.</li>
-                  <li>Write a reflection explaining how the systems administrator role changes when infrastructure is moved to AWS.</li>
-                </ol>
-              </section>
-              <section class="lab-section">
-                <h3>Success criteria</h3>
-                <ul class="outcome-list">
-                  <li>Diagrams are complete, readable, and use correct terms.</li>
-                  <li>AWS diagrams correctly show Region and Availability Zone structure.</li>
-                  <li>The comparison table explains differences, not just lists keywords.</li>
-                  <li>The shared responsibility answers correctly distinguish security of the cloud from security in the cloud.</li>
-                  <li>The written reflection connects theory to administrative practice.</li>
-                </ul>
-              </section>
-              <section class="lab-section">
-                <h3>Skills reinforced</h3>
-                <ul class="outcome-list">
-                  <li>Systems thinking</li>
-                  <li>Client-server analysis</li>
-                  <li>Infrastructure comparison</li>
-                  <li>AWS foundational literacy</li>
-                  <li>Administrative responsibility boundaries</li>
-                </ul>
-              </section>
-              <section class="lab-section">
-                <h3>Information for students</h3>
-                <ul class="outcome-list">
-                  <li>Use simple diagrams; accuracy matters more than artistic detail.</li>
-                  <li>When comparing on-premises and cloud systems, focus on ownership, location, scaling, and resilience.</li>
-                  <li>In the Shared Responsibility Model, AWS secures the infrastructure of the cloud, while customers secure their workloads and configurations in the cloud.</li>
-                </ul>
-              </section>
-              <section class="lab-section">
-                <h3>Useful resources</h3>
-                <ul class="resource-list">
-                  <li><a href="https://aws.amazon.com/about-aws/global-infrastructure/" target="_blank" rel="noreferrer">AWS Global Infrastructure</a></li>
-                  <li><a href="https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html" target="_blank" rel="noreferrer">AWS Regions and Availability Zones documentation</a></li>
-                  <li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html" target="_blank" rel="noreferrer">EC2 guide to Regions and Availability Zones</a></li>
-                  <li><a href="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/shared-responsibility.html" target="_blank" rel="noreferrer">AWS Shared Responsibility Model</a></li>
-                </ul>
-              </section>
-              <section class="lab-section">
-                <h3>Video lectures and internet materials</h3>
-                <ul class="resource-list">
-                  <li><a href="https://aws.amazon.com/getting-started/cloud-essentials/" target="_blank" rel="noreferrer">AWS Cloud Essentials</a> - includes introductory video material on cloud concepts and global infrastructure.</li>
-                  <li><a href="https://aws.amazon.com/about-aws/global-infrastructure/" target="_blank" rel="noreferrer">AWS Global Infrastructure page</a> - includes AWS-produced explainer media on Regions and Availability Zones.</li>
-                  <li><a href="https://aws.amazon.com/blogs/training-and-certification/cloud-practitioner-essentials-digital-course/" target="_blank" rel="noreferrer">AWS Cloud Practitioner Essentials course overview</a> - points students to current beginner AWS learning paths.</li>
-                </ul>
-              </section>
-            </div>
-          </article>
-
-          <article class="module-card lab-card" id="lab-2">
-            <div class="lab-header">
-              <div>
-                <p class="lab-tag">Topic 2</p>
-                <h3>Cloud Computing and Virtualization Fundamentals Lab</h3>
-                <p class="module-summary">
-                  Compare cloud deployment models, inspect virtualization approaches, and estimate basic AWS compute costs.
-                </p>
-              </div>
-              <p class="lab-duration">3 hours</p>
-            </div>
-
-            <div class="lab-grid">
-              <section class="lab-section">
-                <h3>Goal</h3>
-                <p class="panel-copy">
-                  Connect distributed systems and virtualization theory to practical infrastructure choices,
-                  then evaluate AWS compute and pricing decisions for a small organization.
-                </p>
-              </section>
-              <section class="lab-section">
-                <h3>Required outputs</h3>
-                <ul class="outcome-list">
-                  <li>One completed deployment model classification worksheet</li>
-                  <li>One virtualization comparison table covering hypervisors, virtual machines, and containers</li>
-                  <li>One AWS service-model mapping exercise covering IaaS, PaaS, and SaaS examples</li>
-                  <li>One short pricing estimate or cost-planning summary using AWS pricing resources</li>
-                  <li>One recommendation paragraph explaining the best deployment choice for the scenario</li>
-                </ul>
-              </section>
-              <section class="lab-section">
-                <h3>Assessable tasks</h3>
-                <ol class="lab-list">
-                  <li>Classify at least 4 scenarios into public, private, hybrid, or multi-cloud and justify each answer in one sentence.</li>
-                  <li>Compare virtual machines and containers using at least 5 criteria such as isolation, startup speed, resource use, operating system dependency, and management overhead.</li>
-                  <li>Explain the role of a hypervisor and identify whether it supports virtualization directly or through a host operating system.</li>
-                  <li>Match at least 5 AWS services or use cases to IaaS, PaaS, or SaaS-style delivery models.</li>
-                  <li>Use AWS Pricing Calculator or EC2 pricing pages to estimate a small deployment and record the assumptions used.</li>
-                  <li>Submit a recommendation that balances technical fit, flexibility, and cost.</li>
-                </ol>
-              </section>
-              <section class="lab-section">
-                <h3>Success criteria</h3>
-                <ul class="outcome-list">
-                  <li>Deployment model classifications are justified using the scenario details.</li>
-                  <li>Virtualization comparisons describe trade-offs rather than isolated definitions.</li>
-                  <li>AWS service mappings are logically consistent with IaaS, PaaS, and SaaS concepts.</li>
-                  <li>Pricing work includes visible assumptions such as instance type, storage, or duration.</li>
-                  <li>The final recommendation shows a clear reasoned choice.</li>
-                </ul>
-              </section>
-              <section class="lab-section">
-                <h3>Skills reinforced</h3>
-                <ul class="outcome-list">
-                  <li>Cloud model analysis</li>
-                  <li>Virtualization literacy</li>
-                  <li>Service model differentiation</li>
-                  <li>AWS compute awareness</li>
-                  <li>Cost-conscious infrastructure planning</li>
-                </ul>
-              </section>
-              <section class="lab-section">
-                <h3>Information for students</h3>
-                <ul class="outcome-list">
-                  <li>Focus on why a deployment model fits a scenario, not only on definitions.</li>
-                  <li>Containers and virtual machines solve different problems; do not assume one always replaces the other.</li>
-                  <li>Cost estimates are only meaningful when the assumptions are explicit.</li>
-                </ul>
-              </section>
-              <section class="lab-section">
-                <h3>Useful resources</h3>
-                <ul class="resource-list">
-                  <li><a href="https://aws.amazon.com/getting-started/cloud-essentials/" target="_blank" rel="noreferrer">AWS Cloud Essentials</a></li>
-                  <li><a href="https://aws.amazon.com/ec2/pricing/" target="_blank" rel="noreferrer">Amazon EC2 pricing</a></li>
-                  <li><a href="https://docs.aws.amazon.com/pricing-calculator/" target="_blank" rel="noreferrer">AWS Pricing Calculator documentation</a></li>
-                  <li><a href="https://docs.aws.amazon.com/en_us/pricing-calculator/latest/userguide/generate-estimate.html" target="_blank" rel="noreferrer">Generate an estimate in AWS Pricing Calculator</a></li>
-                  <li><a href="https://docs.aws.amazon.com/pricing-calculator/latest/userguide/ec2-estimates.html" target="_blank" rel="noreferrer">Generating Amazon EC2 estimates</a></li>
-                </ul>
-              </section>
-              <section class="lab-section">
-                <h3>Video lectures and internet materials</h3>
-                <ul class="resource-list">
-                  <li><a href="https://aws.amazon.com/getting-started/cloud-essentials/" target="_blank" rel="noreferrer">AWS Cloud Essentials</a> - beginner learning materials covering cloud models and core AWS concepts.</li>
-                  <li><a href="https://aws.amazon.com/blogs/training-and-certification/cloud-practitioner-essentials-digital-course/" target="_blank" rel="noreferrer">AWS Cloud Practitioner Essentials course overview</a> - current entry point for official AWS foundational training.</li>
-                  <li><a href="https://docs.aws.amazon.com/pricing-calculator/" target="_blank" rel="noreferrer">AWS Pricing Calculator documentation</a> - useful alongside lecture or demo walkthroughs for cost-planning exercises.</li>
-                </ul>
-              </section>
-            </div>
-          </article>
-
-          <article class="module-card lab-card" id="lab-3">
-            <div class="lab-header">
-              <div>
-                <p class="lab-tag">Topic 3</p>
-                <h3>Identity, Access Management, and Governance Lab</h3>
-                <p class="module-summary">
-                  Design secure access controls, evaluate IAM policies, and apply governance principles to AWS administration scenarios.
-                </p>
-              </div>
-              <p class="lab-duration">3 hours</p>
-            </div>
-
-            <div class="lab-grid">
-              <section class="lab-section">
-                <h3>Goal</h3>
-                <p class="panel-copy">
-                  Apply authentication, authorization, IAM, least-privilege, MFA, and federation concepts to realistic cloud administration scenarios.
-                </p>
-              </section>
-              <section class="lab-section">
-                <h3>Required outputs</h3>
-                <ul class="outcome-list">
-                  <li>One access-control comparison sheet covering RBAC and ABAC</li>
-                  <li>One IAM role or policy design recommendation for a given scenario</li>
-                  <li>One least-privilege review of an identity policy set</li>
-                  <li>One governance checklist with at least 5 secure-administration controls</li>
-                  <li>One short analysis paragraph on MFA and identity federation</li>
-                </ul>
-              </section>
-              <section class="lab-section">
-                <h3>Assessable tasks</h3>
-                <ol class="lab-list">
-                  <li>Define authentication and authorization in your own words and give one administration example of each.</li>
-                  <li>Compare RBAC and ABAC using at least 4 criteria such as flexibility, complexity, scalability, and policy management.</li>
-                  <li>Review a sample AWS administration scenario and assign permissions using least-privilege logic.</li>
-                  <li>Identify at least 3 cases where MFA should be required for secure administrative access.</li>
-                  <li>Explain how identity federation reduces the need for separate long-term IAM user accounts.</li>
-                  <li>Create a short governance checklist covering account review, policy review, MFA enforcement, role use, and access monitoring.</li>
-                </ol>
-              </section>
-              <section class="lab-section">
-                <h3>Success criteria</h3>
-                <ul class="outcome-list">
-                  <li>Authentication and authorization are correctly distinguished.</li>
-                  <li>RBAC and ABAC comparisons show practical differences rather than definitions only.</li>
-                  <li>IAM recommendations follow least-privilege and do not over-assign permissions.</li>
-                  <li>MFA and federation explanations connect directly to secure cloud administration.</li>
-                  <li>The governance checklist is actionable and relevant to AWS account operations.</li>
-                </ul>
-              </section>
-              <section class="lab-section">
-                <h3>Skills reinforced</h3>
-                <ul class="outcome-list">
-                  <li>Identity and access analysis</li>
-                  <li>Least-privilege reasoning</li>
-                  <li>IAM policy evaluation</li>
-                  <li>Governance awareness</li>
-                  <li>Secure cloud administration planning</li>
-                </ul>
-              </section>
-              <section class="lab-section">
-                <h3>Information for students</h3>
-                <ul class="outcome-list">
-                  <li>Do not treat IAM as only a permissions list; it is part of a larger governance model.</li>
-                  <li>Least privilege means enough access to perform the task, not the fewest words in a policy.</li>
-                  <li>Federation is useful when organizations already manage identities in an external directory or identity provider.</li>
-                </ul>
-              </section>
-              <section class="lab-section">
-                <h3>Useful resources</h3>
-                <ul class="resource-list">
-                  <li><a href="https://docs.aws.amazon.com/iam/" target="_blank" rel="noreferrer">AWS Identity and Access Management documentation</a></li>
-                  <li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html" target="_blank" rel="noreferrer">Policies and permissions in AWS IAM</a></li>
-                  <li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html" target="_blank" rel="noreferrer">Multi-factor authentication in IAM</a></li>
-                  <li><a href="https://aws.amazon.com/identity/federation/" target="_blank" rel="noreferrer">AWS identity federation</a></li>
-                  <li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html" target="_blank" rel="noreferrer">Security best practices in IAM</a></li>
-                  <li><a href="https://docs.aws.amazon.com/wellarchitected/latest/framework/sec_permissions_least_privileges.html" target="_blank" rel="noreferrer">AWS Well-Architected least privilege guidance</a></li>
-                </ul>
-              </section>
-              <section class="lab-section">
-                <h3>Video lectures and internet materials</h3>
-                <ul class="resource-list">
-                  <li><a href="https://aws.amazon.com/getting-started/cloud-essentials/" target="_blank" rel="noreferrer">AWS Cloud Essentials</a> - current foundational learning materials that include IAM and security basics.</li>
-                  <li><a href="https://aws.amazon.com/blogs/training-and-certification/cloud-practitioner-essentials-digital-course/" target="_blank" rel="noreferrer">AWS Cloud Practitioner Essentials course overview</a> - entry point to official foundational AWS training.</li>
-                  <li><a href="https://aws.amazon.com/identity/federation/" target="_blank" rel="noreferrer">AWS identity federation overview</a> - public overview material useful before deeper configuration work.</li>
-                </ul>
-              </section>
-            </div>
-          </article>
+          <section class="tab-panels">
+            <section class="tab-panel is-active" id="lab-1" role="tabpanel">
+              <article class="module-card lab-card">
+                <div class="lab-header">
+                  <div>
+                    <p class="lab-tag">Topic 1</p>
+                    <h3>Foundations of Systems Administration Lab</h3>
+                    <p class="module-summary">Build and analyze a basic cloud-based system using core infrastructure and AWS concepts.</p>
+                  </div>
+                  <p class="lab-duration">3 hours</p>
+                </div>
+                <div class="lab-grid">
+                  <section class="lab-section"><h3>Goal</h3><p class="panel-copy">Apply systems administration concepts by identifying system components, mapping client-server relationships, and examining how AWS infrastructure and the Shared Responsibility Model affect administration.</p></section>
+                  <section class="lab-section"><h3>Required outputs</h3><ul class="outcome-list"><li>One labeled on-premises infrastructure diagram</li><li>One labeled AWS-based infrastructure diagram</li><li>One comparison table with at least 4 differences between on-premises and cloud infrastructure</li><li>One completed shared responsibility worksheet with at least 6 items classified correctly</li><li>One reflection paragraph of 120 to 180 words</li></ul></section>
+                  <section class="lab-section"><h3>Assessable tasks</h3><ol class="lab-list"><li>Identify and label at least 6 components in a simple on-premises environment: client, server, operating system, network, storage, administrator.</li><li>Redraw the same environment in AWS terms and include at least 1 Region and 2 Availability Zones.</li><li>Write a comparison table that explains at least 4 differences between traditional infrastructure and AWS cloud infrastructure.</li><li>Classify at least 6 responsibilities under either AWS or customer responsibility, with at least 5 correct classifications required for completion.</li><li>Use the AWS console demo or AWS documentation to identify where Region and service navigation appear in the interface.</li><li>Write a reflection explaining how the systems administrator role changes when infrastructure is moved to AWS.</li></ol></section>
+                  <section class="lab-section"><h3>Success criteria</h3><ul class="outcome-list"><li>Diagrams are complete, readable, and use correct terms.</li><li>AWS diagrams correctly show Region and Availability Zone structure.</li><li>The comparison table explains differences, not just lists keywords.</li><li>The shared responsibility answers correctly distinguish security of the cloud from security in the cloud.</li><li>The written reflection connects theory to administrative practice.</li></ul></section>
+                  <section class="lab-section"><h3>Skills reinforced</h3><ul class="outcome-list"><li>Systems thinking</li><li>Client-server analysis</li><li>Infrastructure comparison</li><li>AWS foundational literacy</li><li>Administrative responsibility boundaries</li></ul></section>
+                  <section class="lab-section"><h3>Information for students</h3><ul class="outcome-list"><li>Use simple diagrams; accuracy matters more than artistic detail.</li><li>When comparing on-premises and cloud systems, focus on ownership, location, scaling, and resilience.</li><li>In the Shared Responsibility Model, AWS secures the infrastructure of the cloud, while customers secure their workloads and configurations in the cloud.</li></ul></section>
+                  <section class="lab-section"><h3>Useful resources</h3><ul class="resource-list"><li><a href="https://aws.amazon.com/about-aws/global-infrastructure/" target="_blank" rel="noreferrer">AWS Global Infrastructure</a></li><li><a href="https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions.html" target="_blank" rel="noreferrer">AWS Regions and Availability Zones documentation</a></li><li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html" target="_blank" rel="noreferrer">EC2 guide to Regions and Availability Zones</a></li><li><a href="https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/shared-responsibility.html" target="_blank" rel="noreferrer">AWS Shared Responsibility Model</a></li></ul></section>
+                  <section class="lab-section"><h3>Video lectures and internet materials</h3><ul class="resource-list"><li><a href="https://aws.amazon.com/getting-started/cloud-essentials/" target="_blank" rel="noreferrer">AWS Cloud Essentials</a> - includes introductory video material on cloud concepts and global infrastructure.</li><li><a href="https://aws.amazon.com/about-aws/global-infrastructure/" target="_blank" rel="noreferrer">AWS Global Infrastructure page</a> - includes AWS-produced explainer media on Regions and Availability Zones.</li><li><a href="https://aws.amazon.com/blogs/training-and-certification/cloud-practitioner-essentials-digital-course/" target="_blank" rel="noreferrer">AWS Cloud Practitioner Essentials course overview</a> - points students to current beginner AWS learning paths.</li></ul></section>
+                </div>
+              </article>
+            </section>
+            <section class="tab-panel" id="lab-2" role="tabpanel" hidden>
+              <article class="module-card lab-card">
+                <div class="lab-header"><div><p class="lab-tag">Topic 2</p><h3>Cloud Computing and Virtualization Fundamentals Lab</h3><p class="module-summary">Compare cloud deployment models, inspect virtualization approaches, and estimate basic AWS compute costs.</p></div><p class="lab-duration">3 hours</p></div>
+                <div class="lab-grid">
+                  <section class="lab-section"><h3>Goal</h3><p class="panel-copy">Connect distributed systems and virtualization theory to practical infrastructure choices, then evaluate AWS compute and pricing decisions for a small organization.</p></section>
+                  <section class="lab-section"><h3>Required outputs</h3><ul class="outcome-list"><li>One completed deployment model classification worksheet</li><li>One virtualization comparison table covering hypervisors, virtual machines, and containers</li><li>One AWS service-model mapping exercise covering IaaS, PaaS, and SaaS examples</li><li>One short pricing estimate or cost-planning summary using AWS pricing resources</li><li>One recommendation paragraph explaining the best deployment choice for the scenario</li></ul></section>
+                  <section class="lab-section"><h3>Assessable tasks</h3><ol class="lab-list"><li>Classify at least 4 scenarios into public, private, hybrid, or multi-cloud and justify each answer in one sentence.</li><li>Compare virtual machines and containers using at least 5 criteria such as isolation, startup speed, resource use, operating system dependency, and management overhead.</li><li>Explain the role of a hypervisor and identify whether it supports virtualization directly or through a host operating system.</li><li>Match at least 5 AWS services or use cases to IaaS, PaaS, or SaaS-style delivery models.</li><li>Use AWS Pricing Calculator or EC2 pricing pages to estimate a small deployment and record the assumptions used.</li><li>Submit a recommendation that balances technical fit, flexibility, and cost.</li></ol></section>
+                  <section class="lab-section"><h3>Success criteria</h3><ul class="outcome-list"><li>Deployment model classifications are justified using the scenario details.</li><li>Virtualization comparisons describe trade-offs rather than isolated definitions.</li><li>AWS service mappings are logically consistent with IaaS, PaaS, and SaaS concepts.</li><li>Pricing work includes visible assumptions such as instance type, storage, or duration.</li><li>The final recommendation shows a clear reasoned choice.</li></ul></section>
+                  <section class="lab-section"><h3>Skills reinforced</h3><ul class="outcome-list"><li>Cloud model analysis</li><li>Virtualization literacy</li><li>Service model differentiation</li><li>AWS compute awareness</li><li>Cost-conscious infrastructure planning</li></ul></section>
+                  <section class="lab-section"><h3>Information for students</h3><ul class="outcome-list"><li>Focus on why a deployment model fits a scenario, not only on definitions.</li><li>Containers and virtual machines solve different problems; do not assume one always replaces the other.</li><li>Cost estimates are only meaningful when the assumptions are explicit.</li></ul></section>
+                  <section class="lab-section"><h3>Useful resources</h3><ul class="resource-list"><li><a href="https://aws.amazon.com/getting-started/cloud-essentials/" target="_blank" rel="noreferrer">AWS Cloud Essentials</a></li><li><a href="https://aws.amazon.com/ec2/pricing/" target="_blank" rel="noreferrer">Amazon EC2 pricing</a></li><li><a href="https://docs.aws.amazon.com/pricing-calculator/" target="_blank" rel="noreferrer">AWS Pricing Calculator documentation</a></li><li><a href="https://docs.aws.amazon.com/en_us/pricing-calculator/latest/userguide/generate-estimate.html" target="_blank" rel="noreferrer">Generate an estimate in AWS Pricing Calculator</a></li><li><a href="https://docs.aws.amazon.com/pricing-calculator/latest/userguide/ec2-estimates.html" target="_blank" rel="noreferrer">Generating Amazon EC2 estimates</a></li></ul></section>
+                  <section class="lab-section"><h3>Video lectures and internet materials</h3><ul class="resource-list"><li><a href="https://aws.amazon.com/getting-started/cloud-essentials/" target="_blank" rel="noreferrer">AWS Cloud Essentials</a> - beginner learning materials covering cloud models and core AWS concepts.</li><li><a href="https://aws.amazon.com/blogs/training-and-certification/cloud-practitioner-essentials-digital-course/" target="_blank" rel="noreferrer">AWS Cloud Practitioner Essentials course overview</a> - current entry point for official AWS foundational training.</li><li><a href="https://docs.aws.amazon.com/pricing-calculator/" target="_blank" rel="noreferrer">AWS Pricing Calculator documentation</a> - useful alongside lecture or demo walkthroughs for cost-planning exercises.</li></ul></section>
+                </div>
+              </article>
+            </section>
+            <section class="tab-panel" id="lab-3" role="tabpanel" hidden>
+              <article class="module-card lab-card">
+                <div class="lab-header"><div><p class="lab-tag">Topic 3</p><h3>Identity, Access Management, and Governance Lab</h3><p class="module-summary">Design secure access controls, evaluate IAM policies, and apply governance principles to AWS administration scenarios.</p></div><p class="lab-duration">3 hours</p></div>
+                <div class="lab-grid">
+                  <section class="lab-section"><h3>Goal</h3><p class="panel-copy">Apply authentication, authorization, IAM, least-privilege, MFA, and federation concepts to realistic cloud administration scenarios.</p></section>
+                  <section class="lab-section"><h3>Required outputs</h3><ul class="outcome-list"><li>One access-control comparison sheet covering RBAC and ABAC</li><li>One IAM role or policy design recommendation for a given scenario</li><li>One least-privilege review of an identity policy set</li><li>One governance checklist with at least 5 secure-administration controls</li><li>One short analysis paragraph on MFA and identity federation</li></ul></section>
+                  <section class="lab-section"><h3>Assessable tasks</h3><ol class="lab-list"><li>Define authentication and authorization in your own words and give one administration example of each.</li><li>Compare RBAC and ABAC using at least 4 criteria such as flexibility, complexity, scalability, and policy management.</li><li>Review a sample AWS administration scenario and assign permissions using least-privilege logic.</li><li>Identify at least 3 cases where MFA should be required for secure administrative access.</li><li>Explain how identity federation reduces the need for separate long-term IAM user accounts.</li><li>Create a short governance checklist covering account review, policy review, MFA enforcement, role use, and access monitoring.</li></ol></section>
+                  <section class="lab-section"><h3>Success criteria</h3><ul class="outcome-list"><li>Authentication and authorization are correctly distinguished.</li><li>RBAC and ABAC comparisons show practical differences rather than definitions only.</li><li>IAM recommendations follow least-privilege and do not over-assign permissions.</li><li>MFA and federation explanations connect directly to secure cloud administration.</li><li>The governance checklist is actionable and relevant to AWS account operations.</li></ul></section>
+                  <section class="lab-section"><h3>Skills reinforced</h3><ul class="outcome-list"><li>Identity and access analysis</li><li>Least-privilege reasoning</li><li>IAM policy evaluation</li><li>Governance awareness</li><li>Secure cloud administration planning</li></ul></section>
+                  <section class="lab-section"><h3>Information for students</h3><ul class="outcome-list"><li>Do not treat IAM as only a permissions list; it is part of a larger governance model.</li><li>Least privilege means enough access to perform the task, not the fewest words in a policy.</li><li>Federation is useful when organizations already manage identities in an external directory or identity provider.</li></ul></section>
+                  <section class="lab-section"><h3>Useful resources</h3><ul class="resource-list"><li><a href="https://docs.aws.amazon.com/iam/" target="_blank" rel="noreferrer">AWS Identity and Access Management documentation</a></li><li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html" target="_blank" rel="noreferrer">Policies and permissions in AWS IAM</a></li><li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html" target="_blank" rel="noreferrer">Multi-factor authentication in IAM</a></li><li><a href="https://aws.amazon.com/identity/federation/" target="_blank" rel="noreferrer">AWS identity federation</a></li><li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html" target="_blank" rel="noreferrer">Security best practices in IAM</a></li><li><a href="https://docs.aws.amazon.com/wellarchitected/latest/framework/sec_permissions_least_privileges.html" target="_blank" rel="noreferrer">AWS Well-Architected least privilege guidance</a></li></ul></section>
+                  <section class="lab-section"><h3>Video lectures and internet materials</h3><ul class="resource-list"><li><a href="https://aws.amazon.com/getting-started/cloud-essentials/" target="_blank" rel="noreferrer">AWS Cloud Essentials</a> - current foundational learning materials that include IAM and security basics.</li><li><a href="https://aws.amazon.com/blogs/training-and-certification/cloud-practitioner-essentials-digital-course/" target="_blank" rel="noreferrer">AWS Cloud Practitioner Essentials course overview</a> - entry point to official foundational AWS training.</li><li><a href="https://aws.amazon.com/identity/federation/" target="_blank" rel="noreferrer">AWS identity federation overview</a> - public overview material useful before deeper configuration work.</li></ul></section>
+                </div>
+              </article>
+            </section>
+            <section class="tab-panel" id="lab-4" role="tabpanel" hidden>
+              <article class="module-card lab-card">
+                <div class="lab-header"><div><p class="lab-tag">Topic 4</p><h3>Computer Networks and Cloud Networking Lab</h3><p class="module-summary">Model secure VPC networking by designing subnets, route tables, gateways, and traffic controls for an AWS-based environment.</p></div><p class="lab-duration">3 hours</p></div>
+                <div class="lab-grid">
+                  <section class="lab-section"><h3>Goal</h3><p class="panel-copy">Apply core networking concepts to cloud infrastructure by mapping traffic flow, designing VPC components, and evaluating secure communication paths.</p></section>
+                  <section class="lab-section"><h3>Required outputs</h3><ul class="outcome-list"><li>One OSI versus TCP/IP comparison table</li><li>One VPC network diagram with public and private subnets</li><li>One route-table plan that shows internet and private outbound traffic flow</li><li>One security-control comparison sheet for security groups and network ACLs</li><li>One short evaluation paragraph explaining whether the design is secure and functional</li></ul></section>
+                  <section class="lab-section"><h3>Assessable tasks</h3><ol class="lab-list"><li>Differentiate the OSI and TCP/IP models by matching at least 5 networking functions to the correct model layers.</li><li>Create a VPC design that includes at least 1 VPC, 2 subnets, 1 route table, 1 internet gateway, and 1 NAT gateway.</li><li>Explain which subnet is public and which is private based on the route-table targets.</li><li>Describe how DNS supports access to cloud resources and why routing is required for traffic movement.</li><li>Compare security groups and network ACLs using at least 4 criteria such as scope, statefulness, and rule direction.</li><li>Evaluate whether the design supports secure inbound and outbound communication for a web application scenario.</li></ol></section>
+                  <section class="lab-section"><h3>Success criteria</h3><ul class="outcome-list"><li>The VPC design correctly distinguishes public and private connectivity paths.</li><li>Routing decisions align with the selected gateways and subnet intent.</li><li>DNS, firewalls, routing, and subnets are explained in operational terms, not only definitions.</li><li>Security groups and network ACLs are compared accurately.</li><li>The final evaluation clearly judges both functionality and security.</li></ul></section>
+                  <section class="lab-section"><h3>Skills reinforced</h3><ul class="outcome-list"><li>Cloud networking analysis</li><li>VPC design literacy</li><li>Routing and subnet reasoning</li><li>Traffic-security evaluation</li><li>Network architecture communication</li></ul></section>
+                  <section class="lab-section"><h3>Information for students</h3><ul class="outcome-list"><li>A subnet is considered public only when its route table allows traffic to an internet gateway.</li><li>A NAT gateway supports outbound internet access from private subnets without allowing unsolicited inbound traffic.</li><li>Security groups and network ACLs both matter because they protect at different scopes.</li></ul></section>
+                  <section class="lab-section"><h3>Useful resources</h3><ul class="resource-list"><li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html" target="_blank" rel="noreferrer">How Amazon VPC works</a></li><li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-route-tables.html" target="_blank" rel="noreferrer">Subnet route tables in Amazon VPC</a></li><li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html" target="_blank" rel="noreferrer">Configure route tables</a></li><li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html" target="_blank" rel="noreferrer">Internet gateways in Amazon VPC</a></li><li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html" target="_blank" rel="noreferrer">NAT gateways</a></li><li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html" target="_blank" rel="noreferrer">Security groups for your VPC</a></li><li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html" target="_blank" rel="noreferrer">Network ACLs</a></li></ul></section>
+                  <section class="lab-section"><h3>Video lectures and internet materials</h3><ul class="resource-list"><li><a href="https://aws.amazon.com/blogs/training-and-certification/new-aws-cloud-practitioner-essentials/" target="_blank" rel="noreferrer">Updated AWS Cloud Practitioner Essentials overview</a> - highlights the current AWS networking module in the beginner course.</li><li><a href="https://aws.amazon.com/blogs/training-and-certification/cloud-practitioner-essentials-digital-course/" target="_blank" rel="noreferrer">AWS Cloud Practitioner Essentials digital course overview</a> - foundational training path for AWS networking basics.</li><li><a href="https://aws.amazon.com/blogs/training-and-certification/free-aws-training-webinars-to-grow-your-cloud-skills/" target="_blank" rel="noreferrer">Free AWS training webinars</a> - public AWS training material that can supplement network and cloud lessons.</li></ul></section>
+                </div>
+              </article>
+            </section>
+          </section>
         </section>
       </main>
     </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
