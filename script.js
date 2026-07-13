@@ -397,6 +397,43 @@ const modules = [
       ],
       answer: "The target time to restore a service after disruption"
     }
+  },
+  {
+    title: "Systems Maintenance, Automation, and IT Service Management",
+    summary: "Maintenance strategy, service management, root cause analysis, operational runbooks, and AWS automation services.",
+    topics: [
+      "Preventive Maintenance",
+      "Corrective Maintenance",
+      "Patch Management",
+      "Incident Management",
+      "Problem Management",
+      "Change Management",
+      "Configuration Management",
+      "Root Cause Analysis",
+      "ITIL Fundamentals",
+      "Service Level Agreements",
+      "Operational Runbooks",
+      "AWS Systems Manager",
+      "Patch Manager",
+      "Automation Documents",
+      "Trusted Advisor"
+    ],
+    checks: [
+      "Explain the principles of systems maintenance and IT service management.",
+      "Differentiate maintenance strategies used throughout the systems lifecycle.",
+      "Explain incident, problem, and change management processes.",
+      "Analyze the role of automation in improving operational efficiency.",
+      "Evaluate maintenance strategies based on organizational requirements."
+    ],
+    quiz: {
+      question: "Which practice is most directly associated with identifying the underlying cause of recurring incidents?",
+      options: [
+        "Root Cause Analysis",
+        "Elastic Load Balancing",
+        "Versioning"
+      ],
+      answer: "Root Cause Analysis"
+    }
   }
 ];
 
@@ -460,6 +497,10 @@ const flashcards = [
   {
     question: "What is the difference between RPO and RTO?",
     answer: "RPO defines acceptable data loss measured in time, while RTO defines acceptable service recovery time after an outage."
+  },
+  {
+    question: "How does automation improve systems maintenance?",
+    answer: "Automation reduces manual repetition, improves consistency, speeds response, and helps enforce operational procedures at scale."
   }
 ];
 
