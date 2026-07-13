@@ -304,6 +304,37 @@ const modules = [
       ],
       answer: "Amazon CloudWatch"
     }
+  },
+  {
+    title: "Cloud Security Administration",
+    summary: "Layered cloud security, cryptography, risk management, and AWS security protection services.",
+    topics: [
+      "Information Security Principles",
+      "Defense in Depth",
+      "Cryptography",
+      "Risk Management",
+      "AWS KMS",
+      "Secrets Manager",
+      "GuardDuty",
+      "AWS Inspector",
+      "AWS WAF"
+    ],
+    checks: [
+      "Explain the principles of cloud security and layered defense.",
+      "Differentiate preventive, detective, and corrective security controls.",
+      "Explain the functions of AWS security services in protecting cloud infrastructure.",
+      "Analyze cloud security risks using established security principles.",
+      "Evaluate organizational security practices in cloud environments."
+    ],
+    quiz: {
+      question: "Which AWS service is primarily used to protect web applications from common web exploits?",
+      options: [
+        "AWS WAF",
+        "Amazon SNS",
+        "Amazon EFS"
+      ],
+      answer: "AWS WAF"
+    }
   }
 ];
 
@@ -355,6 +386,10 @@ const flashcards = [
   {
     question: "How is logging different from monitoring?",
     answer: "Monitoring tracks system state and performance over time, while logging records detailed event data that helps explain what happened."
+  },
+  {
+    question: "What does defense in depth mean in cloud security?",
+    answer: "It means using multiple layers of security controls so that one control failure does not fully expose the system."
   }
 ];
 

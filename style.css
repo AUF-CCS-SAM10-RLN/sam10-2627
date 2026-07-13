@@ -618,31 +618,39 @@ a {
 }
 
 .lab-group {
-  padding: 1rem;
-  border-radius: 18px;
+  padding: 1.15rem;
+  border-radius: 20px;
   border: 1px solid var(--aws-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  overflow: hidden;
 }
 
 .lab-group-context {
-  background: linear-gradient(180deg, rgba(9, 114, 211, 0.05), rgba(9, 114, 211, 0.01));
+  background: linear-gradient(180deg, rgba(9, 114, 211, 0.07), rgba(9, 114, 211, 0.015));
+  border-top: 4px solid rgba(9, 114, 211, 0.45);
 }
 
 .lab-group-execution {
-  background: linear-gradient(180deg, rgba(255, 153, 0, 0.08), rgba(255, 153, 0, 0.02));
+  background: linear-gradient(180deg, rgba(255, 153, 0, 0.1), rgba(255, 153, 0, 0.025));
+  border-top: 4px solid rgba(255, 153, 0, 0.55);
 }
 
 .lab-group-deliverables {
-  background: linear-gradient(180deg, rgba(22, 101, 52, 0.06), rgba(22, 101, 52, 0.01));
+  background: linear-gradient(180deg, rgba(22, 101, 52, 0.08), rgba(22, 101, 52, 0.015));
+  border-top: 4px solid rgba(22, 101, 52, 0.45);
 }
 
 .lab-group-support {
-  background: linear-gradient(180deg, rgba(71, 85, 105, 0.08), rgba(71, 85, 105, 0.02));
+  background: linear-gradient(180deg, rgba(71, 85, 105, 0.09), rgba(71, 85, 105, 0.02));
+  border-top: 4px solid rgba(71, 85, 105, 0.45);
 }
 
 .lab-group-head {
   display: grid;
   gap: 0.3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
+  padding: 0.15rem 0 0.4rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
 }
 
 .lab-group-kicker {
@@ -656,7 +664,29 @@ a {
 
 .lab-group-head h4 {
   margin: 0;
-  font-size: 1.05rem;
+  font-size: 1.08rem;
+}
+
+.lab-group .lab-grid {
+  gap: 0.9rem;
+}
+
+.lab-group .lab-section {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(2px);
+}
+
+.lab-group .lab-section h3 {
+  margin-top: 0;
+}
+
+.lab-card .lab-header {
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.24);
+}
+
+.lab-card .module-summary {
+  max-width: 72ch;
 }
 
 .lab-groups > .lab-section:nth-child(-n + 5) {
