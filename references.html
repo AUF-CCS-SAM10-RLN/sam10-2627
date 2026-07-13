@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAM10 References | Books, Papers, and Articles</title>
+  <meta
+    name="description"
+    content="Curated references for SAM10 including books, research papers, and technical articles."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="console-topbar">
+      <div class="console-topbar-left">
+        <div class="console-logo">aws</div>
+        <div class="console-title">Reference Console</div>
+      </div>
+      <label class="console-search">
+        <span class="sr-only">Search page</span>
+        <input type="search" value="sam10 books papers articles" aria-label="Search page" readonly>
+      </label>
+      <div class="console-topbar-right">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="lectures.html">Lectures</a>
+        <a class="nav-link" href="labs.html">Labs</a>
+        <a class="nav-link" href="artifacts.html">Artifacts</a>
+        <a class="nav-link" href="projects.html">Projects</a>
+        <a class="nav-link" href="commands.html">Commands</a>
+        <a class="nav-link" href="shell.html">Shell</a>
+        <a class="nav-link" href="aws-console.html">AWS Demo</a>
+        <span class="console-chip">Reference</span>
+      </div>
+    </header>
+
+    <div class="console-shell">
+      <aside class="console-sidebar">
+        <div class="sidebar-group">
+          <p class="sidebar-title">Navigation</p>
+          <a class="sidebar-link" href="index.html">Overview</a>
+          <a class="sidebar-link" href="lectures.html">Lectures</a>
+          <a class="sidebar-link" href="labs.html">Laboratories</a>
+          <a class="sidebar-link" href="artifacts.html">Written Artifacts</a>
+          <a class="sidebar-link" href="projects.html">Project Presentations</a>
+          <a class="sidebar-link" href="commands.html">Linux Commands</a>
+          <a class="sidebar-link is-active" href="references.html">References</a>
+          <a class="sidebar-link" href="shell.html">Linux Shell</a>
+          <a class="sidebar-link" href="aws-console.html">AWS Console Demo</a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-title">Sections</p>
+          <a class="sidebar-link" href="#books">Books</a>
+          <a class="sidebar-link" href="#papers">Research papers</a>
+          <a class="sidebar-link" href="#articles">Technical articles and standards</a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-title">Use</p>
+          <p class="sidebar-note">
+            These references were selected for quality, relevance to SAM10, and long-term usefulness in systems administration and cloud infrastructure study.
+          </p>
+        </div>
+      </aside>
+
+      <main class="console-main">
+        <section class="page-banner">
+          <div>
+            <p class="eyebrow">Course references</p>
+            <h1>Books, research manuscripts, and technical articles</h1>
+            <p class="section-copy">
+              This page recommends high-value references for Linux administration, cloud computing, AWS, reliability, and foundational distributed systems concepts.
+            </p>
+          </div>
+          <div class="page-banner-actions">
+            <a class="primary-button" href="#books">Open books</a>
+            <a class="secondary-button" href="#papers">Open papers</a>
+          </div>
+        </section>
+
+        <section class="metrics-grid">
+          <article class="metric-card">
+            <p class="metric-label">Books</p>
+            <h2>6</h2>
+            <p class="metric-copy">Practical texts for systems administration, Linux, AWS, and reliability.</p>
+          </article>
+          <article class="metric-card">
+            <p class="metric-label">Research papers</p>
+            <h2>5</h2>
+            <p class="metric-copy">Foundational manuscripts for cloud and distributed systems understanding.</p>
+          </article>
+          <article class="metric-card">
+            <p class="metric-label">Standards and articles</p>
+            <h2>3</h2>
+            <p class="metric-copy">Official guidance and architecture best-practice references.</p>
+          </article>
+        </section>
+
+        <section class="panel">
+          <div class="section-head">
+            <p class="section-label">Selection note</p>
+            <h2>How to use these references</h2>
+          </div>
+          <p class="panel-copy">
+            Start with the practical books for hands-on skill building, then use the papers and standards to strengthen conceptual understanding and technical justification during labs and project presentations.
+          </p>
+        </section>
+
+        <section class="module-list" id="books">
+          <article class="module-card lab-card">
+            <div class="lab-header">
+              <div>
+                <p class="lab-tag">Books</p>
+                <h3>Recommended core books</h3>
+                <p class="module-summary">Practical reading for Linux systems administration, AWS operations, and reliability-oriented thinking.</p>
+              </div>
+            </div>
+            <div class="lab-grid">
+              <section class="lab-section">
+                <h3>UNIX and Linux System Administration Handbook</h3>
+                <ul class="outcome-list">
+                  <li>Why it is useful: broad, durable systems administration reference covering Linux and operational practice.</li>
+                  <li>Best fit: Linux administration, services, storage, operations, and maintenance topics.</li>
+                  <li><a href="https://www.oreilly.com/library/view/unix-and-linux/9780134278308/" rel="noreferrer" target="_blank">Publisher page</a></li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>How Linux Works, 3rd Edition</h3>
+                <ul class="outcome-list">
+                  <li>Why it is useful: strong conceptual explanation of how Linux boots, runs processes, manages storage, and handles networking.</li>
+                  <li>Best fit: Linux architecture, shell environment, services, and file system topics.</li>
+                  <li><a href="https://nostarch.com/howlinuxworks3" rel="noreferrer" target="_blank">Publisher page</a></li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Linux Pocket Guide, 4th Edition</h3>
+                <ul class="outcome-list">
+                  <li>Why it is useful: compact command-line reference for daily administration practice.</li>
+                  <li>Best fit: CLI command mastery and lab support.</li>
+                  <li><a href="https://www.oreilly.com/library/view/linux-pocket-guide/9781098157951/" rel="noreferrer" target="_blank">Publisher page</a></li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>AWS System Administration</h3>
+                <ul class="outcome-list">
+                  <li>Why it is useful: focused on administering AWS resources from a systems administrator perspective.</li>
+                  <li>Best fit: IAM, security groups, EC2, networking, and operational cloud workflows.</li>
+                  <li><a href="https://www.oreilly.com/library/view/aws-system-administration/9781449342562/" rel="noreferrer" target="_blank">Publisher page</a></li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>AWS for System Administrators</h3>
+                <ul class="outcome-list">
+                  <li>Why it is useful: more modern AWS-administration-oriented practical text with infrastructure, IAM, and automation coverage.</li>
+                  <li>Best fit: compute, IAM, CloudFormation, and cloud operations topics.</li>
+                  <li><a href="https://www.oreilly.com/library/view/aws-for-system/9781800201538/" rel="noreferrer" target="_blank">Publisher page</a></li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Site Reliability Engineering / The Site Reliability Workbook</h3>
+                <ul class="outcome-list">
+                  <li>Why it is useful: strong operational thinking for monitoring, reliability, toil reduction, and production service management.</li>
+                  <li>Best fit: monitoring, performance, reliability, maintenance, and optimization topics.</li>
+                  <li><a href="https://sre.google/resources/" rel="noreferrer" target="_blank">Google SRE library</a></li>
+                </ul>
+              </section>
+            </div>
+          </article>
+        </section>
+
+        <section class="module-list" id="papers">
+          <article class="module-card lab-card">
+            <div class="lab-header">
+              <div>
+                <p class="lab-tag">Research manuscripts</p>
+                <h3>Foundational papers worth reading</h3>
+                <p class="module-summary">Seminal references for cloud computing, distributed systems, and systems administration theory.</p>
+              </div>
+            </div>
+            <div class="lab-grid">
+              <section class="lab-section">
+                <h3>The NIST Definition of Cloud Computing</h3>
+                <ul class="outcome-list">
+                  <li>Why it matters: standard vocabulary for cloud models and service models.</li>
+                  <li>Best fit: Topics 1 and 2.</li>
+                  <li><a href="https://www.nist.gov/publications/nist-definition-cloud-computing" rel="noreferrer" target="_blank">NIST publication</a></li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Above the Clouds: A Berkeley View of Cloud Computing</h3>
+                <ul class="outcome-list">
+                  <li>Why it matters: classic early analysis of cloud computing economics and architecture.</li>
+                  <li>Best fit: cloud computing fundamentals and infrastructure trade-offs.</li>
+                  <li><a href="https://www.usenix.org/conference/lisa-09/above-clouds-berkeley-view-cloud-computing" rel="noreferrer" target="_blank">USENIX page</a></li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Dynamo: Amazon’s Highly Available Key-value Store</h3>
+                <ul class="outcome-list">
+                  <li>Why it matters: key distributed-systems paper from Amazon that helps explain NoSQL design trade-offs.</li>
+                  <li>Best fit: database administration, availability, scalability, CAP-related discussions.</li>
+                  <li><a href="https://www.amazon.science/publications/dynamo-amazons-highly-available-key-value-store" rel="noreferrer" target="_blank">Amazon Science page</a></li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>MapReduce: Simplified Data Processing on Large Clusters</h3>
+                <ul class="outcome-list">
+                  <li>Why it matters: foundational distributed processing paper from Google.</li>
+                  <li>Best fit: distributed systems and cloud-scale processing discussion.</li>
+                  <li><a href="https://research.google/pubs/mapreduce-simplified-data-processing-on-large-clusters/" rel="noreferrer" target="_blank">Google Research page</a></li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>On the Theory of System Administration</h3>
+                <ul class="outcome-list">
+                  <li>Why it matters: connects systems administration work to formal thinking about policy, automation, and maintenance.</li>
+                  <li>Best fit: Topic 1 and operations-oriented later topics.</li>
+                  <li><a href="https://arxiv.org/abs/cs/0003075" rel="noreferrer" target="_blank">arXiv manuscript</a></li>
+                </ul>
+              </section>
+            </div>
+          </article>
+        </section>
+
+        <section class="module-list" id="articles">
+          <article class="module-card lab-card">
+            <div class="lab-header">
+              <div>
+                <p class="lab-tag">Technical articles and standards</p>
+                <h3>High-value official references</h3>
+                <p class="module-summary">Current official guidance that supports secure administration, operations, and architecture review.</p>
+              </div>
+            </div>
+            <div class="lab-grid">
+              <section class="lab-section">
+                <h3>AWS Well-Architected Framework</h3>
+                <ul class="outcome-list">
+                  <li>Why it matters: current AWS architecture best-practice framework for reliability, security, performance, cost, and sustainability.</li>
+                  <li>Best fit: Topic 15 and any architecture or optimization discussion.</li>
+                  <li><a href="https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html" rel="noreferrer" target="_blank">Official AWS documentation</a></li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>IT System and Network Administration (NIST)</h3>
+                <ul class="outcome-list">
+                  <li>Why it matters: a gateway to official NIST resources for secure systems and network administration.</li>
+                  <li>Best fit: operations, maintenance, hardening, and governance topics.</li>
+                  <li><a href="https://www.nist.gov/programs-projects/it-system-and-network-administration" rel="noreferrer" target="_blank">Official NIST page</a></li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Google SRE Resources Hub</h3>
+                <ul class="outcome-list">
+                  <li>Why it matters: reliable source for production operations, SLOs, incident thinking, and service reliability guidance.</li>
+                  <li>Best fit: monitoring, reliability engineering, maintenance, and troubleshooting topics.</li>
+                  <li><a href="https://sre.google/resources/" rel="noreferrer" target="_blank">Official Google SRE resources</a></li>
+                </ul>
+              </section>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
