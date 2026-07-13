@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Provisioning Simulator | SAM10 AWS Demo</title>
+  <meta name="description" content="Interactive AWS provisioning simulator for SAM10.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="aws-body">
+  <div class="aws-console aws-console-dense">
+    <header class="console-topbar console-topbar-console console-topbar-compact">
+      <div class="console-topbar-left console-topbar-left-compact">
+        <div class="console-product-title">AWS Management Console Demo</div>
+        <div class="console-context-row">
+          <span class="console-context-pill">Region: us-east-1</span>
+          <span class="console-context-pill">Account: sam10-demo</span>
+          <span class="console-context-pill">Role: AdministratorAccess</span>
+        </div>
+      </div>
+      <div class="console-search console-search-compact">
+        <label>
+          <span class="sr-only">Search AWS services</span>
+          <input type="search" value="Provisioning simulator" aria-label="Search AWS services">
+        </label>
+      </div>
+      <nav class="console-main-nav" aria-label="Site navigation">
+        <a class="console-main-link" href="index.html">Course Home</a>
+        <a class="console-main-link" href="lectures.html">Lectures</a>
+        <a class="console-main-link" href="labs.html">Labs</a>
+        <a class="console-main-link" href="shell.html">Shell</a>
+      </nav>
+    </header>
+
+    <div class="aws-service-nav" aria-label="AWS service dashboards">
+      <a class="aws-service-link" href="aws-console.html">Overview</a>
+      <a class="aws-service-link" href="aws-ec2.html">EC2</a>
+      <a class="aws-service-link" href="aws-vpc.html">VPC</a>
+      <a class="aws-service-link" href="aws-iam.html">IAM</a>
+      <a class="aws-service-link" href="aws-s3.html">S3</a>
+      <a class="aws-service-link" href="aws-cloudwatch.html">CloudWatch</a>
+      <a class="aws-service-link" href="aws-billing.html">Billing</a>
+      <a class="aws-service-link is-active" href="aws-provisioning.html">Provisioning</a>
+    </div>
+
+    <div class="console-shell">
+      <aside class="console-sidebar console-sidebar-console">
+        <div class="sidebar-group">
+          <p class="sidebar-title">Dashboards</p>
+          <a class="sidebar-link" href="aws-console.html">Overview</a>
+          <a class="sidebar-link" href="aws-ec2.html">EC2 Dashboard</a>
+          <a class="sidebar-link" href="aws-vpc.html">VPC Dashboard</a>
+          <a class="sidebar-link" href="aws-iam.html">IAM Dashboard</a>
+          <a class="sidebar-link" href="aws-s3.html">S3 Dashboard</a>
+          <a class="sidebar-link" href="aws-cloudwatch.html">CloudWatch Dashboard</a>
+          <a class="sidebar-link" href="aws-billing.html">Billing Dashboard</a>
+          <a class="sidebar-link is-active" href="aws-provisioning.html">Provisioning Simulator</a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-title">Process steps</p>
+          <a class="sidebar-link" href="#simulator-workflow">Create</a>
+          <a class="sidebar-link" href="#simulator-resources">Modify or stop</a>
+          <a class="sidebar-link" href="#simulator-activity">Remove and review</a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-title">Use</p>
+          <p class="sidebar-note">This simulator is a static training environment. It does not create real AWS resources, but it mirrors the decision flow students should practice before touching a real account.</p>
+        </div>
+      </aside>
+
+      <main class="console-main aws-main">
+        <section class="page-banner aws-page-banner">
+          <div>
+            <p class="eyebrow">Provisioning workflow</p>
+            <h1>Simulate the AWS service lifecycle</h1>
+            <p>Students can practice creating, modifying, stopping, and removing services in a controlled static console. The workflow is designed to feel like a simplified AWS operations surface.</p>
+          </div>
+          <div class="page-banner-actions">
+            <a class="primary-button" href="#simulator-workflow">Start simulation</a>
+            <a class="secondary-button" href="aws-ec2.html">Review EC2 context</a>
+          </div>
+        </section>
+
+        <section class="aws-overview">
+          <article class="aws-metric-card">
+            <p class="aws-metric-label">Supported services</p>
+            <h2>4</h2>
+            <p class="aws-metric-text">EC2, S3, IAM Role, and VPC environments.</p>
+          </article>
+          <article class="aws-metric-card">
+            <p class="aws-metric-label">Available actions</p>
+            <h2>4</h2>
+            <p class="aws-metric-text">Create, modify, stop, and remove simulated resources.</p>
+          </article>
+          <article class="aws-metric-card">
+            <p class="aws-metric-label">Training mode</p>
+            <h2>Safe</h2>
+            <p class="aws-metric-text">No real cloud actions or billing impact.</p>
+          </article>
+        </section>
+
+        <section class="aws-panel" id="simulator-workflow">
+          <div class="aws-panel-head">
+            <div>
+              <p class="aws-panel-kicker">Step 1</p>
+              <h3>Create a resource</h3>
+            </div>
+            <span class="aws-badge">Provisioning form</span>
+          </div>
+          <div class="provisioning-grid">
+            <form class="provisioning-form" id="provisioning-form">
+              <label class="provisioning-field">
+                <span>Service type</span>
+                <select id="service-type" name="serviceType">
+                  <option value="EC2">Amazon EC2</option>
+                  <option value="S3">Amazon S3</option>
+                  <option value="IAM Role">AWS IAM Role</option>
+                  <option value="VPC">Amazon VPC</option>
+                </select>
+              </label>
+              <label class="provisioning-field">
+                <span>Resource name</span>
+                <input id="resource-name" name="resourceName" type="text" placeholder="web-app-01" required>
+              </label>
+              <label class="provisioning-field">
+                <span>Configuration profile</span>
+                <select id="resource-profile" name="resourceProfile">
+                  <option value="Small">Small</option>
+                  <option value="Standard" selected>Standard</option>
+                  <option value="High Availability">High Availability</option>
+                  <option value="Cost Optimized">Cost Optimized</option>
+                </select>
+              </label>
+              <label class="provisioning-field">
+                <span>Environment tag</span>
+                <select id="resource-environment" name="resourceEnvironment">
+                  <option value="Lab">Lab</option>
+                  <option value="Development">Development</option>
+                  <option value="Staging">Staging</option>
+                  <option value="Production">Production</option>
+                </select>
+              </label>
+              <label class="provisioning-field provisioning-field-wide">
+                <span>Notes</span>
+                <textarea id="resource-notes" name="resourceNotes" rows="3" placeholder="Purpose, security note, or deployment reason"></textarea>
+              </label>
+              <div class="page-banner-actions">
+                <button class="primary-button" type="submit">Create service</button>
+                <button class="secondary-button" id="reset-simulator" type="button">Reset simulator</button>
+              </div>
+            </form>
+            <div class="aws-panel provisioning-guide">
+              <div class="aws-panel-head">
+                <div>
+                  <p class="aws-panel-kicker">Expected thinking</p>
+                  <h3>What students should consider before provisioning</h3>
+                </div>
+              </div>
+              <ul class="outcome-list">
+                <li>Choose a service type that fits the intended workload.</li>
+                <li>Match configuration profile to performance, availability, or cost priorities.</li>
+                <li>Use clear names and environment tags for maintainability.</li>
+                <li>Record why the service is being provisioned before moving to operations.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="aws-panel" id="simulator-resources">
+          <div class="aws-panel-head">
+            <div>
+              <p class="aws-panel-kicker">Step 2 and 3</p>
+              <h3>Modify, stop, or remove a simulated resource</h3>
+            </div>
+            <span class="aws-badge aws-badge-live" id="resource-count-badge">0 resources</span>
+          </div>
+          <div class="aws-table-wrap">
+            <table class="aws-table">
+              <thead>
+                <tr>
+                  <th>Service</th>
+                  <th>Name</th>
+                  <th>Profile</th>
+                  <th>Environment</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="resource-table-body"></tbody>
+            </table>
+          </div>
+          <template id="resource-row-template">
+            <tr>
+              <td data-field="type"></td>
+              <td data-field="name"></td>
+              <td data-field="profile"></td>
+              <td data-field="environment"></td>
+              <td data-field="status"></td>
+              <td>
+                <div class="sim-action-group">
+                  <button class="sim-action-button" data-action="modify" type="button">Modify</button>
+                  <button class="sim-action-button" data-action="toggle" type="button">Stop</button>
+                  <button class="sim-action-button sim-action-danger" data-action="remove" type="button">Remove</button>
+                </div>
+              </td>
+            </tr>
+          </template>
+          <div class="sim-empty-state" id="empty-state">
+            No simulated services yet. Create a resource to start the workflow.
+          </div>
+        </section>
+
+        <section class="aws-panel-grid" id="simulator-activity">
+          <article class="aws-panel">
+            <div class="aws-panel-head">
+              <div>
+                <p class="aws-panel-kicker">Activity log</p>
+                <h3>Recent admin actions</h3>
+              </div>
+            </div>
+            <ul class="aws-billing-list" id="activity-log"></ul>
+          </article>
+          <article class="aws-panel">
+            <div class="aws-panel-head">
+              <div>
+                <p class="aws-panel-kicker">Student focus</p>
+                <h3>Operational skills reinforced</h3>
+              </div>
+            </div>
+            <ul class="outcome-list">
+              <li>Provision services with a clear purpose and naming standard.</li>
+              <li>Modify services when requirements change instead of rebuilding everything.</li>
+              <li>Stop services when they are not needed and remove them when they are no longer justified.</li>
+              <li>Track the lifecycle of a service as part of systems administration discipline.</li>
+            </ul>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="aws-demo.js"></script>
+</body>
+</html>

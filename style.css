@@ -1004,6 +1004,81 @@ a {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.provisioning-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.9fr);
+  gap: 1rem;
+}
+
+.provisioning-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.provisioning-field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.provisioning-field span {
+  font-size: 0.88rem;
+  color: var(--aws-text-muted);
+}
+
+.provisioning-field input,
+.provisioning-field select,
+.provisioning-field textarea {
+  width: 100%;
+  padding: 0.82rem 0.9rem;
+  border-radius: 12px;
+  border: 1px solid var(--aws-border-strong);
+  background: var(--aws-surface-alt);
+  color: var(--aws-text);
+}
+
+.provisioning-field textarea {
+  resize: vertical;
+}
+
+.provisioning-field-wide {
+  grid-column: 1 / -1;
+}
+
+.provisioning-guide {
+  background: var(--aws-console-panel);
+}
+
+.sim-action-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.sim-action-button {
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid var(--aws-border-strong);
+  background: var(--aws-surface-alt);
+}
+
+.sim-action-button:hover {
+  border-color: var(--aws-blue);
+}
+
+.sim-action-danger {
+  color: #b42318;
+}
+
+.sim-empty-state {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px dashed var(--aws-border-strong);
+  border-radius: 12px;
+  color: var(--aws-text-muted);
+  background: var(--aws-surface-alt);
+}
+
 .aws-network-card p {
   margin: 0.2rem 0 0;
 }
@@ -1179,6 +1254,8 @@ a {
   .lab-grid,
   .aws-overview,
   .aws-panel-grid,
+  .provisioning-grid,
+  .provisioning-form,
   .aws-catalog-grid,
   .aws-service-grid,
   .aws-split-grid,
