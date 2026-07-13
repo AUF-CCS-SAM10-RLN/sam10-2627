@@ -250,6 +250,7 @@ function renderModules() {
   });
 
   updateProgressDisplays(progress);
+  syncHashTarget();
 }
 
 function filterModules() {
@@ -258,6 +259,30 @@ function filterModules() {
   document.querySelectorAll(".module-card").forEach((card) => {
     const matches = !query || card.dataset.search.includes(query);
     card.classList.toggle("is-hidden", !matches);
+  });
+}
+
+function syncHashTarget() {
+  const hash = window.location.hash;
+  if (!hash || !hash.startsWith("#topic-")) {
+    return;
+  }
+
+  const targetCard = document.querySelector(hash);
+  if (!targetCard) {
+    return;
+  }
+
+  const toggle = targetCard.querySelector(".module-toggle");
+  const body = targetCard.querySelector(".module-body");
+
+  if (toggle && body) {
+    toggle.setAttribute("aria-expanded", "true");
+    body.hidden = false;
+  }
+
+  requestAnimationFrame(() => {
+    targetCard.scrollIntoView({ block: "start", behavior: "smooth" });
   });
 }
 
@@ -277,6 +302,8 @@ function flipFlashcard() {
 if (searchInput) {
   searchInput.addEventListener("input", filterModules);
 }
+
+window.addEventListener("hashchange", syncHashTarget);
 
 if (resetProgressButton) {
   resetProgressButton.addEventListener("click", () => {
