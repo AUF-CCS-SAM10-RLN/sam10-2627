@@ -612,6 +612,69 @@ a {
   margin-bottom: 1rem;
 }
 
+.lab-groups {
+  display: grid;
+  gap: 1rem;
+}
+
+.lab-group {
+  padding: 1rem;
+  border-radius: 18px;
+  border: 1px solid var(--aws-border);
+}
+
+.lab-group-context {
+  background: linear-gradient(180deg, rgba(9, 114, 211, 0.05), rgba(9, 114, 211, 0.01));
+}
+
+.lab-group-execution {
+  background: linear-gradient(180deg, rgba(255, 153, 0, 0.08), rgba(255, 153, 0, 0.02));
+}
+
+.lab-group-deliverables {
+  background: linear-gradient(180deg, rgba(22, 101, 52, 0.06), rgba(22, 101, 52, 0.01));
+}
+
+.lab-group-support {
+  background: linear-gradient(180deg, rgba(71, 85, 105, 0.08), rgba(71, 85, 105, 0.02));
+}
+
+.lab-group-head {
+  display: grid;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.lab-group-kicker {
+  margin: 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #9a3412;
+}
+
+.lab-group-head h4 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.lab-groups > .lab-section:nth-child(-n + 5) {
+  background: linear-gradient(180deg, rgba(9, 114, 211, 0.04), rgba(9, 114, 211, 0));
+}
+
+.lab-groups > .lab-section:nth-child(n + 6):nth-child(-n + 10) {
+  background: linear-gradient(180deg, rgba(255, 153, 0, 0.06), rgba(255, 153, 0, 0));
+}
+
+.lab-groups > .lab-section:nth-child(n + 11):nth-child(-n + 12) {
+  background: linear-gradient(180deg, rgba(22, 101, 52, 0.05), rgba(22, 101, 52, 0));
+}
+
+.lab-groups > .lab-section:nth-child(n + 13) {
+  background: linear-gradient(180deg, rgba(71, 85, 105, 0.06), rgba(71, 85, 105, 0));
+}
+
 .lab-card-muted {
   background: var(--aws-surface-alt);
 }
