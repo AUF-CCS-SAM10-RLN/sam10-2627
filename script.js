@@ -55,157 +55,25 @@ const modules = [
       ],
       answer: "Containers share the host OS kernel, while virtual machines emulate full guest environments"
     }
-  },
-  {
-    title: "User and Permission Management",
-    summary: "Accounts, groups, access levels, and least-privilege administration.",
-    topics: [
-      "Creating and disabling user accounts",
-      "Groups, roles, and delegated access",
-      "Authentication basics",
-      "File permissions and ownership"
-    ],
-    checks: [
-      "Create an access model using users and groups.",
-      "Explain the principle of least privilege.",
-      "Identify permission issues that block normal use."
-    ],
-    quiz: {
-      question: "What does least privilege mean?",
-      options: [
-        "Users receive only the access needed for their tasks",
-        "All users have administrator rights",
-        "Permissions are assigned randomly"
-      ],
-      answer: "Users receive only the access needed for their tasks"
-    }
-  },
-  {
-    title: "Networking Basics for Administrators",
-    summary: "Addressing, connectivity, and the network concepts needed to support systems.",
-    topics: [
-      "IP addressing and subnet basics",
-      "DNS, DHCP, and gateways",
-      "Testing connectivity with standard tools",
-      "Common causes of network failure"
-    ],
-    checks: [
-      "Explain how a device gets network settings.",
-      "Use diagnostic logic to isolate connectivity faults.",
-      "Describe the role of DNS in system access."
-    ],
-    quiz: {
-      question: "Which service translates names like `server.local` into IP addresses?",
-      options: ["DNS", "DHCP", "NTP"],
-      answer: "DNS"
-    }
-  },
-  {
-    title: "System Maintenance and Updates",
-    summary: "Preventive maintenance, patch cycles, performance checks, and housekeeping.",
-    topics: [
-      "Patch management routines",
-      "Disk cleanup and storage monitoring",
-      "Performance baselines and alerts",
-      "Maintenance windows and rollback thinking"
-    ],
-    checks: [
-      "Plan a routine maintenance schedule.",
-      "Explain why updates should be verified after installation.",
-      "Recognize signs that a system is degrading over time."
-    ],
-    quiz: {
-      question: "Why should updates be scheduled and documented?",
-      options: [
-        "To reduce risk and make rollback possible",
-        "To slow down maintenance work",
-        "To avoid all testing"
-      ],
-      answer: "To reduce risk and make rollback possible"
-    }
-  },
-  {
-    title: "Backup and Recovery",
-    summary: "Data protection strategies, backup types, and recovery validation.",
-    topics: [
-      "Full, incremental, and differential backups",
-      "Backup schedules and retention",
-      "Recovery point and recovery time concepts",
-      "Restore testing"
-    ],
-    checks: [
-      "Choose an appropriate backup type for a scenario.",
-      "Explain the difference between backup and recovery.",
-      "State why restore testing is mandatory."
-    ],
-    quiz: {
-      question: "What proves a backup strategy actually works?",
-      options: ["Large storage space", "Successful restore testing", "Naming files carefully"],
-      answer: "Successful restore testing"
-    }
-  },
-  {
-    title: "Security and Hardening",
-    summary: "Access control, patching, malware defense, and secure system practices.",
-    topics: [
-      "Security baselines and hardening checklists",
-      "Antivirus, anti-malware, and endpoint controls",
-      "Password policy and multifactor basics",
-      "Logs, alerts, and suspicious activity"
-    ],
-    checks: [
-      "List baseline steps used to harden a system.",
-      "Explain why patching is part of security, not just maintenance.",
-      "Recognize indicators that a system may be compromised."
-    ],
-    quiz: {
-      question: "Which action is part of hardening?",
-      options: ["Removing unnecessary services", "Sharing admin passwords", "Ignoring logs"],
-      answer: "Removing unnecessary services"
-    }
-  },
-  {
-    title: "Troubleshooting and Support",
-    summary: "Structured diagnosis, event logs, remote support, and escalation practice.",
-    topics: [
-      "Troubleshooting methodology",
-      "Using logs and system messages",
-      "Remote assistance tools",
-      "Escalation and incident reporting"
-    ],
-    checks: [
-      "Follow a repeatable troubleshooting process.",
-      "Use logs to support a diagnosis instead of guessing.",
-      "Document findings for escalation or handoff."
-    ],
-    quiz: {
-      question: "What should happen before escalating an unresolved issue?",
-      options: [
-        "Record symptoms, actions, and evidence",
-        "Delete the logs",
-        "Restart random services without notes"
-      ],
-      answer: "Record symptoms, actions, and evidence"
-    }
   }
 ];
 
 const flashcards = [
   {
-    question: "What is preventive maintenance?",
-    answer: "Planned work that keeps systems stable before failures occur."
+    question: "What does the AWS Shared Responsibility Model define?",
+    answer: "It divides security and operational responsibilities between AWS and the customer."
   },
   {
-    question: "Why is DNS important in administration?",
-    answer: "It maps human-readable names to IP addresses so users and services can find systems."
+    question: "Why do Availability Zones matter?",
+    answer: "They support resilience by distributing workloads across separate physical locations in a region."
   },
   {
-    question: "What is the principle of least privilege?",
-    answer: "Give users only the access required to perform their tasks."
+    question: "How do virtualization and distributed systems support cloud computing?",
+    answer: "They allow shared infrastructure, elastic scaling, and service delivery across many connected resources."
   },
   {
-    question: "Why test backups?",
-    answer: "A backup is only trustworthy if data can actually be restored from it."
+    question: "What is a key difference between containers and virtual machines?",
+    answer: "Containers share the host OS kernel, while virtual machines run full guest operating systems."
   }
 ];
 
@@ -219,8 +87,8 @@ const topicCount = document.querySelector("#topic-count");
 const completionCount = document.querySelector("#completion-count");
 const progressFill = document.querySelector("#progress-fill");
 const flashcard = document.querySelector("#flashcard");
-const flashcardQuestion = flashcard.querySelector(".flashcard-question");
-const flashcardAnswer = flashcard.querySelector(".flashcard-answer");
+const flashcardQuestion = flashcard ? flashcard.querySelector(".flashcard-question") : null;
+const flashcardAnswer = flashcard ? flashcard.querySelector(".flashcard-answer") : null;
 const flipCardButton = document.querySelector("#flip-card");
 const nextCardButton = document.querySelector("#next-card");
 
@@ -347,6 +215,7 @@ function renderModules() {
     const options = fragment.querySelector(".quiz-options");
     const feedbackSlot = fragment.querySelector(".quiz-feedback");
 
+    card.id = `topic-${moduleIndex + 1}`;
     title.textContent = module.title;
     summary.textContent = module.summary;
     order.textContent = `M${String(moduleIndex + 1).padStart(2, "0")}`;
@@ -405,26 +274,42 @@ function flipFlashcard() {
   flashcard.setAttribute("aria-pressed", String(flipped));
 }
 
-searchInput.addEventListener("input", filterModules);
+if (searchInput) {
+  searchInput.addEventListener("input", filterModules);
+}
 
-resetProgressButton.addEventListener("click", () => {
-  localStorage.removeItem(progressKey);
+if (resetProgressButton) {
+  resetProgressButton.addEventListener("click", () => {
+    localStorage.removeItem(progressKey);
+    renderModules();
+  });
+}
+
+if (flipCardButton) {
+  flipCardButton.addEventListener("click", flipFlashcard);
+}
+
+if (nextCardButton) {
+  nextCardButton.addEventListener("click", () => {
+    currentFlashcard = (currentFlashcard + 1) % flashcards.length;
+    renderFlashcard(currentFlashcard);
+  });
+}
+
+if (flashcard) {
+  flashcard.addEventListener("click", flipFlashcard);
+  flashcard.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      flipFlashcard();
+    }
+  });
+}
+
+if (moduleList && moduleTemplate) {
   renderModules();
-});
+}
 
-flipCardButton.addEventListener("click", flipFlashcard);
-nextCardButton.addEventListener("click", () => {
-  currentFlashcard = (currentFlashcard + 1) % flashcards.length;
+if (flashcard) {
   renderFlashcard(currentFlashcard);
-});
-
-flashcard.addEventListener("click", flipFlashcard);
-flashcard.addEventListener("keydown", (event) => {
-  if (event.key === "Enter" || event.key === " ") {
-    event.preventDefault();
-    flipFlashcard();
-  }
-});
-
-renderModules();
-renderFlashcard(currentFlashcard);
+}

@@ -6,168 +6,118 @@
   <title>SAM10 | Systems Administration and Maintenance</title>
   <meta
     name="description"
-    content="Interactive course website for SAM10: Systems Administration and Maintenance."
+    content="SAM10 course site for Systems Administration and Maintenance."
   >
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
     rel="stylesheet"
   >
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="page-shell">
-    <header class="hero">
-      <nav class="topbar">
-        <div>
-          <p class="eyebrow">GitHub Pages Course Site</p>
-          <p class="brand">SAM10</p>
-        </div>
-        <div class="nav-actions">
-          <a class="ghost-link" href="#modules">Jump to Topics</a>
-          <a class="ghost-link" href="labs.html">Laboratory Activities</a>
-        </div>
-      </nav>
-
-      <div class="hero-grid">
-        <section class="hero-copy">
-          <p class="hero-kicker">Systems Administration and Maintenance</p>
-          <h1>Learn the operational backbone of modern computing.</h1>
-          <p class="hero-text">
-            This site turns the SAM10 course outline into a study guide with
-            searchable modules, checkable outcomes, self-tests, and quick-review flashcards.
-          </p>
-
-          <div class="hero-actions">
-            <a class="primary-button" href="#modules">Explore Modules</a>
-            <a class="secondary-button" href="labs.html">View Lab Activities</a>
-            <button class="secondary-button" id="reset-progress" type="button">Reset Progress</button>
-          </div>
-
-          <dl class="hero-stats">
-            <div>
-              <dt>Modules</dt>
-              <dd id="module-count">0</dd>
-            </div>
-            <div>
-              <dt>Topics</dt>
-              <dd id="topic-count">0</dd>
-            </div>
-            <div>
-              <dt>Completed</dt>
-              <dd id="completion-count">0%</dd>
-            </div>
-          </dl>
-        </section>
-
-        <aside class="hero-panel">
-          <p class="panel-label">Course Focus</p>
-          <ul class="focus-list">
-            <li>Operating systems and user administration</li>
-            <li>Networking, services, and security hardening</li>
-            <li>Maintenance routines, backups, and recovery</li>
-            <li>Troubleshooting through logs and diagnostics</li>
-          </ul>
-          <div class="panel-meter">
-            <span>Your study progress</span>
-            <div class="progress-track" aria-hidden="true">
-              <div class="progress-fill" id="progress-fill"></div>
-            </div>
-          </div>
-        </aside>
+    <header class="console-topbar">
+      <div class="console-topbar-left">
+        <div class="console-logo">aws</div>
+        <div class="console-title">SAM10 Course Console</div>
+      </div>
+      <label class="console-search">
+        <span class="sr-only">Search</span>
+        <input type="search" value="sam10 course" aria-label="Search course site" readonly>
+      </label>
+      <div class="console-topbar-right">
+        <span class="console-chip">Course: SAM10</span>
+        <span class="console-chip">Mode: Student</span>
       </div>
     </header>
 
-    <main>
-      <section class="toolbar" aria-label="Learning controls">
-        <label class="search-field" for="module-search">
-          <span>Find a topic</span>
-          <input
-            id="module-search"
-            type="search"
-            placeholder="Search modules, tools, or keywords"
-            autocomplete="off"
-          >
-        </label>
-
-        <div class="toolbar-card">
-          <p class="toolbar-title">Study mode</p>
-          <p class="toolbar-text">
-            Open any module to review concepts, mark tasks complete, and test yourself.
+    <div class="console-shell">
+      <aside class="console-sidebar">
+        <div class="sidebar-group">
+          <p class="sidebar-title">Navigation</p>
+          <a class="sidebar-link is-active" href="index.html">Overview</a>
+          <a class="sidebar-link" href="lectures.html">Lectures</a>
+          <a class="sidebar-link" href="labs.html">Laboratories</a>
+          <a class="sidebar-link" href="aws-console.html">AWS Console Demo</a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-title">Published topics</p>
+          <a class="sidebar-link" href="lectures.html#topic-1">Topic 1</a>
+          <a class="sidebar-link" href="lectures.html#topic-2">Topic 2</a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-title">Status</p>
+          <p class="sidebar-note">
+            The site now contains only the two SAM10 topics you have provided, plus their matching labs and AWS console simulation.
           </p>
         </div>
-      </section>
+      </aside>
 
-      <section class="section-head" id="modules">
-        <p class="section-label">Topics</p>
-        <h2>Course modules and interactive notes</h2>
-      </section>
-
-      <section id="module-list" class="module-list" aria-live="polite"></section>
-
-      <section class="study-grid">
-        <article class="study-card">
-          <p class="section-label">Flashcards</p>
-          <h2>Quick review deck</h2>
-          <div id="flashcard" class="flashcard" tabindex="0" role="button" aria-pressed="false">
-            <p class="flashcard-face flashcard-question"></p>
-            <p class="flashcard-face flashcard-answer"></p>
+      <main class="console-main">
+        <section class="page-banner">
+          <div>
+            <p class="eyebrow">Systems Administration and Maintenance</p>
+            <h1>SAM10 course workspace</h1>
+            <p class="section-copy">
+              This GitHub Pages site is organized like a lightweight console: lectures, labs,
+              and an AWS-style demo interface for foundational cloud topics.
+            </p>
           </div>
-          <div class="flashcard-actions">
-            <button id="flip-card" type="button">Flip Card</button>
-            <button id="next-card" type="button">Next Card</button>
+          <div class="page-banner-actions">
+            <a class="primary-button" href="lectures.html">Open lectures</a>
+            <a class="secondary-button" href="labs.html">View laboratories</a>
+            <a class="secondary-button" href="aws-console.html">Launch AWS demo</a>
           </div>
-        </article>
-
-        <article class="study-card">
-          <p class="section-label">Checklist</p>
-          <h2>What this course builds</h2>
-          <ul class="outcome-list">
-            <li>Configure and maintain operating systems and user environments</li>
-            <li>Document system issues and follow structured troubleshooting workflows</li>
-            <li>Protect systems through patching, backups, and access control</li>
-            <li>Support core network and server services with operational discipline</li>
-          </ul>
-        </article>
-      </section>
-    </main>
-  </div>
-
-  <template id="module-template">
-    <article class="module-card">
-      <button class="module-toggle" type="button" aria-expanded="false">
-        <span class="module-order"></span>
-        <span class="module-heading">
-          <span class="module-title"></span>
-          <span class="module-summary"></span>
-        </span>
-        <span class="module-progress"></span>
-      </button>
-
-      <div class="module-body" hidden>
-        <div class="module-columns">
-          <section>
-            <h3>Key topics</h3>
-            <ul class="topic-list"></ul>
-          </section>
-
-          <section>
-            <h3>Learning check</h3>
-            <ul class="check-list"></ul>
-          </section>
-        </div>
-
-        <section class="quiz-block">
-          <h3>Mini quiz</h3>
-          <p class="quiz-question"></p>
-          <div class="quiz-options"></div>
-          <p class="quiz-feedback" aria-live="polite"></p>
         </section>
-      </div>
-    </article>
-  </template>
 
-  <script src="script.js"></script>
+        <section class="metrics-grid">
+          <article class="metric-card">
+            <p class="metric-label">Lecture topics</p>
+            <h2>2</h2>
+            <p class="metric-copy">Only the confirmed course content is published.</p>
+          </article>
+          <article class="metric-card">
+            <p class="metric-label">Laboratory activities</p>
+            <h2>2</h2>
+            <p class="metric-copy">Each current topic has a matching three-hour lab.</p>
+          </article>
+          <article class="metric-card">
+            <p class="metric-label">Cloud simulation</p>
+            <h2>1</h2>
+            <p class="metric-copy">A static AWS Console-style page supports Topics 1 and 2.</p>
+          </article>
+        </section>
+
+        <section class="panel">
+          <div class="section-head">
+            <p class="section-label">Published scope</p>
+            <h2>Current course coverage</h2>
+          </div>
+          <p class="panel-copy">
+            The lecture content is intentionally limited to `Foundations of Systems Administration`
+            and `Cloud Computing and Virtualization Fundamentals`. Additional topics can be added later,
+            but they are not shown anywhere in the current site.
+          </p>
+        </section>
+
+        <section class="quick-links">
+          <a class="quick-link-card" href="lectures.html#topic-1">
+            <h3>Topic 1</h3>
+            <p>Systems theory, IT infrastructure, operating systems, client-server architecture, and AWS foundations.</p>
+          </a>
+          <a class="quick-link-card" href="lectures.html#topic-2">
+            <h3>Topic 2</h3>
+            <p>Cloud models, virtualization, distributed systems, AWS compute, and pricing concepts.</p>
+          </a>
+          <a class="quick-link-card" href="labs.html">
+            <h3>Lab activities</h3>
+            <p>Hands-on exercises aligned to the two confirmed lecture topics.</p>
+          </a>
+        </section>
+      </main>
+    </div>
+  </div>
 </body>
 </html>

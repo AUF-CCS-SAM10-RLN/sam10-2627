@@ -5,11 +5,14 @@ Static GitHub Pages site for **SAM10: Systems Administration and Maintenance**.
 ## What is included
 
 - Course landing page for SAM10
+- Dedicated `lectures.html` page for the published lecture topics
 - Dedicated laboratory activities page
-- Expandable topic modules
+- Static AWS Console demonstration page
+- Expandable lecture modules
 - Searchable content
 - Learning checklists with browser-saved progress
 - Flashcards and mini quizzes
+- AWS Console-inspired UI theme
 - Mobile-friendly layout
 
 ## GitHub Pages setup
@@ -21,9 +24,13 @@ Static GitHub Pages site for **SAM10: Systems Administration and Maintenance**.
 
 ## Editing course content
 
-Course modules, topics, checklists, quizzes, and flashcards are stored in `script.js`.
+Published lecture topics, checklists, quizzes, and flashcards are stored in `script.js`.
+
+The lecture interface is stored in `lectures.html`.
 
 Laboratory activity content is stored in `labs.html`.
+
+The AWS Console simulation is stored in `aws-console.html`.
 
 You can update:
 

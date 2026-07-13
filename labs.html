@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SAM10 Labs | Systems Administration and Maintenance</title>
+  <title>SAM10 Laboratories | Systems Administration and Maintenance</title>
   <meta
     name="description"
     content="Laboratory activities for SAM10: Systems Administration and Maintenance."
@@ -11,179 +11,176 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
     rel="stylesheet"
   >
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="page-shell">
-    <header class="hero hero-compact">
-      <nav class="topbar">
-        <div>
-          <p class="eyebrow">GitHub Pages Course Site</p>
-          <p class="brand">SAM10</p>
-        </div>
-        <div class="nav-actions">
-          <a class="ghost-link" href="index.html">Course Home</a>
-          <a class="ghost-link" href="#labs">Jump to Labs</a>
-        </div>
-      </nav>
-
-      <div class="hero-grid">
-        <section class="hero-copy">
-          <p class="hero-kicker">Laboratory Activities</p>
-          <h1>Hands-on work for SAM10.</h1>
-          <p class="hero-text">
-            This page collects the practical laboratory activities that support each topic in
-            Systems Administration and Maintenance.
-          </p>
-        </section>
-
-        <aside class="hero-panel">
-          <p class="panel-label">Current status</p>
-          <ul class="focus-list">
-            <li>2 laboratory activities published</li>
-            <li>Built to expand topic by topic</li>
-            <li>Designed for GitHub Pages deployment</li>
-          </ul>
-        </aside>
+    <header class="console-topbar">
+      <div class="console-topbar-left">
+        <div class="console-logo">aws</div>
+        <div class="console-title">Laboratory Console</div>
+      </div>
+      <label class="console-search">
+        <span class="sr-only">Search labs</span>
+        <input type="search" value="sam10 laboratories" aria-label="Search laboratory page" readonly>
+      </label>
+      <div class="console-topbar-right">
+        <span class="console-chip">2 Labs</span>
+        <a class="nav-link" href="index.html">Home</a>
       </div>
     </header>
 
-    <main>
-      <section class="section-head" id="labs">
-        <p class="section-label">Course Labs</p>
-        <h2>Laboratory activities by topic</h2>
-      </section>
+    <div class="console-shell">
+      <aside class="console-sidebar">
+        <div class="sidebar-group">
+          <p class="sidebar-title">Navigation</p>
+          <a class="sidebar-link" href="index.html">Overview</a>
+          <a class="sidebar-link" href="lectures.html">Lectures</a>
+          <a class="sidebar-link is-active" href="labs.html">Laboratories</a>
+          <a class="sidebar-link" href="aws-console.html">AWS Console Demo</a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-title">Lab list</p>
+          <a class="sidebar-link" href="#lab-1">Topic 1 Lab</a>
+          <a class="sidebar-link" href="#lab-2">Topic 2 Lab</a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-title">Use</p>
+          <p class="sidebar-note">
+            These labs complement the two confirmed lecture topics only. No unpublished topics are shown.
+          </p>
+        </div>
+      </aside>
 
-      <section class="module-list">
-        <article class="module-card lab-card">
-          <div class="lab-header">
-            <div>
-              <p class="lab-tag">Topic 1</p>
-              <h3>Foundations of Systems Administration Lab</h3>
-              <p class="module-summary">
-                Build and analyze a basic cloud-based system using core infrastructure and AWS concepts.
-              </p>
+      <main class="console-main">
+        <section class="page-banner">
+          <div>
+            <p class="eyebrow">Laboratory activities</p>
+            <h1>SAM10 hands-on activities</h1>
+            <p class="section-copy">
+              Practical exercises aligned to the two published lecture topics: foundations of systems administration,
+              and cloud computing with virtualization fundamentals.
+            </p>
+          </div>
+          <div class="page-banner-actions">
+            <a class="primary-button" href="#lab-1">Open labs</a>
+            <a class="secondary-button" href="lectures.html">Back to lectures</a>
+            <a class="secondary-button" href="aws-console.html">AWS demo</a>
+          </div>
+        </section>
+
+        <section class="module-list">
+          <article class="module-card lab-card" id="lab-1">
+            <div class="lab-header">
+              <div>
+                <p class="lab-tag">Topic 1</p>
+                <h3>Foundations of Systems Administration Lab</h3>
+                <p class="module-summary">
+                  Build and analyze a basic cloud-based system using core infrastructure and AWS concepts.
+                </p>
+              </div>
+              <p class="lab-duration">3 hours</p>
             </div>
-            <p class="lab-duration">3 hours</p>
-          </div>
 
-          <div class="lab-grid">
-            <section class="lab-section">
-              <h4>Goal</h4>
-              <p>
-                Apply systems administration concepts by identifying system components, mapping
-                client-server relationships, and examining how AWS infrastructure and the Shared
-                Responsibility Model affect administration.
-              </p>
-            </section>
-
-            <section class="lab-section">
-              <h4>Activities</h4>
-              <ol class="lab-list">
-                <li>Review systems theory, operating systems, client-server architecture, and administrator roles.</li>
-                <li>Draw a simple on-premises IT environment and identify key components and responsibilities.</li>
-                <li>Redraw the same environment as a cloud-based design using AWS Regions and Availability Zones.</li>
-                <li>Explore the AWS Management Console or a guided simulation to inspect infrastructure concepts.</li>
-                <li>Complete Shared Responsibility Model scenarios and classify AWS versus customer duties.</li>
-                <li>Submit a short reflection comparing on-premises and cloud administration.</li>
-              </ol>
-            </section>
-
-            <section class="lab-section">
-              <h4>Expected outputs</h4>
-              <ul class="outcome-list">
-                <li>A labeled infrastructure diagram</li>
-                <li>An on-premises versus cloud comparison table</li>
-                <li>Shared responsibility scenario answers</li>
-                <li>A short written reflection</li>
-              </ul>
-            </section>
-
-            <section class="lab-section">
-              <h4>Skills reinforced</h4>
-              <ul class="outcome-list">
-                <li>Systems thinking</li>
-                <li>Client-server analysis</li>
-                <li>Infrastructure comparison</li>
-                <li>AWS foundational literacy</li>
-                <li>Administrative responsibility boundaries</li>
-              </ul>
-            </section>
-          </div>
-        </article>
-
-        <article class="module-card lab-card">
-          <div class="lab-header">
-            <div>
-              <p class="lab-tag">Topic 2</p>
-              <h3>Cloud Computing and Virtualization Fundamentals Lab</h3>
-              <p class="module-summary">
-                Compare cloud deployment models, inspect virtualization approaches, and estimate basic AWS compute costs.
-              </p>
+            <div class="lab-grid">
+              <section class="lab-section">
+                <h3>Goal</h3>
+                <p class="panel-copy">
+                  Apply systems administration concepts by identifying system components, mapping client-server
+                  relationships, and examining how AWS infrastructure and the Shared Responsibility Model affect administration.
+                </p>
+              </section>
+              <section class="lab-section">
+                <h3>Activities</h3>
+                <ol class="lab-list">
+                  <li>Review systems theory, operating systems, client-server architecture, and administrator roles.</li>
+                  <li>Draw a simple on-premises IT environment and identify key components and responsibilities.</li>
+                  <li>Redraw the same environment as a cloud-based design using AWS Regions and Availability Zones.</li>
+                  <li>Explore the AWS Management Console or a guided simulation to inspect infrastructure concepts.</li>
+                  <li>Complete Shared Responsibility Model scenarios and classify AWS versus customer duties.</li>
+                  <li>Submit a short reflection comparing on-premises and cloud administration.</li>
+                </ol>
+              </section>
+              <section class="lab-section">
+                <h3>Expected outputs</h3>
+                <ul class="outcome-list">
+                  <li>A labeled infrastructure diagram</li>
+                  <li>An on-premises versus cloud comparison table</li>
+                  <li>Shared responsibility scenario answers</li>
+                  <li>A short written reflection</li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Skills reinforced</h3>
+                <ul class="outcome-list">
+                  <li>Systems thinking</li>
+                  <li>Client-server analysis</li>
+                  <li>Infrastructure comparison</li>
+                  <li>AWS foundational literacy</li>
+                  <li>Administrative responsibility boundaries</li>
+                </ul>
+              </section>
             </div>
-            <p class="lab-duration">3 hours</p>
-          </div>
+          </article>
 
-          <div class="lab-grid">
-            <section class="lab-section">
-              <h4>Goal</h4>
-              <p>
-                Connect distributed systems and virtualization theory to practical infrastructure choices,
-                then evaluate AWS compute and pricing decisions for a small organization.
-              </p>
-            </section>
-
-            <section class="lab-section">
-              <h4>Activities</h4>
-              <ol class="lab-list">
-                <li>Review cloud deployment models, service models, distributed systems, and virtualization concepts.</li>
-                <li>Classify a set of scenarios as public, private, hybrid, or multi-cloud and justify each choice.</li>
-                <li>Compare hypervisors, virtual machines, and containers using a feature matrix.</li>
-                <li>Inspect AWS compute options such as EC2 and container-based services through guided notes or console screenshots.</li>
-                <li>Match AWS services to IaaS, PaaS, and SaaS-style use cases.</li>
-                <li>Estimate costs for a simple deployment using AWS pricing examples and discuss planning trade-offs.</li>
-              </ol>
-            </section>
-
-            <section class="lab-section">
-              <h4>Expected outputs</h4>
-              <ul class="outcome-list">
-                <li>A deployment model classification worksheet</li>
-                <li>A virtual machine versus container comparison table</li>
-                <li>An AWS service model mapping activity</li>
-                <li>A short pricing and infrastructure recommendation</li>
-              </ul>
-            </section>
-
-            <section class="lab-section">
-              <h4>Skills reinforced</h4>
-              <ul class="outcome-list">
-                <li>Cloud model analysis</li>
-                <li>Virtualization literacy</li>
-                <li>Service model differentiation</li>
-                <li>AWS compute awareness</li>
-                <li>Cost-conscious infrastructure planning</li>
-              </ul>
-            </section>
-          </div>
-        </article>
-
-        <article class="module-card lab-card lab-card-muted">
-          <div class="lab-header">
-            <div>
-              <p class="lab-tag">More labs</p>
-              <h3>Additional topic labs will appear here</h3>
-              <p class="module-summary">
-                As you provide more SAM10 topics, each one can be paired with its own dedicated practical activity.
-              </p>
+          <article class="module-card lab-card" id="lab-2">
+            <div class="lab-header">
+              <div>
+                <p class="lab-tag">Topic 2</p>
+                <h3>Cloud Computing and Virtualization Fundamentals Lab</h3>
+                <p class="module-summary">
+                  Compare cloud deployment models, inspect virtualization approaches, and estimate basic AWS compute costs.
+                </p>
+              </div>
+              <p class="lab-duration">3 hours</p>
             </div>
-          </div>
-        </article>
-      </section>
-    </main>
+
+            <div class="lab-grid">
+              <section class="lab-section">
+                <h3>Goal</h3>
+                <p class="panel-copy">
+                  Connect distributed systems and virtualization theory to practical infrastructure choices,
+                  then evaluate AWS compute and pricing decisions for a small organization.
+                </p>
+              </section>
+              <section class="lab-section">
+                <h3>Activities</h3>
+                <ol class="lab-list">
+                  <li>Review cloud deployment models, service models, distributed systems, and virtualization concepts.</li>
+                  <li>Classify scenarios as public, private, hybrid, or multi-cloud and justify each choice.</li>
+                  <li>Compare hypervisors, virtual machines, and containers using a feature matrix.</li>
+                  <li>Inspect AWS compute options such as EC2 and container-based services through guided notes or screenshots.</li>
+                  <li>Match AWS services to IaaS, PaaS, and SaaS-style use cases.</li>
+                  <li>Estimate costs for a simple deployment using AWS pricing examples and discuss planning trade-offs.</li>
+                </ol>
+              </section>
+              <section class="lab-section">
+                <h3>Expected outputs</h3>
+                <ul class="outcome-list">
+                  <li>A deployment model classification worksheet</li>
+                  <li>A virtual machine versus container comparison table</li>
+                  <li>An AWS service model mapping activity</li>
+                  <li>A short pricing and infrastructure recommendation</li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Skills reinforced</h3>
+                <ul class="outcome-list">
+                  <li>Cloud model analysis</li>
+                  <li>Virtualization literacy</li>
+                  <li>Service model differentiation</li>
+                  <li>AWS compute awareness</li>
+                  <li>Cost-conscious infrastructure planning</li>
+                </ul>
+              </section>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
   </div>
 </body>
 </html>
