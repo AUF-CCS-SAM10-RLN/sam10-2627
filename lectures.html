@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAM10 Lectures | Systems Administration and Maintenance</title>
+  <meta
+    name="description"
+    content="Lecture topics for SAM10: Systems Administration and Maintenance."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="console-topbar">
+      <div class="console-topbar-left">
+        <div class="console-logo">aws</div>
+        <div class="console-title">Lecture Console</div>
+      </div>
+      <label class="console-search">
+        <span class="sr-only">Search lecture topics</span>
+        <input id="module-search" type="search" placeholder="Search topics, AWS concepts, or outcomes">
+      </label>
+      <div class="console-topbar-right">
+        <a class="nav-link" href="lectures.html#topic-1">Topic 1</a>
+        <a class="nav-link" href="lectures.html#topic-2">Topic 2</a>
+        <a class="nav-link" href="labs.html">Labs</a>
+        <a class="nav-link" href="aws-console.html">AWS Demo</a>
+        <span class="console-chip">2 Topics</span>
+        <a class="nav-link" href="index.html">Home</a>
+      </div>
+    </header>
+
+    <div class="console-shell">
+      <aside class="console-sidebar">
+        <div class="sidebar-group">
+          <p class="sidebar-title">Navigation</p>
+          <a class="sidebar-link" href="index.html">Overview</a>
+          <a class="sidebar-link is-active" href="lectures.html">Lectures</a>
+          <a class="sidebar-link" href="labs.html">Laboratories</a>
+          <a class="sidebar-link" href="aws-console.html">AWS Console Demo</a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-title">Lecture topics</p>
+          <a class="sidebar-link" href="#topic-1">Topic 1</a>
+          <a class="sidebar-link" href="#topic-2">Topic 2</a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-title">Study controls</p>
+          <p class="sidebar-note">
+            Use search, completion checklists, quizzes, and flashcards to review the two published lectures.
+          </p>
+        </div>
+      </aside>
+
+      <main class="console-main">
+        <section class="page-banner">
+          <div>
+            <p class="eyebrow">Lecture modules</p>
+            <h1>SAM10 lecture topics</h1>
+            <p class="section-copy">
+              This page consolidates all current lecture content for SAM10. Only Topic 1 and Topic 2 are shown.
+            </p>
+          </div>
+          <div class="page-banner-actions">
+            <a class="primary-button" href="#module-list">Browse lectures</a>
+            <a class="secondary-button" href="labs.html">Go to labs</a>
+            <button class="secondary-button" id="reset-progress" type="button">Reset progress</button>
+          </div>
+        </section>
+
+        <section class="metrics-grid">
+          <article class="metric-card">
+            <p class="metric-label">Modules</p>
+            <h2 id="module-count">0</h2>
+            <p class="metric-copy">Lecture modules currently published.</p>
+          </article>
+          <article class="metric-card">
+            <p class="metric-label">Subtopics</p>
+            <h2 id="topic-count">0</h2>
+            <p class="metric-copy">Combined concepts across both lecture topics.</p>
+          </article>
+          <article class="metric-card">
+            <p class="metric-label">Completion</p>
+            <h2 id="completion-count">0%</h2>
+            <div class="progress-track" aria-hidden="true">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+          </article>
+        </section>
+
+        <section class="toolbar" aria-label="Lecture controls">
+          <div class="panel">
+            <p class="toolbar-title">Coverage</p>
+            <p class="panel-copy">
+              Topic 1 establishes systems administration foundations and Topic 2 moves into cloud and virtualization fundamentals.
+            </p>
+          </div>
+          <div class="panel">
+            <p class="toolbar-title">Review mode</p>
+            <p class="panel-copy">
+              Expand each lecture to review topics, track outcomes, and answer a short quiz.
+            </p>
+          </div>
+        </section>
+
+        <section class="section-head">
+          <p class="section-label">Lectures</p>
+          <h2>Published topic modules</h2>
+        </section>
+
+        <section id="module-list" class="module-list" aria-live="polite"></section>
+
+        <section class="study-grid">
+          <article class="study-card">
+            <p class="section-label">Flashcards</p>
+            <h2>Core review prompts</h2>
+            <p class="study-copy">Quick checks drawn only from Topics 1 and 2.</p>
+            <div id="flashcard" class="flashcard" tabindex="0" role="button" aria-pressed="false">
+              <p class="flashcard-face flashcard-question"></p>
+              <p class="flashcard-face flashcard-answer"></p>
+            </div>
+            <div class="flashcard-actions">
+              <button id="flip-card" type="button">Flip card</button>
+              <button id="next-card" type="button">Next card</button>
+            </div>
+          </article>
+
+          <article class="study-card">
+            <p class="section-label">Learning outcomes</p>
+            <h2>What students should leave with</h2>
+            <ul class="outcome-list">
+              <li>Explain systems administration using systems theory and operating system concepts.</li>
+              <li>Compare on-premises and cloud infrastructure using AWS global infrastructure concepts.</li>
+              <li>Explain how distributed systems and virtualization enable cloud computing.</li>
+              <li>Interpret AWS compute options and pricing trade-offs for infrastructure planning.</li>
+            </ul>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <template id="module-template">
+    <article class="module-card">
+      <button class="module-toggle" type="button" aria-expanded="false">
+        <span class="module-order"></span>
+        <span class="module-heading">
+          <span class="module-title"></span>
+          <span class="module-summary"></span>
+        </span>
+        <span class="module-progress"></span>
+      </button>
+
+      <div class="module-body" hidden>
+        <div class="module-columns">
+          <section>
+            <h3>Key topics</h3>
+            <ul class="topic-list"></ul>
+          </section>
+          <section>
+            <h3>Learning outcomes</h3>
+            <ul class="check-list"></ul>
+          </section>
+        </div>
+
+        <section class="quiz-block">
+          <h3>Mini quiz</h3>
+          <p class="quiz-question"></p>
+          <div class="quiz-options"></div>
+          <p class="quiz-feedback" aria-live="polite"></p>
+        </section>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>

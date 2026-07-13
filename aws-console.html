@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Console Demo | SAM10</title>
+  <meta
+    name="description"
+    content="Static AWS Console-style learning page for SAM10."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="aws-body">
+  <div class="aws-console">
+    <header class="console-topbar">
+      <div class="console-topbar-left">
+        <div class="console-logo">aws</div>
+        <div class="console-title">Management Console Demo</div>
+      </div>
+      <div class="console-search">
+        <label>
+          <span class="sr-only">Search AWS services</span>
+          <input type="search" value="ec2" aria-label="Search AWS services">
+        </label>
+      </div>
+      <div class="console-topbar-right">
+        <a class="nav-link" href="lectures.html">Lectures</a>
+        <a class="nav-link" href="labs.html">Labs</a>
+        <a class="nav-link" href="aws-console.html#ec2">EC2</a>
+        <a class="nav-link" href="aws-console.html#billing">Billing</a>
+        <span class="console-chip">Region: ap-southeast-2</span>
+        <span class="console-chip">Account: sam10-lab</span>
+        <a class="nav-link" href="index.html">Course Home</a>
+      </div>
+    </header>
+
+    <div class="console-shell">
+      <aside class="console-sidebar">
+        <div class="sidebar-group">
+          <p class="sidebar-title">Recently visited</p>
+          <a class="sidebar-link is-active" href="#ec2">EC2 Dashboard</a>
+          <a class="sidebar-link" href="#monitoring">CloudWatch</a>
+          <a class="sidebar-link" href="#billing">Billing</a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-title">Core services</p>
+          <a class="sidebar-link" href="#services">Compute</a>
+          <a class="sidebar-link" href="#services">Storage</a>
+          <a class="sidebar-link" href="#services">Networking</a>
+          <a class="sidebar-link" href="#services">IAM</a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-title">For students</p>
+          <p class="sidebar-note">
+            This is a static practice interface. Use it to recognize console layout, service names,
+            region selectors, metrics, and billing panels.
+          </p>
+        </div>
+      </aside>
+
+      <main class="console-main aws-main">
+        <section class="page-banner">
+          <div>
+            <p class="eyebrow">Topic 1 and Topic 2</p>
+            <h1>EC2 dashboard sample</h1>
+            <p>
+              A console-style mockup that helps students identify the kinds of controls and
+              status panels they will meet in a real AWS environment.
+            </p>
+          </div>
+          <div class="page-banner-actions">
+            <a class="primary-button" href="labs.html">Back to Labs</a>
+            <a class="secondary-button" href="#billing">Jump to Billing</a>
+          </div>
+        </section>
+
+        <section class="aws-overview" id="ec2">
+          <article class="aws-metric-card">
+            <p class="aws-metric-label">Running instances</p>
+            <h2>3</h2>
+            <p class="aws-metric-text">2 web servers, 1 database instance</p>
+          </article>
+          <article class="aws-metric-card">
+            <p class="aws-metric-label">Availability Zones</p>
+            <h2>2</h2>
+            <p class="aws-metric-text">Balanced across ap-southeast-2a and ap-southeast-2b</p>
+          </article>
+          <article class="aws-metric-card">
+            <p class="aws-metric-label">Estimated monthly cost</p>
+            <h2>$86</h2>
+            <p class="aws-metric-text">Compute, storage, and monitoring included</p>
+          </article>
+        </section>
+
+        <section class="aws-panel-grid">
+          <article class="aws-panel">
+            <div class="aws-panel-head">
+              <div>
+                <p class="aws-panel-kicker">Service summary</p>
+                <h3>Compute services</h3>
+              </div>
+              <span class="aws-badge">Demo</span>
+            </div>
+            <div class="aws-service-grid" id="services">
+              <div class="aws-service-card">
+                <p class="aws-service-name">Amazon EC2</p>
+                <p class="aws-service-text">Virtual machines for application hosting and admin practice.</p>
+              </div>
+              <div class="aws-service-card">
+                <p class="aws-service-name">Elastic Load Balancing</p>
+                <p class="aws-service-text">Distributes requests across multiple instances.</p>
+              </div>
+              <div class="aws-service-card">
+                <p class="aws-service-name">Amazon ECS</p>
+                <p class="aws-service-text">Container orchestration for lightweight deployments.</p>
+              </div>
+              <div class="aws-service-card">
+                <p class="aws-service-name">AWS Lambda</p>
+                <p class="aws-service-text">Event-driven compute without server management.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="aws-panel">
+            <div class="aws-panel-head">
+              <div>
+                <p class="aws-panel-kicker">Instances</p>
+                <h3>Running resources</h3>
+              </div>
+              <span class="aws-badge aws-badge-live">Healthy</span>
+            </div>
+            <div class="aws-table-wrap">
+              <table class="aws-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Instance ID</th>
+                    <th>Type</th>
+                    <th>AZ</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>sam10-web-01</td>
+                    <td>i-08af12c1</td>
+                    <td>t3.micro</td>
+                    <td>2a</td>
+                    <td><span class="aws-status ok">running</span></td>
+                  </tr>
+                  <tr>
+                    <td>sam10-web-02</td>
+                    <td>i-08af12c2</td>
+                    <td>t3.micro</td>
+                    <td>2b</td>
+                    <td><span class="aws-status ok">running</span></td>
+                  </tr>
+                  <tr>
+                    <td>sam10-db-01</td>
+                    <td>i-08af12c3</td>
+                    <td>t3.small</td>
+                    <td>2a</td>
+                    <td><span class="aws-status warn">initializing</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <section class="aws-panel-grid">
+          <article class="aws-panel" id="monitoring">
+            <div class="aws-panel-head">
+              <div>
+                <p class="aws-panel-kicker">CloudWatch</p>
+                <h3>Monitoring snapshot</h3>
+              </div>
+              <span class="aws-badge">5 minute view</span>
+            </div>
+            <div class="aws-chart">
+              <div class="aws-bars">
+                <span style="height: 34%"></span>
+                <span style="height: 55%"></span>
+                <span style="height: 42%"></span>
+                <span style="height: 78%"></span>
+                <span style="height: 64%"></span>
+                <span style="height: 48%"></span>
+                <span style="height: 58%"></span>
+                <span style="height: 37%"></span>
+              </div>
+              <div class="aws-chart-legend">
+                <p><strong>CPUUtilization</strong> peaks during simulated traffic bursts.</p>
+                <p><strong>NetworkIn</strong> stays stable across both web instances.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="aws-panel" id="billing">
+            <div class="aws-panel-head">
+              <div>
+                <p class="aws-panel-kicker">Billing</p>
+                <h3>Pricing and planning sample</h3>
+              </div>
+              <span class="aws-badge">Estimated</span>
+            </div>
+            <ul class="aws-billing-list">
+              <li><span>EC2 compute</span><strong>$42.00</strong></li>
+              <li><span>EBS storage</span><strong>$18.50</strong></li>
+              <li><span>Data transfer</span><strong>$11.00</strong></li>
+              <li><span>CloudWatch metrics</span><strong>$6.50</strong></li>
+              <li><span>Contingency</span><strong>$8.00</strong></li>
+            </ul>
+            <div class="aws-callout">
+              <p class="aws-callout-title">Planning note</p>
+              <p>
+                Students should connect instance size, region, storage, and monitoring choices to
+                budget impact. This mirrors Topic 2 discussions about cloud trade-offs.
+              </p>
+            </div>
+          </article>
+        </section>
+
+        <section class="aws-panel-grid">
+          <article class="aws-panel">
+            <div class="aws-panel-head">
+              <div>
+                <p class="aws-panel-kicker">Shared responsibility</p>
+                <h3>Responsibility split</h3>
+              </div>
+            </div>
+            <div class="aws-split-grid">
+              <div class="aws-split-card">
+                <h4>AWS handles</h4>
+                <ul class="outcome-list">
+                  <li>Physical facilities and hardware security</li>
+                  <li>Availability of foundational cloud services</li>
+                  <li>Global infrastructure and region operations</li>
+                </ul>
+              </div>
+              <div class="aws-split-card">
+                <h4>Customer handles</h4>
+                <ul class="outcome-list">
+                  <li>Operating system patching</li>
+                  <li>IAM users and access policies</li>
+                  <li>Application configuration and data protection</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="aws-panel">
+            <div class="aws-panel-head">
+              <div>
+                <p class="aws-panel-kicker">Recognition guide</p>
+                <h3>What students should notice</h3>
+              </div>
+            </div>
+            <ul class="outcome-list">
+              <li>The top bar usually carries account, region, and search tools.</li>
+              <li>The left navigation groups services and recently visited resources.</li>
+              <li>Dashboard cards summarize health, capacity, and costs at a glance.</li>
+              <li>Tables, metrics, and alerts are central to routine administration.</li>
+            </ul>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
