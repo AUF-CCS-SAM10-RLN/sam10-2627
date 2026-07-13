@@ -33,8 +33,9 @@
         <a class="nav-link" href="labs.html#lab-2">Topic 2 Lab</a>
         <a class="nav-link" href="labs.html#lab-3">Topic 3 Lab</a>
         <a class="nav-link" href="labs.html#lab-4">Topic 4 Lab</a>
+        <a class="nav-link" href="labs.html#lab-5">Topic 5 Lab</a>
         <a class="nav-link" href="aws-console.html">AWS Demo</a>
-        <span class="console-chip">4 Labs</span>
+        <span class="console-chip">5 Labs</span>
         <a class="nav-link" href="index.html">Home</a>
       </div>
     </header>
@@ -54,6 +55,7 @@
           <a class="sidebar-link" href="#lab-2">Topic 2 Lab</a>
           <a class="sidebar-link" href="#lab-3">Topic 3 Lab</a>
           <a class="sidebar-link" href="#lab-4">Topic 4 Lab</a>
+          <a class="sidebar-link" href="#lab-5">Topic 5 Lab</a>
         </div>
         <div class="sidebar-group">
           <p class="sidebar-title">Use</p>
@@ -69,7 +71,7 @@
             <p class="eyebrow">Laboratory activities</p>
             <h1>SAM10 hands-on activities</h1>
             <p class="section-copy">
-              Practical exercises aligned to the four published lecture topics. Select a tab to open one lab at a time.
+              Practical exercises aligned to the five published lecture topics. Select a tab to open one lab at a time.
             </p>
           </div>
           <div class="page-banner-actions">
@@ -85,6 +87,7 @@
             <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="lab-2" data-tab-target="lab-2">Topic 2 Lab</button>
             <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="lab-3" data-tab-target="lab-3">Topic 3 Lab</button>
             <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="lab-4" data-tab-target="lab-4">Topic 4 Lab</button>
+            <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="lab-5" data-tab-target="lab-5">Topic 5 Lab</button>
           </div>
 
           <section class="tab-panels">
@@ -152,6 +155,21 @@
                   <section class="lab-section"><h3>Information for students</h3><ul class="outcome-list"><li>A subnet is considered public only when its route table allows traffic to an internet gateway.</li><li>A NAT gateway supports outbound internet access from private subnets without allowing unsolicited inbound traffic.</li><li>Security groups and network ACLs both matter because they protect at different scopes.</li></ul></section>
                   <section class="lab-section"><h3>Useful resources</h3><ul class="resource-list"><li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html" target="_blank" rel="noreferrer">How Amazon VPC works</a></li><li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-route-tables.html" target="_blank" rel="noreferrer">Subnet route tables in Amazon VPC</a></li><li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html" target="_blank" rel="noreferrer">Configure route tables</a></li><li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html" target="_blank" rel="noreferrer">Internet gateways in Amazon VPC</a></li><li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html" target="_blank" rel="noreferrer">NAT gateways</a></li><li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html" target="_blank" rel="noreferrer">Security groups for your VPC</a></li><li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html" target="_blank" rel="noreferrer">Network ACLs</a></li></ul></section>
                   <section class="lab-section"><h3>Video lectures and internet materials</h3><ul class="resource-list"><li><a href="https://aws.amazon.com/blogs/training-and-certification/new-aws-cloud-practitioner-essentials/" target="_blank" rel="noreferrer">Updated AWS Cloud Practitioner Essentials overview</a> - highlights the current AWS networking module in the beginner course.</li><li><a href="https://aws.amazon.com/blogs/training-and-certification/cloud-practitioner-essentials-digital-course/" target="_blank" rel="noreferrer">AWS Cloud Practitioner Essentials digital course overview</a> - foundational training path for AWS networking basics.</li><li><a href="https://aws.amazon.com/blogs/training-and-certification/free-aws-training-webinars-to-grow-your-cloud-skills/" target="_blank" rel="noreferrer">Free AWS training webinars</a> - public AWS training material that can supplement network and cloud lessons.</li></ul></section>
+                </div>
+              </article>
+            </section>
+            <section class="tab-panel" id="lab-5" role="tabpanel" hidden>
+              <article class="module-card lab-card">
+                <div class="lab-header"><div><p class="lab-tag">Topic 5</p><h3>Compute Infrastructure Administration Lab</h3><p class="module-summary">Provision and evaluate EC2-based compute environments using AMIs, instance sizing, launch templates, Elastic IP, and basic CloudFormation thinking.</p></div><p class="lab-duration">3 hours</p></div>
+                <div class="lab-grid">
+                  <section class="lab-section"><h3>Goal</h3><p class="panel-copy">Apply compute-administration concepts by selecting EC2 resources, comparing provisioning methods, and introducing Infrastructure as Code with AWS CloudFormation.</p></section>
+                  <section class="lab-section"><h3>Required outputs</h3><ul class="outcome-list"><li>One EC2 deployment plan with AMI, instance type, storage, and networking choices</li><li>One comparison sheet covering virtual machines, containers, and elastic compute resources</li><li>One launch template design summary with reusable parameters</li><li>One short infrastructure-as-code explanation using a simple CloudFormation scenario</li><li>One recommendation paragraph justifying the compute design</li></ul></section>
+                  <section class="lab-section"><h3>Assessable tasks</h3><ol class="lab-list"><li>Identify an appropriate AMI and instance type for at least 2 different workload scenarios and explain the reasoning.</li><li>Differentiate virtual machines, containers, and elastic compute in terms of provisioning, scaling, and management.</li><li>Describe what information should be stored in a launch template and why that improves consistency.</li><li>Explain how an Elastic IP differs from a standard dynamic public IP in an operational scenario.</li><li>Outline how AWS CloudFormation can provision infrastructure repeatedly from a defined template.</li><li>Write a final recommendation that balances workload needs, repeatability, and administrative control.</li></ol></section>
+                  <section class="lab-section"><h3>Success criteria</h3><ul class="outcome-list"><li>Compute choices are justified using workload characteristics rather than guesswork.</li><li>AMI, instance type, and launch template roles are clearly distinguished.</li><li>Elastic IP use is explained in a realistic administration context.</li><li>Infrastructure as Code is described as a provisioning method, not only a definition.</li><li>The final recommendation is operationally coherent and technically defensible.</li></ul></section>
+                  <section class="lab-section"><h3>Skills reinforced</h3><ul class="outcome-list"><li>Compute resource selection</li><li>Provisioning analysis</li><li>Reusable configuration design</li><li>Infrastructure as Code awareness</li><li>Cloud administration planning</li></ul></section>
+                  <section class="lab-section"><h3>Information for students</h3><ul class="outcome-list"><li>An AMI is the machine template used to launch an instance; it does not replace instance sizing decisions.</li><li>Launch templates improve repeatability by storing launch parameters once and reusing them.</li><li>CloudFormation is valuable because it turns infrastructure setup into a versionable and repeatable definition.</li></ul></section>
+                  <section class="lab-section"><h3>Useful resources</h3><ul class="resource-list"><li><a href="https://docs.aws.amazon.com/ec2/" target="_blank" rel="noreferrer">Amazon EC2 documentation</a></li><li><a href="https://aws.amazon.com/documentation-overview/ec2/" target="_blank" rel="noreferrer">Amazon EC2 documentation overview</a></li><li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Instances.html" target="_blank" rel="noreferrer">Amazon EC2 instances</a></li><li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html" target="_blank" rel="noreferrer">Store instance launch parameters in launch templates</a></li><li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/create-launch-template.html" target="_blank" rel="noreferrer">Create an Amazon EC2 launch template</a></li><li><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/GettingStarted.html" target="_blank" rel="noreferrer">Getting started with AWS CloudFormation</a></li></ul></section>
+                  <section class="lab-section"><h3>Video lectures and internet materials</h3><ul class="resource-list"><li><a href="https://aws.amazon.com/blogs/training-and-certification/cloud-practitioner-essentials-digital-course/" target="_blank" rel="noreferrer">AWS Cloud Practitioner Essentials digital course overview</a> - includes current beginner coverage of EC2 and foundational provisioning concepts.</li><li><a href="https://aws.amazon.com/documentation-overview/ec2/" target="_blank" rel="noreferrer">Amazon EC2 documentation overview</a> - public entry point to guided learning resources and documentation for EC2.</li><li><a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/GettingStarted.html" target="_blank" rel="noreferrer">CloudFormation getting started guide</a> - practical official introduction to Infrastructure as Code with AWS.</li></ul></section>
                 </div>
               </article>
             </section>

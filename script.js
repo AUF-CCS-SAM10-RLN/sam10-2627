@@ -120,6 +120,36 @@ const modules = [
       ],
       answer: "Its route table sends internet-bound traffic to an internet gateway"
     }
+  },
+  {
+    title: "Compute Infrastructure Administration",
+    summary: "EC2 provisioning, AMIs, instance sizing, launch templates, Elastic IP, and CloudFormation fundamentals.",
+    topics: [
+      "Amazon EC2",
+      "Amazon Machine Images",
+      "Instance Types",
+      "Launch Templates",
+      "Elastic IP",
+      "Infrastructure Provisioning",
+      "Introduction to Infrastructure as Code",
+      "AWS CloudFormation Fundamentals"
+    ],
+    checks: [
+      "Explain how virtualization supports modern cloud infrastructure.",
+      "Differentiate virtual machines, containers, and elastic compute resources.",
+      "Explain the role of Amazon EC2 in cloud infrastructure provisioning.",
+      "Analyze factors affecting compute resource selection based on workload requirements.",
+      "Explain the principles and benefits of Infrastructure as Code using AWS CloudFormation."
+    ],
+    quiz: {
+      question: "What is a primary benefit of using a launch template with Amazon EC2?",
+      options: [
+        "It stores reusable instance launch parameters for consistent provisioning",
+        "It replaces the need for an AMI entirely",
+        "It automatically turns every instance into a container"
+      ],
+      answer: "It stores reusable instance launch parameters for consistent provisioning"
+    }
   }
 ];
 
@@ -147,6 +177,10 @@ const flashcards = [
   {
     question: "What is the main purpose of a NAT gateway?",
     answer: "It allows resources in private subnets to reach the internet outbound without accepting unsolicited inbound connections."
+  },
+  {
+    question: "What does Infrastructure as Code improve in cloud administration?",
+    answer: "It makes provisioning repeatable, reviewable, and easier to automate across environments."
   }
 ];
 
