@@ -243,6 +243,35 @@ const modules = [
       ],
       answer: "Amazon DynamoDB"
     }
+  },
+  {
+    title: "Web and Application Services",
+    summary: "Multi-tier architecture, web and application delivery, reverse proxy, load balancing, DNS, certificates, and deployment.",
+    topics: [
+      "Multi-tier Architecture",
+      "Web Servers",
+      "Reverse Proxy",
+      "Load Distribution",
+      "Elastic Load Balancer",
+      "Route 53",
+      "AWS Certificate Manager",
+      "Application Deployment"
+    ],
+    checks: [
+      "Explain the principles of multi-tier application architecture.",
+      "Differentiate the functions of web servers, application servers, and load balancers.",
+      "Explain how AWS services support secure and scalable web application deployment.",
+      "Analyze application architectures based on availability, scalability, and security requirements."
+    ],
+    quiz: {
+      question: "What is a primary role of an Elastic Load Balancer in a multi-tier application?",
+      options: [
+        "It distributes traffic across healthy targets to improve availability and scalability",
+        "It replaces DNS and certificate management entirely",
+        "It stores application data as durable object storage"
+      ],
+      answer: "It distributes traffic across healthy targets to improve availability and scalability"
+    }
   }
 ];
 
@@ -286,6 +315,10 @@ const flashcards = [
   {
     question: "What is a practical difference between relational and NoSQL databases?",
     answer: "Relational databases emphasize structured schemas and transactional consistency, while NoSQL systems often prioritize flexible models and horizontal scalability."
+  },
+  {
+    question: "Why is a multi-tier architecture useful for production web applications?",
+    answer: "It separates presentation, application, and data responsibilities to improve scalability, security, and maintainability."
   }
 ];
 
