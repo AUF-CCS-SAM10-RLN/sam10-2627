@@ -31,8 +31,9 @@
         <a class="nav-link" href="lectures.html">Lectures</a>
         <a class="nav-link" href="labs.html#lab-1">Topic 1 Lab</a>
         <a class="nav-link" href="labs.html#lab-2">Topic 2 Lab</a>
+        <a class="nav-link" href="labs.html#lab-3">Topic 3 Lab</a>
         <a class="nav-link" href="aws-console.html">AWS Demo</a>
-        <span class="console-chip">2 Labs</span>
+        <span class="console-chip">3 Labs</span>
         <a class="nav-link" href="index.html">Home</a>
       </div>
     </header>
@@ -50,6 +51,7 @@
           <p class="sidebar-title">Lab list</p>
           <a class="sidebar-link" href="#lab-1">Topic 1 Lab</a>
           <a class="sidebar-link" href="#lab-2">Topic 2 Lab</a>
+          <a class="sidebar-link" href="#lab-3">Topic 3 Lab</a>
         </div>
         <div class="sidebar-group">
           <p class="sidebar-title">Use</p>
@@ -251,6 +253,96 @@
                   <li><a href="https://aws.amazon.com/getting-started/cloud-essentials/" target="_blank" rel="noreferrer">AWS Cloud Essentials</a> - beginner learning materials covering cloud models and core AWS concepts.</li>
                   <li><a href="https://aws.amazon.com/blogs/training-and-certification/cloud-practitioner-essentials-digital-course/" target="_blank" rel="noreferrer">AWS Cloud Practitioner Essentials course overview</a> - current entry point for official AWS foundational training.</li>
                   <li><a href="https://docs.aws.amazon.com/pricing-calculator/" target="_blank" rel="noreferrer">AWS Pricing Calculator documentation</a> - useful alongside lecture or demo walkthroughs for cost-planning exercises.</li>
+                </ul>
+              </section>
+            </div>
+          </article>
+
+          <article class="module-card lab-card" id="lab-3">
+            <div class="lab-header">
+              <div>
+                <p class="lab-tag">Topic 3</p>
+                <h3>Identity, Access Management, and Governance Lab</h3>
+                <p class="module-summary">
+                  Design secure access controls, evaluate IAM policies, and apply governance principles to AWS administration scenarios.
+                </p>
+              </div>
+              <p class="lab-duration">3 hours</p>
+            </div>
+
+            <div class="lab-grid">
+              <section class="lab-section">
+                <h3>Goal</h3>
+                <p class="panel-copy">
+                  Apply authentication, authorization, IAM, least-privilege, MFA, and federation concepts to realistic cloud administration scenarios.
+                </p>
+              </section>
+              <section class="lab-section">
+                <h3>Required outputs</h3>
+                <ul class="outcome-list">
+                  <li>One access-control comparison sheet covering RBAC and ABAC</li>
+                  <li>One IAM role or policy design recommendation for a given scenario</li>
+                  <li>One least-privilege review of an identity policy set</li>
+                  <li>One governance checklist with at least 5 secure-administration controls</li>
+                  <li>One short analysis paragraph on MFA and identity federation</li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Assessable tasks</h3>
+                <ol class="lab-list">
+                  <li>Define authentication and authorization in your own words and give one administration example of each.</li>
+                  <li>Compare RBAC and ABAC using at least 4 criteria such as flexibility, complexity, scalability, and policy management.</li>
+                  <li>Review a sample AWS administration scenario and assign permissions using least-privilege logic.</li>
+                  <li>Identify at least 3 cases where MFA should be required for secure administrative access.</li>
+                  <li>Explain how identity federation reduces the need for separate long-term IAM user accounts.</li>
+                  <li>Create a short governance checklist covering account review, policy review, MFA enforcement, role use, and access monitoring.</li>
+                </ol>
+              </section>
+              <section class="lab-section">
+                <h3>Success criteria</h3>
+                <ul class="outcome-list">
+                  <li>Authentication and authorization are correctly distinguished.</li>
+                  <li>RBAC and ABAC comparisons show practical differences rather than definitions only.</li>
+                  <li>IAM recommendations follow least-privilege and do not over-assign permissions.</li>
+                  <li>MFA and federation explanations connect directly to secure cloud administration.</li>
+                  <li>The governance checklist is actionable and relevant to AWS account operations.</li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Skills reinforced</h3>
+                <ul class="outcome-list">
+                  <li>Identity and access analysis</li>
+                  <li>Least-privilege reasoning</li>
+                  <li>IAM policy evaluation</li>
+                  <li>Governance awareness</li>
+                  <li>Secure cloud administration planning</li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Information for students</h3>
+                <ul class="outcome-list">
+                  <li>Do not treat IAM as only a permissions list; it is part of a larger governance model.</li>
+                  <li>Least privilege means enough access to perform the task, not the fewest words in a policy.</li>
+                  <li>Federation is useful when organizations already manage identities in an external directory or identity provider.</li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Useful resources</h3>
+                <ul class="resource-list">
+                  <li><a href="https://docs.aws.amazon.com/iam/" target="_blank" rel="noreferrer">AWS Identity and Access Management documentation</a></li>
+                  <li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html" target="_blank" rel="noreferrer">Policies and permissions in AWS IAM</a></li>
+                  <li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html" target="_blank" rel="noreferrer">Multi-factor authentication in IAM</a></li>
+                  <li><a href="https://aws.amazon.com/identity/federation/" target="_blank" rel="noreferrer">AWS identity federation</a></li>
+                  <li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html" target="_blank" rel="noreferrer">Security best practices in IAM</a></li>
+                  <li><a href="https://docs.aws.amazon.com/wellarchitected/latest/framework/sec_permissions_least_privileges.html" target="_blank" rel="noreferrer">AWS Well-Architected least privilege guidance</a></li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Video lectures and internet materials</h3>
+                <ul class="resource-list">
+                  <li><a href="https://aws.amazon.com/getting-started/cloud-essentials/" target="_blank" rel="noreferrer">AWS Cloud Essentials</a> - current foundational learning materials that include IAM and security basics.</li>
+                  <li><a href="https://aws.amazon.com/blogs/training-and-certification/cloud-practitioner-essentials-digital-course/" target="_blank" rel="noreferrer">AWS Cloud Practitioner Essentials course overview</a> - entry point to official foundational AWS training.</li>
+                  <li><a href="https://aws.amazon.com/identity/federation/" target="_blank" rel="noreferrer">AWS identity federation overview</a> - public overview material useful before deeper configuration work.</li>
                 </ul>
               </section>
             </div>

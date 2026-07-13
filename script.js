@@ -55,6 +55,36 @@ const modules = [
       ],
       answer: "Containers share the host OS kernel, while virtual machines emulate full guest environments"
     }
+  },
+  {
+    title: "Identity, Access Management, and Governance",
+    summary: "Authentication, authorization, access control models, IAM, MFA, federation, and governance.",
+    topics: [
+      "Authentication",
+      "Authorization",
+      "Role-Based Access Control (RBAC)",
+      "Attribute-Based Access Control (ABAC)",
+      "Principle of Least Privilege",
+      "AWS IAM",
+      "Multi-Factor Authentication",
+      "Identity Federation"
+    ],
+    checks: [
+      "Explain authentication and authorization mechanisms used in secure computing environments.",
+      "Differentiate RBAC and ABAC access control models.",
+      "Explain how AWS IAM implements secure identity and access management.",
+      "Evaluate identity management policies using the principle of least privilege.",
+      "Analyze governance practices that support secure cloud administration."
+    ],
+    quiz: {
+      question: "Which statement best describes the principle of least privilege?",
+      options: [
+        "Grant only the permissions required to complete a task",
+        "Grant administrator access to reduce configuration effort",
+        "Use the same permissions for every identity"
+      ],
+      answer: "Grant only the permissions required to complete a task"
+    }
   }
 ];
 
@@ -74,6 +104,10 @@ const flashcards = [
   {
     question: "What is a key difference between containers and virtual machines?",
     answer: "Containers share the host OS kernel, while virtual machines run full guest operating systems."
+  },
+  {
+    question: "How is RBAC different from ABAC?",
+    answer: "RBAC grants access based on roles, while ABAC uses attributes such as user, resource, or environment details."
   }
 ];
 
