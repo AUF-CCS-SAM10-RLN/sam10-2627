@@ -272,6 +272,38 @@ const modules = [
       ],
       answer: "It distributes traffic across healthy targets to improve availability and scalability"
     }
+  },
+  {
+    title: "Monitoring, Logging, and Performance Management",
+    summary: "Monitoring, observability, metrics, tuning, logging, and AWS operational visibility services.",
+    topics: [
+      "Systems Monitoring",
+      "Observability",
+      "Performance Metrics",
+      "Capacity Planning",
+      "Performance Tuning",
+      "Log Management",
+      "Amazon CloudWatch",
+      "CloudTrail",
+      "AWS Config",
+      "SNS"
+    ],
+    checks: [
+      "Explain the role of monitoring and observability in systems administration.",
+      "Differentiate monitoring, logging, and auditing functions.",
+      "Analyze performance metrics to evaluate system health.",
+      "Explain how AWS monitoring services support operational decision-making.",
+      "Recommend monitoring strategies based on infrastructure requirements."
+    ],
+    quiz: {
+      question: "Which AWS service is most directly used to collect metrics, create alarms, and visualize operational dashboards?",
+      options: [
+        "Amazon CloudWatch",
+        "Amazon Route 53",
+        "AWS Certificate Manager"
+      ],
+      answer: "Amazon CloudWatch"
+    }
   }
 ];
 
@@ -319,6 +351,10 @@ const flashcards = [
   {
     question: "Why is a multi-tier architecture useful for production web applications?",
     answer: "It separates presentation, application, and data responsibilities to improve scalability, security, and maintainability."
+  },
+  {
+    question: "How is logging different from monitoring?",
+    answer: "Monitoring tracks system state and performance over time, while logging records detailed event data that helps explain what happened."
   }
 ];
 
