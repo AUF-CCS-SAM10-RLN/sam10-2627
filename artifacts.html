@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAM10 Artifacts | Systems Administration and Maintenance</title>
+  <meta
+    name="description"
+    content="Written artifacts a systems administrator should maintain."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="console-topbar">
+      <div class="console-topbar-left">
+        <div class="console-logo">aws</div>
+        <div class="console-title">Documentation Console</div>
+      </div>
+      <label class="console-search">
+        <span class="sr-only">Search page</span>
+        <input type="search" value="system administration documentation" aria-label="Search page" readonly>
+      </label>
+      <div class="console-topbar-right">
+        <a class="nav-link" href="lectures.html">Lectures</a>
+        <a class="nav-link" href="labs.html">Labs</a>
+        <a class="nav-link" href="artifacts.html">Artifacts</a>
+        <a class="nav-link" href="aws-console.html">AWS Demo</a>
+        <span class="console-chip">Reference</span>
+        <a class="nav-link" href="index.html">Home</a>
+      </div>
+    </header>
+
+    <div class="console-shell">
+      <aside class="console-sidebar">
+        <div class="sidebar-group">
+          <p class="sidebar-title">Navigation</p>
+          <a class="sidebar-link" href="index.html">Overview</a>
+          <a class="sidebar-link" href="lectures.html">Lectures</a>
+          <a class="sidebar-link" href="labs.html">Laboratories</a>
+          <a class="sidebar-link is-active" href="artifacts.html">Written Artifacts</a>
+          <a class="sidebar-link" href="aws-console.html">AWS Console Demo</a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-title">Sections</p>
+          <a class="sidebar-link" href="#core-docs">Core documentation</a>
+          <a class="sidebar-link" href="#security-docs">Security and governance</a>
+          <a class="sidebar-link" href="#operations-docs">Operations and recovery</a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-title">Use</p>
+          <p class="sidebar-note">
+            These are the written records and documents a systems administrator should maintain for stable, secure, and supportable infrastructure.
+          </p>
+        </div>
+      </aside>
+
+      <main class="console-main">
+        <section class="page-banner">
+          <div>
+            <p class="eyebrow">Documentation</p>
+            <h1>Written artifacts every systems administrator should maintain</h1>
+            <p class="section-copy">
+              A systems administrator is not only responsible for systems, but also for the written records that make those systems understandable, auditable, and recoverable.
+            </p>
+          </div>
+          <div class="page-banner-actions">
+            <a class="primary-button" href="#core-docs">Open reference</a>
+            <a class="secondary-button" href="lectures.html">Back to lectures</a>
+          </div>
+        </section>
+
+        <section class="metrics-grid">
+          <article class="metric-card">
+            <p class="metric-label">Core areas</p>
+            <h2>3</h2>
+            <p class="metric-copy">Architecture, security, and operations documentation.</p>
+          </article>
+          <article class="metric-card">
+            <p class="metric-label">Artifact types</p>
+            <h2>15+</h2>
+            <p class="metric-copy">Common written deliverables maintained across the system lifecycle.</p>
+          </article>
+          <article class="metric-card">
+            <p class="metric-label">Purpose</p>
+            <h2>Audit</h2>
+            <p class="metric-copy">Support accountability, continuity, recovery, and secure administration.</p>
+          </article>
+        </section>
+
+        <section class="module-list" id="core-docs">
+          <article class="module-card lab-card">
+            <div class="lab-header">
+              <div>
+                <p class="lab-tag">Core documentation</p>
+                <h3>Architecture and environment records</h3>
+                <p class="module-summary">
+                  Documents that explain what exists, how it is connected, and what each system is for.
+                </p>
+              </div>
+            </div>
+            <div class="lab-grid">
+              <section class="lab-section">
+                <h3>System inventory</h3>
+                <ul class="outcome-list">
+                  <li>List of servers, endpoints, network devices, cloud resources, and owners</li>
+                  <li>Hostnames, IP addresses, locations, operating systems, and service roles</li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Network diagrams</h3>
+                <ul class="outcome-list">
+                  <li>Physical and logical network maps</li>
+                  <li>Subnets, gateways, firewalls, security zones, and service paths</li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>System architecture diagrams</h3>
+                <ul class="outcome-list">
+                  <li>Application flow, dependencies, storage, compute, and external integrations</li>
+                  <li>Useful for onboarding, support, and change planning</li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Configuration baselines</h3>
+                <ul class="outcome-list">
+                  <li>Standard server builds, approved software, naming conventions, and default settings</li>
+                  <li>Reference point for compliance and troubleshooting</li>
+                </ul>
+              </section>
+            </div>
+          </article>
+
+          <article class="module-card lab-card" id="security-docs">
+            <div class="lab-header">
+              <div>
+                <p class="lab-tag">Security and governance</p>
+                <h3>Control, policy, and access records</h3>
+                <p class="module-summary">
+                  Documents that define who can do what, what is allowed, and how systems stay governed.
+                </p>
+              </div>
+            </div>
+            <div class="lab-grid">
+              <section class="lab-section">
+                <h3>Access control matrix</h3>
+                <ul class="outcome-list">
+                  <li>Users, roles, groups, systems, and permission levels</li>
+                  <li>Supports least privilege and access reviews</li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Account and credential procedures</h3>
+                <ul class="outcome-list">
+                  <li>User provisioning, deprovisioning, password standards, MFA requirements</li>
+                  <li>May include emergency access handling and account recovery rules</li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Security policies and standards</h3>
+                <ul class="outcome-list">
+                  <li>Patch policy, acceptable use, remote access, encryption, logging, and backup policy</li>
+                  <li>Defines the expected operational security posture</li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Risk and exception register</h3>
+                <ul class="outcome-list">
+                  <li>Known risks, compensating controls, temporary exceptions, approvals, and review dates</li>
+                  <li>Useful for audit and governance follow-up</li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Audit and compliance evidence</h3>
+                <ul class="outcome-list">
+                  <li>Review logs, policy reviews, hardening checklists, and control verification records</li>
+                  <li>Supports internal and external compliance checks</li>
+                </ul>
+              </section>
+            </div>
+          </article>
+
+          <article class="module-card lab-card" id="operations-docs">
+            <div class="lab-header">
+              <div>
+                <p class="lab-tag">Operations and recovery</p>
+                <h3>Day-to-day and incident documentation</h3>
+                <p class="module-summary">
+                  Documents that help the team operate, troubleshoot, recover, and improve services over time.
+                </p>
+              </div>
+            </div>
+            <div class="lab-grid">
+              <section class="lab-section">
+                <h3>Standard operating procedures</h3>
+                <ul class="outcome-list">
+                  <li>Routine tasks such as patching, backups, onboarding, monitoring checks, and maintenance</li>
+                  <li>Should be step-by-step and repeatable</li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Runbooks and troubleshooting guides</h3>
+                <ul class="outcome-list">
+                  <li>Known failure modes, diagnostics, escalation steps, and recovery actions</li>
+                  <li>Designed for fast response during incidents</li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Change records</h3>
+                <ul class="outcome-list">
+                  <li>What changed, why it changed, who approved it, when it happened, and rollback details</li>
+                  <li>Critical for accountability and incident review</li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Backup and recovery plans</h3>
+                <ul class="outcome-list">
+                  <li>Backup scope, frequency, retention, restore steps, and test outcomes</li>
+                  <li>Should include recovery objectives where possible</li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Incident reports and postmortems</h3>
+                <ul class="outcome-list">
+                  <li>Timeline, impact, root cause, resolution, and follow-up actions</li>
+                  <li>Transforms outages into learning and prevention</li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Service handover and onboarding guides</h3>
+                <ul class="outcome-list">
+                  <li>Introduces new administrators to systems, contacts, tools, and responsibilities</li>
+                  <li>Reduces knowledge loss when staff change</li>
+                </ul>
+              </section>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
