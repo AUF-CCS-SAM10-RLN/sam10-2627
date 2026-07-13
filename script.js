@@ -691,6 +691,8 @@ function renderModules() {
     const summary = fragment.querySelector(".module-summary");
     const order = fragment.querySelector(".module-order");
     const progressLabel = fragment.querySelector(".module-progress");
+    const moduleFocus = fragment.querySelector(".module-focus");
+    const moduleFacts = fragment.querySelector(".module-facts");
     const topicList = fragment.querySelector(".topic-list");
     const checkList = fragment.querySelector(".check-list");
     const question = fragment.querySelector(".quiz-question");
@@ -699,8 +701,20 @@ function renderModules() {
 
     title.textContent = module.title;
     summary.textContent = module.summary;
+    moduleFocus.textContent = module.summary;
     order.textContent = `M${String(moduleIndex + 1).padStart(2, "0")}`;
     question.textContent = module.quiz.question;
+
+    [
+      `Topic count: ${module.topics.length}`,
+      `Outcome count: ${module.checks.length}`,
+      `Primary focus: ${module.topics[0]}`,
+      `Closing concept: ${module.topics[module.topics.length - 1]}`
+    ].forEach((fact) => {
+      const item = document.createElement("li");
+      item.textContent = fact;
+      moduleFacts.append(item);
+    });
 
     module.topics.forEach((topic) => {
       const item = document.createElement("li");

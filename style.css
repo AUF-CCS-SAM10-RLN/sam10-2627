@@ -617,6 +617,77 @@ a {
   gap: 1rem;
 }
 
+.lecture-groups {
+  display: grid;
+  gap: 1rem;
+}
+
+.lecture-group {
+  padding: 1.15rem;
+  border-radius: 20px;
+  border: 1px solid var(--aws-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  overflow: hidden;
+}
+
+.lecture-group-context {
+  background: linear-gradient(180deg, rgba(9, 114, 211, 0.07), rgba(9, 114, 211, 0.015));
+  border-top: 4px solid rgba(9, 114, 211, 0.45);
+}
+
+.lecture-group-learning {
+  background: linear-gradient(180deg, rgba(255, 153, 0, 0.1), rgba(255, 153, 0, 0.025));
+  border-top: 4px solid rgba(255, 153, 0, 0.55);
+}
+
+.lecture-group-assessment {
+  background: linear-gradient(180deg, rgba(22, 101, 52, 0.08), rgba(22, 101, 52, 0.015));
+  border-top: 4px solid rgba(22, 101, 52, 0.45);
+}
+
+.lecture-group-head {
+  display: grid;
+  gap: 0.3rem;
+  margin-bottom: 1.1rem;
+  padding: 0.15rem 0 0.4rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.lecture-group-kicker {
+  margin: 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #9a3412;
+}
+
+.lecture-group-head h3,
+.lecture-section h4,
+.quiz-block h4 {
+  margin: 0;
+}
+
+.lecture-group .module-columns {
+  gap: 0.9rem;
+}
+
+.lecture-section {
+  padding: 1rem;
+  border-radius: 16px;
+  border: 1px solid var(--aws-border);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(2px);
+}
+
+.lecture-section-wide {
+  grid-column: 1 / -1;
+}
+
+.module-facts {
+  margin: 0;
+}
+
 .lab-group {
   padding: 1.15rem;
   border-radius: 20px;
@@ -687,6 +758,15 @@ a {
 
 .lab-card .module-summary {
   max-width: 72ch;
+}
+
+.module-card .module-summary {
+  max-width: 72ch;
+}
+
+.module-card .module-body {
+  display: grid;
+  gap: 1rem;
 }
 
 .lab-groups > .lab-section:nth-child(-n + 5) {
