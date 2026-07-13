@@ -150,6 +150,37 @@ const modules = [
       ],
       answer: "It stores reusable instance launch parameters for consistent provisioning"
     }
+  },
+  {
+    title: "Linux Systems Administration",
+    summary: "Linux architecture, shell usage, file systems, identities, permissions, processes, packages, SSH, and Systems Manager.",
+    topics: [
+      "Linux Architecture",
+      "Shell Environment",
+      "File Systems",
+      "Users and Groups",
+      "Permissions",
+      "Process Management",
+      "Package Management",
+      "SSH",
+      "Systems Manager"
+    ],
+    checks: [
+      "Explain the architecture and operational principles of the Linux operating system.",
+      "Differentiate Linux file systems, processes, users, groups, and permission models.",
+      "Analyze Linux system administration practices in cloud environments.",
+      "Explain secure remote administration concepts using SSH and AWS Systems Manager.",
+      "Evaluate Linux administration strategies for enterprise cloud systems."
+    ],
+    quiz: {
+      question: "What is a primary advantage of AWS Systems Manager over direct SSH-only administration?",
+      options: [
+        "It can support managed administration workflows without relying only on direct inbound SSH access",
+        "It replaces Linux permissions and user management entirely",
+        "It prevents all package-management and process issues automatically"
+      ],
+      answer: "It can support managed administration workflows without relying only on direct inbound SSH access"
+    }
   }
 ];
 
@@ -181,6 +212,10 @@ const flashcards = [
   {
     question: "What does Infrastructure as Code improve in cloud administration?",
     answer: "It makes provisioning repeatable, reviewable, and easier to automate across environments."
+  },
+  {
+    question: "Why is AWS Systems Manager useful in Linux administration?",
+    answer: "It supports secure remote management, automation, and operational control without depending only on direct SSH access."
   }
 ];
 
