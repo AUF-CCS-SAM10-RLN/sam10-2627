@@ -213,6 +213,36 @@ const modules = [
       ],
       answer: "Amazon S3"
     }
+  },
+  {
+    title: "Database Administration",
+    summary: "Relational and NoSQL databases, ACID, CAP theorem, AWS managed database services, and backup strategy.",
+    topics: [
+      "Relational Databases",
+      "NoSQL Databases",
+      "ACID",
+      "CAP Theorem",
+      "Amazon RDS",
+      "Amazon Aurora",
+      "DynamoDB",
+      "Database Backup"
+    ],
+    checks: [
+      "Explain relational and NoSQL database architectures.",
+      "Differentiate database management models based on application requirements.",
+      "Explain the principles of managed database administration in cloud environments.",
+      "Analyze AWS database services based on scalability, consistency, and availability.",
+      "Evaluate database solutions appropriate for different organizational needs."
+    ],
+    quiz: {
+      question: "Which AWS service is designed as a managed key-value and document NoSQL database?",
+      options: [
+        "Amazon DynamoDB",
+        "Amazon RDS for MySQL",
+        "Amazon EFS"
+      ],
+      answer: "Amazon DynamoDB"
+    }
   }
 ];
 
@@ -252,6 +282,10 @@ const flashcards = [
   {
     question: "How is object storage different from block storage?",
     answer: "Object storage manages data as discrete objects with metadata, while block storage presents raw volumes for attached operating systems and applications."
+  },
+  {
+    question: "What is a practical difference between relational and NoSQL databases?",
+    answer: "Relational databases emphasize structured schemas and transactional consistency, while NoSQL systems often prioritize flexible models and horizontal scalability."
   }
 ];
 
