@@ -441,6 +441,25 @@ a {
   padding-left: 1.2rem;
 }
 
+.resource-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--aws-text-soft);
+}
+
+.resource-list li + li {
+  margin-top: 0.7rem;
+}
+
+.resource-list a {
+  color: var(--aws-blue);
+  text-decoration: none;
+}
+
+.resource-list a:hover {
+  text-decoration: underline;
+}
+
 .check-list {
   list-style: none;
   padding-left: 0;
