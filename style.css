@@ -113,6 +113,47 @@ a {
   color: #d8e2ef;
 }
 
+.console-product-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #eef4fb;
+}
+
+.console-context-row,
+.console-main-nav,
+.aws-service-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.console-context-pill {
+  padding: 0.28rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #cfd9e5;
+  font-size: 0.76rem;
+}
+
+.console-main-nav {
+  justify-content: flex-end;
+}
+
+.console-main-link {
+  padding: 0.55rem 0.85rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #dbe7f3;
+  border: 1px solid rgba(191, 206, 223, 0.22);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.console-main-link:hover {
+  border-color: rgba(9, 114, 211, 0.55);
+  background: rgba(9, 114, 211, 0.12);
+}
+
 .console-search {
   min-width: 0;
 }
@@ -803,6 +844,20 @@ a {
   z-index: 30;
 }
 
+.console-topbar-compact {
+  grid-template-columns: minmax(250px, 1.2fr) minmax(220px, 1fr) auto;
+}
+
+.console-topbar-left-compact {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.console-search-compact input {
+  background: #132131;
+}
+
 .aws-utilitybar {
   display: flex;
   justify-content: space-between;
@@ -822,6 +877,27 @@ a {
   flex-wrap: wrap;
   gap: 0.6rem;
   align-items: center;
+}
+
+.aws-service-nav {
+  padding: 0.8rem 1.15rem;
+  background: #182535;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.aws-service-link {
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #dce7f4;
+  border: 1px solid rgba(191, 206, 223, 0.16);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.aws-service-link:hover,
+.aws-service-link.is-active {
+  background: rgba(9, 114, 211, 0.14);
+  border-color: rgba(9, 114, 211, 0.58);
 }
 
 .aws-utilitybar a,
@@ -867,7 +943,8 @@ a {
 .aws-network-grid,
 .shell-grid,
 .shell-side-stack,
-.aws-mini-metrics {
+.aws-mini-metrics,
+.aws-dashboard-grid {
   display: grid;
   gap: 1rem;
 }
@@ -889,6 +966,16 @@ a {
 .aws-service-name {
   margin: 0 0 0.35rem;
   font-weight: 600;
+}
+
+.aws-service-card-link {
+  display: block;
+  text-decoration: none;
+}
+
+.aws-service-card-link:hover {
+  border-color: var(--aws-blue);
+  transform: translateY(-1px);
 }
 
 .aws-mini-metrics {
@@ -1106,6 +1193,7 @@ a {
   }
 
   .aws-utilitybar,
+  .aws-service-nav,
   .console-topbar-right,
   .page-banner-actions,
   .console-topbar-left {
@@ -1127,7 +1215,10 @@ a {
   .shell-status,
   .aws-utilitybar,
   .aws-utilitybar-links,
-  .aws-utilitybar-meta {
+  .aws-utilitybar-meta,
+  .console-main-nav,
+  .console-context-row,
+  .aws-service-nav {
     flex-direction: column;
     align-items: stretch;
   }
@@ -1137,6 +1228,10 @@ a {
   }
 
   .shell-input-row {
+    grid-template-columns: 1fr;
+  }
+
+  .console-topbar-compact {
     grid-template-columns: 1fr;
   }
 }

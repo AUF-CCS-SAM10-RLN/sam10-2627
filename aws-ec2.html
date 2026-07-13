@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EC2 Dashboard | SAM10 AWS Demo</title>
+  <meta name="description" content="EC2 Dashboard demo page for SAM10.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="aws-body">
+  <div class="aws-console aws-console-dense">
+    <header class="console-topbar console-topbar-console console-topbar-compact">
+      <div class="console-topbar-left console-topbar-left-compact">
+        <div class="console-product-title">AWS Management Console Demo</div>
+        <div class="console-context-row">
+          <span class="console-context-pill">Region: us-east-1</span>
+          <span class="console-context-pill">Account: sam10-demo</span>
+          <span class="console-context-pill">Role: AdministratorAccess</span>
+        </div>
+      </div>
+      <div class="console-search console-search-compact">
+        <label>
+          <span class="sr-only">Search AWS services</span>
+          <input type="search" value="Amazon EC2" aria-label="Search AWS services">
+        </label>
+      </div>
+      <nav class="console-main-nav" aria-label="Site navigation">
+        <a class="console-main-link" href="index.html">Course Home</a>
+        <a class="console-main-link" href="lectures.html">Lectures</a>
+        <a class="console-main-link" href="labs.html">Labs</a>
+        <a class="console-main-link" href="shell.html">Shell</a>
+      </nav>
+    </header>
+
+    <div class="aws-service-nav" aria-label="AWS service dashboards">
+      <a class="aws-service-link " href="aws-console.html">Overview</a>
+      <a class="aws-service-link is-active" href="aws-ec2.html">EC2</a>
+      <a class="aws-service-link " href="aws-vpc.html">VPC</a>
+      <a class="aws-service-link " href="aws-iam.html">IAM</a>
+      <a class="aws-service-link " href="aws-s3.html">S3</a>
+      <a class="aws-service-link " href="aws-cloudwatch.html">CloudWatch</a>
+      <a class="aws-service-link " href="aws-billing.html">Billing</a>
+    </div>
+    <div class="console-shell">
+      <aside class="console-sidebar console-sidebar-console">
+        <div class="sidebar-group">
+          <p class="sidebar-title">Dashboards</p>
+          <a class="sidebar-link " href="aws-console.html">Overview</a>
+          <a class="sidebar-link is-active" href="aws-ec2.html">EC2 Dashboard</a>
+          <a class="sidebar-link " href="aws-vpc.html">VPC Dashboard</a>
+          <a class="sidebar-link " href="aws-iam.html">IAM Dashboard</a>
+          <a class="sidebar-link " href="aws-s3.html">S3 Dashboard</a>
+          <a class="sidebar-link " href="aws-cloudwatch.html">CloudWatch Dashboard</a>
+          <a class="sidebar-link " href="aws-billing.html">Billing Dashboard</a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-title">Course links</p>
+          <a class="sidebar-link" href="artifacts.html">Written Artifacts</a>
+          <a class="sidebar-link" href="commands.html">Linux Commands</a>
+          <a class="sidebar-link" href="shell.html">Linux Shell</a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-title">Use</p>
+          <p class="sidebar-note">Static dashboards for layout recognition, service terminology, and core AWS administration workflows.</p>
+        </div>
+      </aside>
+      <main class="console-main aws-main">
+        <section class="page-banner aws-page-banner"><div><p class="eyebrow">Compute</p><h1>Amazon EC2 dashboard</h1><p>Review instances, templates, attached storage, and health signals for the sample environment.</p></div><div class="page-banner-actions"><a class="primary-button" href="aws-console.html">Back to overview</a><a class="secondary-button" href="aws-vpc.html">Open VPC</a></div></section><section class="aws-overview"><article class="aws-metric-card"><p class="aws-metric-label">Running instances</p><h2>4</h2><p class="aws-metric-text">2 web, 1 bastion, 1 db-support</p></article><article class="aws-metric-card"><p class="aws-metric-label">Launch templates</p><h2>3</h2><p class="aws-metric-text">Reusable launch parameters for consistent scaling</p></article><article class="aws-metric-card"><p class="aws-metric-label">Elastic IPs</p><h2>2</h2><p class="aws-metric-text">Allocated to public edge and admin access</p></article></section><section class="aws-panel"><div class="aws-panel-head"><div><p class="aws-panel-kicker">Instances</p><h3>Running compute resources</h3></div><span class="aws-badge aws-badge-live">Healthy</span></div><div class="aws-table-wrap"><table class="aws-table"><thead><tr><th>Name</th><th>Instance ID</th><th>Type</th><th>AZ</th><th>Private IP</th><th>Status</th></tr></thead><tbody><tr><td>web-01</td><td>i-0ad41f1c8b2</td><td>t3.micro</td><td>use1-az2</td><td>10.0.1.10</td><td><span class="aws-status ok">running</span></td></tr><tr><td>web-02</td><td>i-0ad41f1c8b3</td><td>t3.micro</td><td>use1-az4</td><td>10.0.1.11</td><td><span class="aws-status ok">running</span></td></tr><tr><td>bastion-01</td><td>i-0ad41f1c8b4</td><td>t3.small</td><td>use1-az2</td><td>10.0.10.5</td><td><span class="aws-status ok">running</span></td></tr><tr><td>db-support-01</td><td>i-0ad41f1c8b5</td><td>t3.medium</td><td>use1-az4</td><td>10.0.20.12</td><td><span class="aws-status warn">impaired</span></td></tr></tbody></table></div></section><section class="aws-panel-grid"><article class="aws-panel"><div class="aws-panel-head"><div><p class="aws-panel-kicker">Templates</p><h3>Provisioning assets</h3></div></div><ul class="aws-billing-list"><li><span>web-tier-template</span><strong>AMI + user data + SG</strong></li><li><span>bastion-template</span><strong>SSH access and logging</strong></li><li><span>db-support-template</span><strong>Higher memory footprint</strong></li></ul></article><article class="aws-panel"><div class="aws-panel-head"><div><p class="aws-panel-kicker">Learning note</p><h3>Student focus</h3></div></div><ul class="outcome-list"><li>Connect instance sizing to workload requirements.</li><li>Notice how AMIs, templates, and security groups shape repeatable provisioning.</li><li>Relate impaired health checks to reliability and monitoring topics.</li></ul></article></section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
