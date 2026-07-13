@@ -335,6 +335,37 @@ const modules = [
       ],
       answer: "AWS WAF"
     }
+  },
+  {
+    title: "High Availability, Scalability, and Reliability Engineering",
+    summary: "Reliability engineering, scaling, fault tolerance, elasticity, health checks, and resilient AWS infrastructure design.",
+    topics: [
+      "Reliability Engineering",
+      "Scalability",
+      "Fault Tolerance",
+      "Elasticity",
+      "Auto Scaling",
+      "Elastic Load Balancer",
+      "Multi-AZ",
+      "Health Checks",
+      "Infrastructure Scaling Strategies"
+    ],
+    checks: [
+      "Explain the principles of high availability, scalability, and fault tolerance.",
+      "Differentiate vertical and horizontal scaling strategies.",
+      "Explain how AWS services support reliable and resilient cloud infrastructures.",
+      "Analyze cloud architectures with respect to availability and performance.",
+      "Evaluate infrastructure designs using reliability engineering principles."
+    ],
+    quiz: {
+      question: "What is a key difference between vertical and horizontal scaling?",
+      options: [
+        "Vertical scaling adds capacity to a single node, while horizontal scaling adds more nodes",
+        "Vertical scaling always improves availability more than horizontal scaling",
+        "Horizontal scaling removes the need for load balancing"
+      ],
+      answer: "Vertical scaling adds capacity to a single node, while horizontal scaling adds more nodes"
+    }
   }
 ];
 
@@ -390,6 +421,10 @@ const flashcards = [
   {
     question: "What does defense in depth mean in cloud security?",
     answer: "It means using multiple layers of security controls so that one control failure does not fully expose the system."
+  },
+  {
+    question: "Why are Multi-AZ and health checks important in resilient architectures?",
+    answer: "They help workloads continue operating during failures by spreading resources and detecting unhealthy components for recovery or rerouting."
   }
 ];
 
