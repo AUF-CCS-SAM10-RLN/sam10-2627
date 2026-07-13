@@ -35,11 +35,12 @@
         <a class="nav-link" href="labs.html#lab-4">Topic 4 Lab</a>
         <a class="nav-link" href="labs.html#lab-5">Topic 5 Lab</a>
         <a class="nav-link" href="labs.html#lab-6">Topic 6 Lab</a>
+        <a class="nav-link" href="labs.html#lab-7">Topic 7 Lab</a>
         <a class="nav-link" href="artifacts.html">Artifacts</a>
         <a class="nav-link" href="commands.html">Commands</a>
         <a class="nav-link" href="shell.html">Shell</a>
         <a class="nav-link" href="aws-console.html">AWS Demo</a>
-        <span class="console-chip">6 Labs</span>
+        <span class="console-chip">7 Labs</span>
         <a class="nav-link" href="index.html">Home</a>
       </div>
     </header>
@@ -64,6 +65,7 @@
           <a class="sidebar-link" href="#lab-4">Topic 4 Lab</a>
           <a class="sidebar-link" href="#lab-5">Topic 5 Lab</a>
           <a class="sidebar-link" href="#lab-6">Topic 6 Lab</a>
+          <a class="sidebar-link" href="#lab-7">Topic 7 Lab</a>
         </div>
         <div class="sidebar-group">
           <p class="sidebar-title">Use</p>
@@ -79,7 +81,7 @@
             <p class="eyebrow">Laboratory activities</p>
             <h1>SAM10 hands-on activities</h1>
             <p class="section-copy">
-              Practical exercises aligned to the six published lecture topics. Each lab is scoped to
+              Practical exercises aligned to the seven published lecture topics. Each lab is scoped to
               3 total hours and may be delivered in one meeting or split across two shorter meetings.
             </p>
           </div>
@@ -99,6 +101,7 @@
             <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="lab-4" data-tab-target="lab-4">Topic 4 Lab</button>
             <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="lab-5" data-tab-target="lab-5">Topic 5 Lab</button>
             <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="lab-6" data-tab-target="lab-6">Topic 6 Lab</button>
+            <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="lab-7" data-tab-target="lab-7">Topic 7 Lab</button>
           </div>
 
           <section class="tab-panels">
@@ -238,6 +241,28 @@
                   <section class="lab-section"><h3>Information for students</h3><ul class="outcome-list"><li>Focus on what a Linux administrator needs to inspect regularly, not only on memorizing command names.</li><li>Permissions should be interpreted in terms of administrative risk and operational need.</li><li>SSH remains important, but managed tools such as AWS Systems Manager can reduce exposure and improve control.</li></ul></section>
                   <section class="lab-section"><h3>Useful resources</h3><ul class="resource-list"><li><a href="https://docs.aws.amazon.com/systems-manager/" target="_blank" rel="noreferrer">AWS Systems Manager documentation</a></li><li><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html" target="_blank" rel="noreferrer">AWS Systems Manager Session Manager</a></li><li><a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connect-linux-inst-ssh.html" target="_blank" rel="noreferrer">Connect to your Linux instance using SSH</a></li><li><a href="https://ubuntu.com/server/docs" target="_blank" rel="noreferrer">Ubuntu Server documentation</a></li><li><a href="https://www.gnu.org/software/bash/manual/bash.html" target="_blank" rel="noreferrer">Bash Reference Manual</a></li></ul></section>
                   <section class="lab-section"><h3>Video lectures and internet materials</h3><ul class="resource-list"><li><a href="https://aws.amazon.com/blogs/training-and-certification/cloud-practitioner-essentials-digital-course/" target="_blank" rel="noreferrer">AWS Cloud Practitioner Essentials digital course overview</a> - entry point to current AWS foundational training.</li><li><a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html" target="_blank" rel="noreferrer">AWS Session Manager guide</a> - useful for understanding remote administration without relying only on inbound SSH.</li><li><a href="https://ubuntu.com/server/docs" target="_blank" rel="noreferrer">Ubuntu Server documentation</a> - practical Linux administration reference for file systems, users, packages, and services.</li></ul></section>
+                </div>
+              </article>
+            </section>
+            <section class="tab-panel" id="lab-7" role="tabpanel" hidden>
+              <article class="module-card lab-card">
+                <div class="lab-header"><div><p class="lab-tag">Topic 7</p><h3>Storage Administration Lab</h3><p class="module-summary">Evaluate enterprise storage needs by comparing block, object, and file storage, then recommend AWS storage services and lifecycle strategies.</p></div><p class="lab-duration">3 hours</p></div>
+                <div class="lab-grid">
+                  <section class="lab-section"><h3>Dummy case study</h3><p class="panel-copy">A growing organization needs storage for website assets, database volumes, shared team files, and archived records. The systems administrator must recommend appropriate storage architectures and AWS services while balancing performance, availability, and cost.</p></section>
+                  <section class="lab-section"><h3>Title</h3><p class="panel-copy">Storage Administration Laboratory Activity</p></section>
+                  <section class="lab-section"><h3>Description</h3><p class="panel-copy">Students analyze a business storage scenario and prepare a storage strategy that distinguishes file, block, and object storage, connects RAID and performance concepts to enterprise needs, and maps those needs to AWS storage services.</p></section>
+                  <section class="lab-section"><h3>3-hour structure</h3><ul class="outcome-list"><li>Meeting format: 1 session of 3 hours or 2 meetings of 1.5 hours each.</li><li>0:00-0:30 review storage hierarchy, storage architectures, and the case study.</li><li>0:30-1:20 compare block, object, and file storage and review RAID and performance concepts.</li><li>1:20-2:10 map organizational requirements to Amazon S3, EBS, EFS, and lifecycle policies.</li><li>2:10-3:00 complete the storage strategy document and final recommendation.</li></ul></section>
+                  <section class="lab-section"><h3>Learning objectives</h3><ul class="outcome-list"><li>Differentiate block, object, and file storage architectures.</li><li>Explain enterprise storage technologies used in cloud infrastructure.</li><li>Analyze storage requirements and match them to appropriate solutions.</li><li>Evaluate storage strategies using performance, availability, and cost.</li></ul></section>
+                  <section class="lab-section"><h3>Required outputs</h3><ul class="outcome-list"><li>One storage comparison worksheet covering block, object, and file storage</li><li>One short RAID and storage-performance explanation sheet</li><li>One AWS storage mapping table covering S3, EBS, EFS, and lifecycle policies</li><li>One storage requirement analysis for at least 4 business needs</li><li>One final recommendation paragraph justifying the chosen strategy</li></ul></section>
+                  <section class="lab-section"><h3>Written artifact to produce</h3><ul class="outcome-list"><li>Create a <code>storage strategy brief</code> for the organization.</li><li>It must include workload-to-storage mapping, performance and availability notes, lifecycle decisions, and cost-aware reasoning.</li><li>The brief should be practical enough for management review and technical follow-up.</li></ul></section>
+                  <section class="lab-section"><h3>Teacher activities</h3><ul class="outcome-list"><li>Introduce the storage case study and review storage architecture principles.</li><li>Explain the differences between object, block, and file storage with enterprise examples.</li><li>Demonstrate how RAID, throughput, latency, and lifecycle policies affect storage planning.</li><li>Guide students in translating storage needs into AWS service choices and a written strategy.</li></ul></section>
+                  <section class="lab-section"><h3>Student learning activities</h3><ol class="lab-list"><li>Compare block, object, and file storage using at least 5 criteria such as access model, performance, persistence, and workload fit.</li><li>Explain RAID and storage-performance concepts in relation to enterprise systems.</li><li>Analyze at least 4 organizational storage needs and select the best-fit storage model for each.</li><li>Map each requirement to AWS services such as Amazon S3, Amazon EBS, or Amazon EFS.</li><li>Describe how lifecycle policies affect cost and storage management over time.</li><li>Write a short final recommendation that balances performance, availability, and cost.</li></ol></section>
+                  <section class="lab-section"><h3>Linux commands to use and master</h3><ul class="resource-list"><li><code>df -h</code>, <code>du -sh</code>, <code>lsblk</code> - inspect file systems and storage usage</li><li><code>mount</code>, <code>umount</code> - understand file-system attachment concepts</li><li><code>ls -la</code>, <code>cp</code>, <code>mv</code> - connect storage structure to file operations</li><li><code>tar</code>, <code>gzip</code> - relate archival and storage handling to enterprise operations</li><li><code>iostat</code> or <code>vmstat</code> - discuss basic storage-performance observation where available</li></ul></section>
+                  <section class="lab-section"><h3>Assessment methodologies</h3><ul class="outcome-list"><li>Storage comparison worksheet check for conceptual accuracy.</li><li>Requirement-mapping rubric for workload-to-service alignment.</li><li>Short written assessment for RAID and performance understanding.</li><li>Strategy brief review for technical reasoning, clarity, and cost-awareness.</li></ul></section>
+                  <section class="lab-section"><h3>Skills reinforced</h3><ul class="outcome-list"><li>Storage architecture analysis</li><li>Workload-to-storage mapping</li><li>AWS storage service selection</li><li>Performance and availability reasoning</li><li>Lifecycle and cost planning</li></ul></section>
+                  <section class="lab-section"><h3>Information for students</h3><ul class="outcome-list"><li>Choose storage based on workload behavior, not only on capacity size.</li><li>Performance considerations include latency, throughput, durability, and access pattern.</li><li>Lifecycle policies matter because enterprise storage planning includes both active and long-term data.</li></ul></section>
+                  <section class="lab-section"><h3>Useful resources</h3><ul class="resource-list"><li><a href="https://aws.amazon.com/s3/" target="_blank" rel="noreferrer">Amazon S3</a></li><li><a href="https://aws.amazon.com/ebs/" target="_blank" rel="noreferrer">Amazon EBS</a></li><li><a href="https://aws.amazon.com/efs/" target="_blank" rel="noreferrer">Amazon EFS</a></li><li><a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html" target="_blank" rel="noreferrer">Managing your storage lifecycle</a></li><li><a href="https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html" target="_blank" rel="noreferrer">What is Amazon EBS?</a></li><li><a href="https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html" target="_blank" rel="noreferrer">What is Amazon EFS?</a></li></ul></section>
+                  <section class="lab-section"><h3>Video lectures and internet materials</h3><ul class="resource-list"><li><a href="https://aws.amazon.com/blogs/training-and-certification/cloud-practitioner-essentials-digital-course/" target="_blank" rel="noreferrer">AWS Cloud Practitioner Essentials digital course overview</a> - current foundational training entry point with AWS storage context.</li><li><a href="https://aws.amazon.com/s3/" target="_blank" rel="noreferrer">Amazon S3 overview</a> - public reference for object-storage use cases and features.</li><li><a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html" target="_blank" rel="noreferrer">S3 lifecycle management guide</a> - practical reading for long-term storage planning.</li></ul></section>
                 </div>
               </article>
             </section>

@@ -181,6 +181,38 @@ const modules = [
       ],
       answer: "It can support managed administration workflows without relying only on direct inbound SSH access"
     }
+  },
+  {
+    title: "Storage Administration",
+    summary: "Storage hierarchy, enterprise storage models, RAID, performance, and AWS storage services.",
+    topics: [
+      "Storage Hierarchy",
+      "Object Storage",
+      "Block Storage",
+      "File Storage",
+      "RAID",
+      "Storage Performance",
+      "Amazon S3",
+      "Amazon EBS",
+      "Amazon EFS",
+      "Storage Lifecycle Policies"
+    ],
+    checks: [
+      "Differentiate block, object, and file storage architectures.",
+      "Explain storage technologies used in enterprise cloud infrastructure.",
+      "Analyze organizational storage requirements and appropriate storage solutions.",
+      "Explain AWS storage services in relation to storage architecture principles.",
+      "Evaluate storage strategies based on performance, availability, and cost considerations."
+    ],
+    quiz: {
+      question: "Which AWS service is most directly aligned with scalable object storage?",
+      options: [
+        "Amazon S3",
+        "Amazon EBS",
+        "Amazon EC2"
+      ],
+      answer: "Amazon S3"
+    }
   }
 ];
 
@@ -216,6 +248,10 @@ const flashcards = [
   {
     question: "Why is AWS Systems Manager useful in Linux administration?",
     answer: "It supports secure remote management, automation, and operational control without depending only on direct SSH access."
+  },
+  {
+    question: "How is object storage different from block storage?",
+    answer: "Object storage manages data as discrete objects with metadata, while block storage presents raw volumes for attached operating systems and applications."
   }
 ];
 
