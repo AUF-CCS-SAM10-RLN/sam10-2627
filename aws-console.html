@@ -6,7 +6,7 @@
   <title>AWS Console Demo | SAM10</title>
   <meta
     name="description"
-    content="Static AWS Console-style learning page for SAM10."
+    content="Static AWS Management Console-style learning page for SAM10."
   >
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,130 +17,186 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="aws-body">
-  <div class="aws-console">
-    <header class="console-topbar">
+  <div class="aws-console aws-console-dense">
+    <header class="console-topbar console-topbar-console">
       <div class="console-topbar-left">
         <div class="console-logo">aws</div>
-        <div class="console-title">Management Console Demo</div>
+        <div class="console-title">AWS Management Console Demo</div>
       </div>
       <div class="console-search">
         <label>
-          <span class="sr-only">Search AWS services</span>
+          <span class="sr-only">Search AWS services, features, blogs, docs, and marketplace</span>
           <input type="search" value="ec2" aria-label="Search AWS services">
         </label>
       </div>
       <div class="console-topbar-right">
         <a class="nav-link" href="lectures.html">Lectures</a>
         <a class="nav-link" href="labs.html">Labs</a>
-        <a class="nav-link" href="artifacts.html">Artifacts</a>
         <a class="nav-link" href="commands.html">Commands</a>
-        <a class="nav-link" href="aws-console.html#ec2">EC2</a>
-        <a class="nav-link" href="aws-console.html#billing">Billing</a>
-        <span class="console-chip">Region: ap-southeast-2</span>
-        <span class="console-chip">Account: sam10-lab</span>
+        <a class="nav-link" href="shell.html">Shell</a>
+        <span class="console-chip">N. Virginia</span>
+        <span class="console-chip">Account ID: 2627-0135</span>
+        <span class="console-chip">Role: AdministratorAccess</span>
         <a class="nav-link" href="index.html">Course Home</a>
       </div>
     </header>
 
+    <div class="aws-utilitybar">
+      <div class="aws-utilitybar-links">
+        <a href="#console-home">Console Home</a>
+        <a href="#services">Services</a>
+        <a href="#ec2-dashboard">EC2</a>
+        <a href="#networking">VPC</a>
+        <a href="#storage">S3</a>
+        <a href="#identity">IAM</a>
+        <a href="#monitoring">CloudWatch</a>
+        <a href="#billing">Billing</a>
+      </div>
+      <div class="aws-utilitybar-meta">
+        <span class="aws-utility-pill">Support</span>
+        <span class="aws-utility-pill">CloudShell</span>
+        <span class="aws-utility-pill">Notifications</span>
+      </div>
+    </div>
+
     <div class="console-shell">
-      <aside class="console-sidebar">
+      <aside class="console-sidebar console-sidebar-console">
         <div class="sidebar-group">
           <p class="sidebar-title">Recently visited</p>
-          <a class="sidebar-link is-active" href="#ec2">EC2 Dashboard</a>
-          <a class="sidebar-link" href="#monitoring">CloudWatch</a>
+          <a class="sidebar-link is-active" href="#ec2-dashboard">EC2 Dashboard</a>
+          <a class="sidebar-link" href="#networking">VPC Dashboard</a>
+          <a class="sidebar-link" href="#identity">IAM Dashboard</a>
           <a class="sidebar-link" href="#billing">Billing</a>
+          <a class="sidebar-link" href="#monitoring">CloudWatch</a>
         </div>
         <div class="sidebar-group">
-          <p class="sidebar-title">Core services</p>
+          <p class="sidebar-title">All services</p>
           <a class="sidebar-link" href="#services">Compute</a>
+          <a class="sidebar-link" href="#services">Containers</a>
           <a class="sidebar-link" href="#services">Storage</a>
+          <a class="sidebar-link" href="#services">Database</a>
           <a class="sidebar-link" href="#services">Networking</a>
-          <a class="sidebar-link" href="#services">IAM</a>
+          <a class="sidebar-link" href="#services">Security, Identity, &amp; Compliance</a>
+          <a class="sidebar-link" href="#services">Management &amp; Governance</a>
         </div>
         <div class="sidebar-group">
-          <p class="sidebar-title">For students</p>
+          <p class="sidebar-title">Student use</p>
           <p class="sidebar-note">
-            This is a static practice interface. Use it to recognize console layout, service names,
-            region selectors, metrics, and billing panels.
+            This is a static learning interface. It is designed to help students recognize the
+            structure, terminology, and workflows of the AWS console before using live accounts.
           </p>
         </div>
         <div class="sidebar-group">
-          <p class="sidebar-title">Reference</p>
+          <p class="sidebar-title">Course links</p>
           <a class="sidebar-link" href="artifacts.html">Written Artifacts</a>
           <a class="sidebar-link" href="commands.html">Linux Commands</a>
+          <a class="sidebar-link" href="shell.html">Linux Shell</a>
         </div>
       </aside>
 
       <main class="console-main aws-main">
-        <section class="page-banner">
+        <section class="page-banner aws-page-banner" id="console-home">
           <div>
-            <p class="eyebrow">Topic 1 and Topic 2</p>
-            <h1>EC2 dashboard sample</h1>
+            <p class="eyebrow">Static Training Environment</p>
+            <h1>AWS Management Console overview</h1>
             <p>
-              A console-style mockup that helps students identify the kinds of controls and
-              status panels they will meet in a real AWS environment.
+              A more realistic management-console mock for Topics 1 through 5. Students can inspect
+              common administration surfaces across compute, networking, identity, storage,
+              monitoring, and billing.
             </p>
           </div>
           <div class="page-banner-actions">
-            <a class="primary-button" href="labs.html">Back to Labs</a>
-            <a class="secondary-button" href="#billing">Jump to Billing</a>
+            <a class="primary-button" href="#ec2-dashboard">Open EC2</a>
+            <a class="secondary-button" href="#billing">View billing</a>
+            <a class="secondary-button" href="shell.html">Open Linux shell</a>
           </div>
         </section>
 
-        <section class="aws-overview" id="ec2">
+        <section class="aws-overview aws-overview-wide">
           <article class="aws-metric-card">
             <p class="aws-metric-label">Running instances</p>
+            <h2>4</h2>
+            <p class="aws-metric-text">2 web, 1 bastion, 1 database support node</p>
+          </article>
+          <article class="aws-metric-card">
+            <p class="aws-metric-label">Estimated month-to-date cost</p>
+            <h2>$214.80</h2>
+            <p class="aws-metric-text">Compute, storage, NAT, monitoring, and transfer</p>
+          </article>
+          <article class="aws-metric-card">
+            <p class="aws-metric-label">Regions in use</p>
+            <h2>1</h2>
+            <p class="aws-metric-text">us-east-1 with workloads split across 2 Availability Zones</p>
+          </article>
+          <article class="aws-metric-card">
+            <p class="aws-metric-label">Security findings</p>
             <h2>3</h2>
-            <p class="aws-metric-text">2 web servers, 1 database instance</p>
-          </article>
-          <article class="aws-metric-card">
-            <p class="aws-metric-label">Availability Zones</p>
-            <h2>2</h2>
-            <p class="aws-metric-text">Balanced across ap-southeast-2a and ap-southeast-2b</p>
-          </article>
-          <article class="aws-metric-card">
-            <p class="aws-metric-label">Estimated monthly cost</p>
-            <h2>$86</h2>
-            <p class="aws-metric-text">Compute, storage, and monitoring included</p>
+            <p class="aws-metric-text">1 high, 2 medium from routine posture review</p>
           </article>
         </section>
 
-        <section class="aws-panel-grid">
-          <article class="aws-panel">
-            <div class="aws-panel-head">
-              <div>
-                <p class="aws-panel-kicker">Service summary</p>
-                <h3>Compute services</h3>
-              </div>
-              <span class="aws-badge">Demo</span>
+        <section class="aws-panel" id="services">
+          <div class="aws-panel-head">
+            <div>
+              <p class="aws-panel-kicker">Services</p>
+              <h3>Essential AWS services for SAM10</h3>
             </div>
-            <div class="aws-service-grid" id="services">
-              <div class="aws-service-card">
-                <p class="aws-service-name">Amazon EC2</p>
-                <p class="aws-service-text">Virtual machines for application hosting and admin practice.</p>
-              </div>
-              <div class="aws-service-card">
-                <p class="aws-service-name">Elastic Load Balancing</p>
-                <p class="aws-service-text">Distributes requests across multiple instances.</p>
-              </div>
-              <div class="aws-service-card">
-                <p class="aws-service-name">Amazon ECS</p>
-                <p class="aws-service-text">Container orchestration for lightweight deployments.</p>
-              </div>
-              <div class="aws-service-card">
-                <p class="aws-service-name">AWS Lambda</p>
-                <p class="aws-service-text">Event-driven compute without server management.</p>
+            <span class="aws-badge">Core admin scope</span>
+          </div>
+          <div class="aws-catalog-grid">
+            <div class="aws-service-category">
+              <h4>Compute</h4>
+              <div class="aws-service-grid">
+                <div class="aws-service-card"><p class="aws-service-name">Amazon EC2</p><p class="aws-service-text">Launch and manage virtual machines.</p></div>
+                <div class="aws-service-card"><p class="aws-service-name">Auto Scaling</p><p class="aws-service-text">Scale compute capacity based on demand.</p></div>
+                <div class="aws-service-card"><p class="aws-service-name">Elastic Load Balancing</p><p class="aws-service-text">Distribute traffic across healthy targets.</p></div>
+                <div class="aws-service-card"><p class="aws-service-name">AWS Lambda</p><p class="aws-service-text">Run event-driven functions without server management.</p></div>
               </div>
             </div>
-          </article>
+            <div class="aws-service-category">
+              <h4>Networking</h4>
+              <div class="aws-service-grid">
+                <div class="aws-service-card"><p class="aws-service-name">Amazon VPC</p><p class="aws-service-text">Create isolated virtual networks, subnets, and routes.</p></div>
+                <div class="aws-service-card"><p class="aws-service-name">Route 53</p><p class="aws-service-text">Manage DNS zones, records, and health checks.</p></div>
+                <div class="aws-service-card"><p class="aws-service-name">NAT Gateway</p><p class="aws-service-text">Provide outbound internet access from private subnets.</p></div>
+                <div class="aws-service-card"><p class="aws-service-name">Internet Gateway</p><p class="aws-service-text">Enable internet routing for public subnets.</p></div>
+              </div>
+            </div>
+            <div class="aws-service-category">
+              <h4>Security and identity</h4>
+              <div class="aws-service-grid">
+                <div class="aws-service-card"><p class="aws-service-name">AWS IAM</p><p class="aws-service-text">Define users, roles, policies, and secure access.</p></div>
+                <div class="aws-service-card"><p class="aws-service-name">AWS Organizations</p><p class="aws-service-text">Apply account governance and policy boundaries.</p></div>
+                <div class="aws-service-card"><p class="aws-service-name">AWS KMS</p><p class="aws-service-text">Manage encryption keys for protected data.</p></div>
+                <div class="aws-service-card"><p class="aws-service-name">AWS Security Hub</p><p class="aws-service-text">Aggregate security findings and posture checks.</p></div>
+              </div>
+            </div>
+            <div class="aws-service-category">
+              <h4>Storage and operations</h4>
+              <div class="aws-service-grid">
+                <div class="aws-service-card"><p class="aws-service-name">Amazon S3</p><p class="aws-service-text">Store backups, logs, static content, and artifacts.</p></div>
+                <div class="aws-service-card"><p class="aws-service-name">Amazon EBS</p><p class="aws-service-text">Persistent block storage for EC2 workloads.</p></div>
+                <div class="aws-service-card"><p class="aws-service-name">CloudWatch</p><p class="aws-service-text">Inspect metrics, alarms, and log streams.</p></div>
+                <div class="aws-service-card"><p class="aws-service-name">CloudFormation</p><p class="aws-service-text">Define infrastructure as code for repeatable provisioning.</p></div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-          <article class="aws-panel">
+        <section class="aws-panel-grid aws-panel-grid-strong">
+          <article class="aws-panel" id="ec2-dashboard">
             <div class="aws-panel-head">
               <div>
-                <p class="aws-panel-kicker">Instances</p>
-                <h3>Running resources</h3>
+                <p class="aws-panel-kicker">EC2 Dashboard</p>
+                <h3>Instances, templates, and health</h3>
               </div>
-              <span class="aws-badge aws-badge-live">Healthy</span>
+              <span class="aws-badge aws-badge-live">4 running</span>
+            </div>
+            <div class="aws-mini-metrics">
+              <div><span>Launch templates</span><strong>3</strong></div>
+              <div><span>Elastic IPs</span><strong>2 allocated</strong></div>
+              <div><span>AMIs</span><strong>5 available</strong></div>
+              <div><span>Volumes</span><strong>8 attached</strong></div>
             </div>
             <div class="aws-table-wrap">
               <table class="aws-table">
@@ -150,33 +206,154 @@
                     <th>Instance ID</th>
                     <th>Type</th>
                     <th>AZ</th>
+                    <th>Private IP</th>
+                    <th>Security group</th>
                     <th>Status</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>sam10-web-01</td>
-                    <td>i-08af12c1</td>
+                    <td>web-01</td>
+                    <td>i-0ad41f1c8b2</td>
                     <td>t3.micro</td>
-                    <td>2a</td>
+                    <td>use1-az2</td>
+                    <td>10.0.1.10</td>
+                    <td>sg-web-public</td>
                     <td><span class="aws-status ok">running</span></td>
                   </tr>
                   <tr>
-                    <td>sam10-web-02</td>
-                    <td>i-08af12c2</td>
+                    <td>web-02</td>
+                    <td>i-0ad41f1c8b3</td>
                     <td>t3.micro</td>
-                    <td>2b</td>
+                    <td>use1-az4</td>
+                    <td>10.0.1.11</td>
+                    <td>sg-web-public</td>
                     <td><span class="aws-status ok">running</span></td>
                   </tr>
                   <tr>
-                    <td>sam10-db-01</td>
-                    <td>i-08af12c3</td>
+                    <td>bastion-01</td>
+                    <td>i-0ad41f1c8b4</td>
                     <td>t3.small</td>
-                    <td>2a</td>
-                    <td><span class="aws-status warn">initializing</span></td>
+                    <td>use1-az2</td>
+                    <td>10.0.10.5</td>
+                    <td>sg-admin-ssh</td>
+                    <td><span class="aws-status ok">running</span></td>
+                  </tr>
+                  <tr>
+                    <td>db-support-01</td>
+                    <td>i-0ad41f1c8b5</td>
+                    <td>t3.medium</td>
+                    <td>use1-az4</td>
+                    <td>10.0.20.12</td>
+                    <td>sg-db-private</td>
+                    <td><span class="aws-status warn">impaired checks</span></td>
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </article>
+
+          <article class="aws-panel" id="networking">
+            <div class="aws-panel-head">
+              <div>
+                <p class="aws-panel-kicker">VPC Dashboard</p>
+                <h3>Network layout and traffic controls</h3>
+              </div>
+              <span class="aws-badge">1 VPC</span>
+            </div>
+            <div class="aws-network-grid">
+              <div class="aws-network-card">
+                <h4>VPC</h4>
+                <p>sam10-prod-vpc</p>
+                <p class="aws-service-text">CIDR: 10.0.0.0/16</p>
+              </div>
+              <div class="aws-network-card">
+                <h4>Public subnets</h4>
+                <p>10.0.1.0/24, 10.0.2.0/24</p>
+                <p class="aws-service-text">ALB and bastion access</p>
+              </div>
+              <div class="aws-network-card">
+                <h4>Private subnets</h4>
+                <p>10.0.20.0/24, 10.0.21.0/24</p>
+                <p class="aws-service-text">App and DB support workloads</p>
+              </div>
+              <div class="aws-network-card">
+                <h4>Routing</h4>
+                <p>IGW + NAT Gateway</p>
+                <p class="aws-service-text">Public inbound, private outbound only</p>
+              </div>
+              <div class="aws-network-card">
+                <h4>Security groups</h4>
+                <p>3 active</p>
+                <p class="aws-service-text">Web, admin SSH, private DB support</p>
+              </div>
+              <div class="aws-network-card">
+                <h4>Network ACLs</h4>
+                <p>2 applied</p>
+                <p class="aws-service-text">Public edge and private application tiers</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="aws-panel-grid">
+          <article class="aws-panel" id="identity">
+            <div class="aws-panel-head">
+              <div>
+                <p class="aws-panel-kicker">IAM Dashboard</p>
+                <h3>Access, roles, and security posture</h3>
+              </div>
+              <span class="aws-badge">Governed</span>
+            </div>
+            <div class="aws-split-grid">
+              <div class="aws-split-card">
+                <h4>Identity summary</h4>
+                <ul class="outcome-list">
+                  <li>IAM users: 6</li>
+                  <li>Roles: 9</li>
+                  <li>Groups: 4</li>
+                  <li>MFA enabled: 5 of 6 users</li>
+                </ul>
+              </div>
+              <div class="aws-split-card">
+                <h4>Recommended checks</h4>
+                <ul class="outcome-list">
+                  <li>Rotate inactive access keys</li>
+                  <li>Require MFA for all console users</li>
+                  <li>Review wildcard actions in policies</li>
+                  <li>Prefer roles over long-lived users</li>
+                </ul>
+              </div>
+            </div>
+            <div class="aws-callout">
+              <p class="aws-callout-title">Least privilege note</p>
+              <p>
+                Students should connect IAM users, roles, groups, and policies to the principle of
+                least privilege and governance practices from Topic 3.
+              </p>
+            </div>
+          </article>
+
+          <article class="aws-panel" id="storage">
+            <div class="aws-panel-head">
+              <div>
+                <p class="aws-panel-kicker">S3 and storage</p>
+                <h3>Bucket inventory and backup posture</h3>
+              </div>
+              <span class="aws-badge">4 buckets</span>
+            </div>
+            <ul class="aws-billing-list">
+              <li><span>sam10-static-site</span><strong>Versioning enabled</strong></li>
+              <li><span>sam10-backups</span><strong>Lifecycle to Glacier</strong></li>
+              <li><span>sam10-vpc-flow-logs</span><strong>Encrypted with SSE-S3</strong></li>
+              <li><span>sam10-lab-artifacts</span><strong>Class projects and exports</strong></li>
+            </ul>
+            <div class="aws-callout">
+              <p class="aws-callout-title">Storage note</p>
+              <p>
+                This section helps students connect backup practices, logging, and artifact storage
+                to written operational documents and lifecycle management.
+              </p>
             </div>
           </article>
         </section>
@@ -186,24 +363,29 @@
             <div class="aws-panel-head">
               <div>
                 <p class="aws-panel-kicker">CloudWatch</p>
-                <h3>Monitoring snapshot</h3>
+                <h3>Metrics and alarms snapshot</h3>
               </div>
               <span class="aws-badge">5 minute view</span>
             </div>
             <div class="aws-chart">
-              <div class="aws-bars">
-                <span style="height: 34%"></span>
+              <div class="aws-bars aws-bars-rich">
+                <span style="height: 28%"></span>
+                <span style="height: 47%"></span>
+                <span style="height: 62%"></span>
+                <span style="height: 76%"></span>
+                <span style="height: 58%"></span>
+                <span style="height: 81%"></span>
+                <span style="height: 49%"></span>
+                <span style="height: 37%"></span>
+                <span style="height: 63%"></span>
                 <span style="height: 55%"></span>
                 <span style="height: 42%"></span>
-                <span style="height: 78%"></span>
-                <span style="height: 64%"></span>
-                <span style="height: 48%"></span>
-                <span style="height: 58%"></span>
-                <span style="height: 37%"></span>
+                <span style="height: 31%"></span>
               </div>
               <div class="aws-chart-legend">
-                <p><strong>CPUUtilization</strong> peaks during simulated traffic bursts.</p>
-                <p><strong>NetworkIn</strong> stays stable across both web instances.</p>
+                <p><strong>CPUUtilization:</strong> elevated on `db-support-01` after health-check delays.</p>
+                <p><strong>NetworkIn:</strong> stable across the web tier behind the load balancer.</p>
+                <p><strong>StatusCheckFailed:</strong> 1 active alarm tied to instance recovery analysis.</p>
               </div>
             </div>
           </article>
@@ -211,23 +393,24 @@
           <article class="aws-panel" id="billing">
             <div class="aws-panel-head">
               <div>
-                <p class="aws-panel-kicker">Billing</p>
-                <h3>Pricing and planning sample</h3>
+                <p class="aws-panel-kicker">Billing and Cost Management</p>
+                <h3>Monthly estimate breakdown</h3>
               </div>
-              <span class="aws-badge">Estimated</span>
+              <span class="aws-badge">Forecast</span>
             </div>
             <ul class="aws-billing-list">
-              <li><span>EC2 compute</span><strong>$42.00</strong></li>
-              <li><span>EBS storage</span><strong>$18.50</strong></li>
-              <li><span>Data transfer</span><strong>$11.00</strong></li>
-              <li><span>CloudWatch metrics</span><strong>$6.50</strong></li>
-              <li><span>Contingency</span><strong>$8.00</strong></li>
+              <li><span>EC2 compute</span><strong>$96.40</strong></li>
+              <li><span>EBS volumes and snapshots</span><strong>$34.20</strong></li>
+              <li><span>NAT Gateway</span><strong>$39.10</strong></li>
+              <li><span>Data transfer</span><strong>$18.80</strong></li>
+              <li><span>CloudWatch metrics and logs</span><strong>$12.30</strong></li>
+              <li><span>S3 storage and lifecycle requests</span><strong>$14.00</strong></li>
             </ul>
             <div class="aws-callout">
               <p class="aws-callout-title">Planning note</p>
               <p>
-                Students should connect instance size, region, storage, and monitoring choices to
-                budget impact. This mirrors Topic 2 discussions about cloud trade-offs.
+                This breakdown is useful for Topic 2 and Topic 5. Students should connect design
+                decisions such as instance type, NAT usage, storage, and observability to budget impact.
               </p>
             </div>
           </article>
@@ -245,17 +428,17 @@
               <div class="aws-split-card">
                 <h4>AWS handles</h4>
                 <ul class="outcome-list">
-                  <li>Physical facilities and hardware security</li>
+                  <li>Physical datacenters, power, and hardware protection</li>
                   <li>Availability of foundational cloud services</li>
-                  <li>Global infrastructure and region operations</li>
+                  <li>Managed regional and Availability Zone infrastructure</li>
                 </ul>
               </div>
               <div class="aws-split-card">
                 <h4>Customer handles</h4>
                 <ul class="outcome-list">
-                  <li>Operating system patching</li>
-                  <li>IAM users and access policies</li>
-                  <li>Application configuration and data protection</li>
+                  <li>Operating system patching and host configuration</li>
+                  <li>IAM design, MFA policy, and role assignment</li>
+                  <li>Application hardening, encryption choices, and data controls</li>
                 </ul>
               </div>
             </div>
@@ -269,10 +452,10 @@
               </div>
             </div>
             <ul class="outcome-list">
-              <li>The top bar usually carries account, region, and search tools.</li>
-              <li>The left navigation groups services and recently visited resources.</li>
-              <li>Dashboard cards summarize health, capacity, and costs at a glance.</li>
-              <li>Tables, metrics, and alerts are central to routine administration.</li>
+              <li>Global search, region selectors, and account context stay visible across the top.</li>
+              <li>Services are grouped by domain such as compute, networking, storage, and identity.</li>
+              <li>Operational dashboards combine metrics, resource tables, alarms, and cost summaries.</li>
+              <li>Most administration tasks move between resource inventory, security controls, logs, and cost views.</li>
             </ul>
           </article>
         </section>

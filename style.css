@@ -1,23 +1,24 @@
 :root {
-  --aws-bg: #f3f5f8;
+  --aws-bg: #eff3f8;
   --aws-surface: #ffffff;
-  --aws-surface-alt: #f8fafc;
-  --aws-border: #dbe3ee;
-  --aws-border-strong: #c9d5e6;
-  --aws-text: #111827;
-  --aws-text-soft: #475569;
-  --aws-text-muted: #64748b;
-  --aws-nav: #0f172a;
-  --aws-nav-alt: #111827;
-  --aws-nav-text: #e2e8f0;
-  --aws-nav-muted: #94a3b8;
-  --aws-accent: #f59e0b;
-  --aws-blue: #2563eb;
+  --aws-surface-alt: #f7f9fc;
+  --aws-border: #d5dfea;
+  --aws-border-strong: #bfcedf;
+  --aws-text: #16191f;
+  --aws-text-soft: #445469;
+  --aws-text-muted: #5f6b7a;
+  --aws-nav: #0f1b2a;
+  --aws-nav-alt: #111b29;
+  --aws-nav-text: #e5ecf5;
+  --aws-nav-muted: #a7b6c8;
+  --aws-accent: #ff9900;
+  --aws-blue: #0972d3;
+  --aws-console-panel: #fbfcfe;
   --aws-green-soft: #dcfce7;
   --aws-green-text: #166534;
   --aws-yellow-soft: #fef3c7;
   --aws-yellow-text: #92400e;
-  --aws-shadow: 0 14px 38px rgba(15, 23, 42, 0.08);
+  --aws-shadow: 0 10px 30px rgba(16, 24, 40, 0.08);
   --aws-radius: 18px;
 }
 
@@ -71,7 +72,7 @@ a {
   grid-template-columns: auto 1fr auto;
   gap: 1rem;
   align-items: center;
-  padding: 0.9rem 1.25rem;
+  padding: 0.85rem 1.15rem;
   background: var(--aws-nav-alt);
   color: var(--aws-nav-text);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -109,7 +110,7 @@ a {
 
 .console-title {
   font-size: 0.95rem;
-  color: #cbd5e1;
+  color: #d8e2ef;
 }
 
 .console-search {
@@ -124,16 +125,16 @@ a {
   width: 100%;
   padding: 0.8rem 1rem;
   border-radius: 12px;
-  border: 1px solid #334155;
-  background: var(--aws-nav);
+  border: 1px solid #32445a;
+  background: #182636;
   color: var(--aws-nav-text);
 }
 
 .console-chip {
   padding: 0.45rem 0.7rem;
   border-radius: 999px;
-  background: #1e293b;
-  color: #cbd5e1;
+  background: #1d2936;
+  color: #d3dce6;
   font-size: 0.82rem;
 }
 
@@ -182,7 +183,7 @@ a {
 
 .sidebar-link:hover,
 .sidebar-link.is-active {
-  background: #1e293b;
+  background: #1f2a39;
 }
 
 .sidebar-note {
@@ -218,6 +219,9 @@ a {
   grid-template-columns: 1.3fr auto;
   gap: 1rem;
   padding: 1.5rem;
+  background:
+    radial-gradient(circle at top right, rgba(255, 153, 0, 0.08), transparent 30%),
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
 }
 
 .eyebrow,
@@ -312,6 +316,7 @@ a {
 .flashcard-actions button:hover,
 .quiz-option:hover {
   transform: translateY(-1px);
+  border-color: var(--aws-blue);
 }
 
 .section-head {
@@ -515,7 +520,10 @@ a {
 .lab-section,
 .aws-service-card,
 .aws-split-card,
-.aws-callout {
+.aws-callout,
+.shell-panel,
+.aws-network-card,
+.aws-service-category {
   padding: 1rem;
   border-radius: 14px;
   border: 1px solid var(--aws-border);
@@ -616,6 +624,54 @@ a {
   background: var(--aws-bg);
 }
 
+.console-topbar-console {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+
+.aws-utilitybar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.65rem 1.15rem;
+  background: #162231;
+  color: #dbe5f0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.aws-utilitybar-links,
+.aws-utilitybar-meta,
+.shell-toolbar,
+.shell-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.aws-utilitybar a,
+.aws-utility-pill {
+  color: #dbe5f0;
+  text-decoration: none;
+  font-size: 0.88rem;
+}
+
+.aws-utility-pill {
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.console-sidebar-console {
+  background: #172332;
+}
+
+.aws-page-banner {
+  border-color: #d7e2ef;
+}
+
 .aws-badge,
 .aws-status {
   display: inline-flex;
@@ -634,9 +690,62 @@ a {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.aws-catalog-grid,
+.aws-network-grid,
+.shell-grid,
+.shell-side-stack,
+.aws-mini-metrics {
+  display: grid;
+  gap: 1rem;
+}
+
+.aws-catalog-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.aws-service-category {
+  background: var(--aws-console-panel);
+}
+
+.aws-service-category h4,
+.aws-network-card h4 {
+  margin: 0 0 0.85rem;
+  font-size: 1rem;
+}
+
 .aws-service-name {
   margin: 0 0 0.35rem;
   font-weight: 600;
+}
+
+.aws-mini-metrics {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 1rem;
+}
+
+.aws-mini-metrics div {
+  padding: 0.85rem 0.9rem;
+  border-radius: 12px;
+  background: var(--aws-surface-alt);
+  border: 1px solid var(--aws-border);
+}
+
+.aws-mini-metrics span {
+  display: block;
+  color: var(--aws-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.aws-mini-metrics strong {
+  font-size: 1.05rem;
+}
+
+.aws-network-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.aws-network-card p {
+  margin: 0.2rem 0 0;
 }
 
 .aws-table-wrap {
@@ -677,6 +786,10 @@ a {
   background: linear-gradient(180deg, rgba(37, 99, 235, 0.06), rgba(37, 99, 235, 0));
 }
 
+.aws-bars-rich {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
 .aws-bars span {
   display: block;
   border-radius: 999px 999px 10px 10px;
@@ -714,6 +827,87 @@ a {
   border-color: var(--aws-blue);
 }
 
+.shell-grid {
+  grid-template-columns: minmax(0, 1.6fr) minmax(300px, 0.9fr);
+}
+
+.shell-side-stack {
+  grid-template-columns: 1fr;
+}
+
+.shell-terminal-panel,
+.shell-panel {
+  background: var(--aws-surface);
+  border: 1px solid var(--aws-border);
+  border-radius: var(--aws-radius);
+  box-shadow: var(--aws-shadow);
+}
+
+.shell-panel-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.shell-terminal {
+  min-height: 420px;
+  max-height: 560px;
+  overflow: auto;
+  padding: 1rem;
+  border-radius: 16px;
+  border: 1px solid #203245;
+  background: #0c1622;
+  color: #dce7f4;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.shell-line + .shell-line {
+  margin-top: 0.3rem;
+}
+
+.shell-command-line {
+  color: #f8fafc;
+}
+
+.shell-terminal-prompt,
+.shell-prompt-label {
+  color: #7dd3fc;
+}
+
+.shell-input-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.shell-input {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--aws-border-strong);
+  background: var(--aws-surface-alt);
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.shell-tree pre {
+  margin: 0;
+  padding: 1rem;
+  overflow: auto;
+  border-radius: 16px;
+  border: 1px solid var(--aws-border);
+  background: #f6f9fd;
+  color: var(--aws-text-soft);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
 @media (max-width: 980px) {
   .console-shell,
   .page-banner,
@@ -725,8 +919,12 @@ a {
   .lab-grid,
   .aws-overview,
   .aws-panel-grid,
+  .aws-catalog-grid,
   .aws-service-grid,
-  .aws-split-grid {
+  .aws-split-grid,
+  .aws-network-grid,
+  .shell-grid,
+  .aws-mini-metrics {
     grid-template-columns: 1fr;
   }
 
@@ -734,6 +932,7 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .aws-utilitybar,
   .console-topbar-right,
   .page-banner-actions,
   .console-topbar-left {
@@ -750,12 +949,21 @@ a {
   .nav-actions,
   .console-topbar-right,
   .flashcard-actions,
-  .quiz-options {
+  .quiz-options,
+  .shell-toolbar,
+  .shell-status,
+  .aws-utilitybar,
+  .aws-utilitybar-links,
+  .aws-utilitybar-meta {
     flex-direction: column;
     align-items: stretch;
   }
 
   .module-toggle {
+    grid-template-columns: 1fr;
+  }
+
+  .shell-input-row {
     grid-template-columns: 1fr;
   }
 }

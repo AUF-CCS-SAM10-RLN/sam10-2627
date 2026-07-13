@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAM10 Linux Shell | Bash Practice</title>
+  <meta
+    name="description"
+    content="Interactive Linux Bash practice shell for the SAM10 course website."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="console-topbar">
+      <div class="console-topbar-left">
+        <div class="console-logo">aws</div>
+        <div class="console-title">Linux Practice Shell</div>
+      </div>
+      <label class="console-search">
+        <span class="sr-only">Search shell page</span>
+        <input type="search" value="linux bash practice shell" aria-label="Search shell page" readonly>
+      </label>
+      <div class="console-topbar-right">
+        <a class="nav-link" href="lectures.html">Lectures</a>
+        <a class="nav-link" href="labs.html">Labs</a>
+        <a class="nav-link" href="artifacts.html">Artifacts</a>
+        <a class="nav-link" href="commands.html">Commands</a>
+        <a class="nav-link" href="shell.html">Shell</a>
+        <a class="nav-link" href="aws-console.html">AWS Demo</a>
+        <span class="console-chip">Mode: Practice</span>
+        <a class="nav-link" href="index.html">Home</a>
+      </div>
+    </header>
+
+    <div class="console-shell">
+      <aside class="console-sidebar">
+        <div class="sidebar-group">
+          <p class="sidebar-title">Navigation</p>
+          <a class="sidebar-link" href="index.html">Overview</a>
+          <a class="sidebar-link" href="lectures.html">Lectures</a>
+          <a class="sidebar-link" href="labs.html">Laboratories</a>
+          <a class="sidebar-link" href="artifacts.html">Written Artifacts</a>
+          <a class="sidebar-link" href="commands.html">Linux Commands</a>
+          <a class="sidebar-link is-active" href="shell.html">Linux Shell</a>
+          <a class="sidebar-link" href="aws-console.html">AWS Console Demo</a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-title">Try these</p>
+          <a class="sidebar-link" href="#shell-lab-1">File navigation</a>
+          <a class="sidebar-link" href="#shell-lab-2">Permissions</a>
+          <a class="sidebar-link" href="#shell-lab-3">Processes</a>
+          <a class="sidebar-link" href="#shell-lab-4">Networking</a>
+          <a class="sidebar-link" href="#shell-lab-5">Logs</a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-title">Supported commands</p>
+          <p class="sidebar-note">
+            This is a simulated Bash shell for GitHub Pages. It supports guided file, process,
+            network, and service inspection commands without needing a backend server.
+          </p>
+        </div>
+      </aside>
+
+      <main class="console-main">
+        <section class="page-banner">
+          <div>
+            <p class="eyebrow">Interactive Practice</p>
+            <h1>Linux Bash practice shell</h1>
+            <p class="section-copy">
+              Students can practice safe Bash commands in a realistic terminal-style environment.
+              The shell is static and course-controlled, so it works on GitHub Pages while still
+              reinforcing command usage from the labs.
+            </p>
+          </div>
+          <div class="page-banner-actions">
+            <button class="primary-button" id="run-help" type="button">Run help</button>
+            <button class="secondary-button" id="reset-shell" type="button">Reset shell</button>
+            <a class="secondary-button" href="commands.html">Open command reference</a>
+          </div>
+        </section>
+
+        <section class="metrics-grid">
+          <article class="metric-card">
+            <p class="metric-label">Shell mode</p>
+            <h2>Static</h2>
+            <p class="metric-copy">Safe for GitHub Pages with no backend required.</p>
+          </article>
+          <article class="metric-card">
+            <p class="metric-label">Command set</p>
+            <h2>25+</h2>
+            <p class="metric-copy">Navigation, file, process, network, and service commands.</p>
+          </article>
+          <article class="metric-card">
+            <p class="metric-label">Practice labs</p>
+            <h2>5</h2>
+            <p class="metric-copy">Aligned to the five current SAM10 laboratory activities.</p>
+          </article>
+        </section>
+
+        <section class="shell-grid">
+          <article class="shell-panel shell-terminal-panel">
+            <div class="shell-panel-head">
+              <div>
+                <p class="section-label">Terminal</p>
+                <h2>SAM10 Bash session</h2>
+              </div>
+              <div class="shell-status">
+                <span class="aws-badge">User: student</span>
+                <span class="aws-badge">Host: sam10-lab</span>
+                <span class="aws-badge">OS: Ubuntu</span>
+              </div>
+            </div>
+
+            <div class="shell-toolbar">
+              <button class="quiz-option" type="button" data-command="pwd">`pwd`</button>
+              <button class="quiz-option" type="button" data-command="ls -la">`ls -la`</button>
+              <button class="quiz-option" type="button" data-command="cd labs">`cd labs`</button>
+              <button class="quiz-option" type="button" data-command="cat notes.txt">`cat notes.txt`</button>
+              <button class="quiz-option" type="button" data-command="ip a">`ip a`</button>
+              <button class="quiz-option" type="button" data-command="systemctl status webapp">`systemctl status webapp`</button>
+            </div>
+
+            <div class="shell-terminal" id="shell-output" aria-live="polite"></div>
+
+            <form class="shell-input-row" id="shell-form">
+              <label class="sr-only" for="shell-input">Shell command</label>
+              <span class="shell-prompt-label" id="shell-prompt-label">student@sam10-lab:~$</span>
+              <input id="shell-input" class="shell-input" type="text" autocomplete="off" spellcheck="false" placeholder="Type a command, for example: help">
+              <button class="primary-button" type="submit">Run</button>
+            </form>
+          </article>
+
+          <div class="shell-side-stack">
+            <article class="shell-panel">
+              <div class="shell-panel-head">
+                <div>
+                  <p class="section-label">Workspace</p>
+                  <h2>Practice filesystem</h2>
+                </div>
+              </div>
+              <div class="shell-tree" id="shell-tree"></div>
+            </article>
+
+            <article class="shell-panel">
+              <div class="shell-panel-head">
+                <div>
+                  <p class="section-label">Command focus</p>
+                  <h2>What this shell supports</h2>
+                </div>
+              </div>
+              <ul class="outcome-list">
+                <li>`pwd`, `ls`, `cd`, `mkdir`, `touch`, `cp`, `mv`, `cat`, `grep`, `clear`</li>
+                <li>`whoami`, `id`, `groups`, `uname -a`, `hostnamectl`</li>
+                <li>`ps aux`, `top`, `free -h`, `df -h`, `lsblk`</li>
+                <li>`ip a`, `ip r`, `ss -tuln`, `dig`, `curl`, `ping`, `traceroute`</li>
+                <li>`systemctl status webapp`, `journalctl -u webapp`, `chmod`, `sudo`, `ssh`</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="module-list">
+          <article class="module-card lab-card" id="shell-lab-1">
+            <div class="lab-header">
+              <div>
+                <p class="lab-tag">Practice task 1</p>
+                <h3>File navigation and documentation workspace</h3>
+              </div>
+            </div>
+            <div class="lab-grid">
+              <section class="lab-section">
+                <h3>Goal</h3>
+                <p class="panel-copy">Move through the training filesystem and inspect course documentation files.</p>
+              </section>
+              <section class="lab-section">
+                <h3>Try</h3>
+                <ul class="resource-list">
+                  <li><code>pwd</code></li>
+                  <li><code>ls -la</code></li>
+                  <li><code>cd labs</code></li>
+                  <li><code>cat notes.txt</code></li>
+                </ul>
+              </section>
+            </div>
+          </article>
+
+          <article class="module-card lab-card" id="shell-lab-2">
+            <div class="lab-header">
+              <div>
+                <p class="lab-tag">Practice task 2</p>
+                <h3>Identity and permissions</h3>
+              </div>
+            </div>
+            <div class="lab-grid">
+              <section class="lab-section">
+                <h3>Goal</h3>
+                <p class="panel-copy">Inspect user context and basic permissions concepts.</p>
+              </section>
+              <section class="lab-section">
+                <h3>Try</h3>
+                <ul class="resource-list">
+                  <li><code>whoami</code></li>
+                  <li><code>id</code></li>
+                  <li><code>groups</code></li>
+                  <li><code>chmod 640 labs/iam-policy.txt</code></li>
+                </ul>
+              </section>
+            </div>
+          </article>
+
+          <article class="module-card lab-card" id="shell-lab-3">
+            <div class="lab-header">
+              <div>
+                <p class="lab-tag">Practice task 3</p>
+                <h3>System health and services</h3>
+              </div>
+            </div>
+            <div class="lab-grid">
+              <section class="lab-section">
+                <h3>Goal</h3>
+                <p class="panel-copy">Review running services, memory usage, and active processes.</p>
+              </section>
+              <section class="lab-section">
+                <h3>Try</h3>
+                <ul class="resource-list">
+                  <li><code>ps aux</code></li>
+                  <li><code>top</code></li>
+                  <li><code>free -h</code></li>
+                  <li><code>systemctl status webapp</code></li>
+                </ul>
+              </section>
+            </div>
+          </article>
+
+          <article class="module-card lab-card" id="shell-lab-4">
+            <div class="lab-header">
+              <div>
+                <p class="lab-tag">Practice task 4</p>
+                <h3>Network inspection</h3>
+              </div>
+            </div>
+            <div class="lab-grid">
+              <section class="lab-section">
+                <h3>Goal</h3>
+                <p class="panel-copy">Inspect addresses, routes, name resolution, and service reachability.</p>
+              </section>
+              <section class="lab-section">
+                <h3>Try</h3>
+                <ul class="resource-list">
+                  <li><code>ip a</code></li>
+                  <li><code>ip r</code></li>
+                  <li><code>dig sam10.internal</code></li>
+                  <li><code>curl https://status.sam10.internal/health</code></li>
+                </ul>
+              </section>
+            </div>
+          </article>
+
+          <article class="module-card lab-card" id="shell-lab-5">
+            <div class="lab-header">
+              <div>
+                <p class="lab-tag">Practice task 5</p>
+                <h3>Logs and troubleshooting</h3>
+              </div>
+            </div>
+            <div class="lab-grid">
+              <section class="lab-section">
+                <h3>Goal</h3>
+                <p class="panel-copy">Read service logs and search for operational issues.</p>
+              </section>
+              <section class="lab-section">
+                <h3>Try</h3>
+                <ul class="resource-list">
+                  <li><code>journalctl -u webapp</code></li>
+                  <li><code>grep ERROR webapp.log</code></li>
+                  <li><code>cat /etc/os-release</code></li>
+                  <li><code>ssh admin@web-01</code></li>
+                </ul>
+              </section>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="shell.js"></script>
+</body>
+</html>
