@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAM10 Commands | Linux Bash and CLI Reference</title>
+  <meta
+    name="description"
+    content="Linux Bash and CLI commands a systems administrator should know."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="console-topbar">
+      <div class="console-topbar-left">
+        <div class="console-logo">aws</div>
+        <div class="console-title">Command Console</div>
+      </div>
+      <label class="console-search">
+        <span class="sr-only">Search page</span>
+        <input type="search" value="linux bash cli commands" aria-label="Search page" readonly>
+      </label>
+      <div class="console-topbar-right">
+        <a class="nav-link" href="lectures.html">Lectures</a>
+        <a class="nav-link" href="labs.html">Labs</a>
+        <a class="nav-link" href="artifacts.html">Artifacts</a>
+        <a class="nav-link" href="commands.html">Commands</a>
+        <a class="nav-link" href="aws-console.html">AWS Demo</a>
+        <span class="console-chip">Reference</span>
+        <a class="nav-link" href="index.html">Home</a>
+      </div>
+    </header>
+
+    <div class="console-shell">
+      <aside class="console-sidebar">
+        <div class="sidebar-group">
+          <p class="sidebar-title">Navigation</p>
+          <a class="sidebar-link" href="index.html">Overview</a>
+          <a class="sidebar-link" href="lectures.html">Lectures</a>
+          <a class="sidebar-link" href="labs.html">Laboratories</a>
+          <a class="sidebar-link" href="artifacts.html">Written Artifacts</a>
+          <a class="sidebar-link is-active" href="commands.html">Linux Commands</a>
+          <a class="sidebar-link" href="aws-console.html">AWS Console Demo</a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-title">Sections</p>
+          <a class="sidebar-link" href="#navigation">Navigation and files</a>
+          <a class="sidebar-link" href="#users">Users and permissions</a>
+          <a class="sidebar-link" href="#processes">Processes and services</a>
+          <a class="sidebar-link" href="#networking">Networking</a>
+          <a class="sidebar-link" href="#storage">Storage and logs</a>
+        </div>
+        <div class="sidebar-group">
+          <p class="sidebar-title">Use</p>
+          <p class="sidebar-note">
+            This page lists common Linux Bash and CLI commands a systems administrator should be able to recognize and use confidently.
+          </p>
+        </div>
+      </aside>
+
+      <main class="console-main">
+        <section class="page-banner">
+          <div>
+            <p class="eyebrow">Linux CLI Reference</p>
+            <h1>Linux Bash and CLI commands every systems administrator should know</h1>
+            <p class="section-copy">
+              Systems administration depends on command-line fluency. This page groups practical commands by daily admin tasks so students can build a usable working set.
+            </p>
+          </div>
+          <div class="page-banner-actions">
+            <a class="primary-button" href="#navigation">Open reference</a>
+            <a class="secondary-button" href="lectures.html">Back to lectures</a>
+          </div>
+        </section>
+
+        <section class="metrics-grid">
+          <article class="metric-card">
+            <p class="metric-label">Command areas</p>
+            <h2>5</h2>
+            <p class="metric-copy">Navigation, users, processes, networking, and storage.</p>
+          </article>
+          <article class="metric-card">
+            <p class="metric-label">Core commands</p>
+            <h2>40+</h2>
+            <p class="metric-copy">A practical baseline for Linux administration work.</p>
+          </article>
+          <article class="metric-card">
+            <p class="metric-label">Purpose</p>
+            <h2>Daily Ops</h2>
+            <p class="metric-copy">Inspection, troubleshooting, configuration, and recovery.</p>
+          </article>
+        </section>
+
+        <section class="module-list" id="navigation">
+          <article class="module-card lab-card">
+            <div class="lab-header">
+              <div>
+                <p class="lab-tag">Navigation and files</p>
+                <h3>Moving around and inspecting the filesystem</h3>
+              </div>
+            </div>
+            <div class="lab-grid">
+              <section class="lab-section"><h3>`pwd`</h3><p class="panel-copy">Show the current working directory.</p></section>
+              <section class="lab-section"><h3>`ls`, `ls -la`</h3><p class="panel-copy">List files, including hidden files and permissions.</p></section>
+              <section class="lab-section"><h3>`cd`</h3><p class="panel-copy">Change directories quickly and accurately.</p></section>
+              <section class="lab-section"><h3>`mkdir`, `rmdir`</h3><p class="panel-copy">Create and remove directories.</p></section>
+              <section class="lab-section"><h3>`cp`, `mv`, `rm`</h3><p class="panel-copy">Copy, move, and remove files and directories.</p></section>
+              <section class="lab-section"><h3>`touch`</h3><p class="panel-copy">Create an empty file or update timestamps.</p></section>
+              <section class="lab-section"><h3>`cat`, `less`, `head`, `tail`</h3><p class="panel-copy">Read full files or inspect the beginning and end of files.</p></section>
+              <section class="lab-section"><h3>`find`, `locate`</h3><p class="panel-copy">Search for files by name, path, or properties.</p></section>
+              <section class="lab-section"><h3>`grep`</h3><p class="panel-copy">Search text inside files and logs.</p></section>
+              <section class="lab-section"><h3>`wc`, `sort`, `cut`, `awk`, `sed`</h3><p class="panel-copy">Basic text processing for filtering, extracting, and transforming output.</p></section>
+            </div>
+          </article>
+
+          <article class="module-card lab-card" id="users">
+            <div class="lab-header">
+              <div>
+                <p class="lab-tag">Users and permissions</p>
+                <h3>Identity, ownership, and access control commands</h3>
+              </div>
+            </div>
+            <div class="lab-grid">
+              <section class="lab-section"><h3>`whoami`, `id`</h3><p class="panel-copy">Check the current user and group membership.</p></section>
+              <section class="lab-section"><h3>`sudo`</h3><p class="panel-copy">Run administrative commands with elevated privilege.</p></section>
+              <section class="lab-section"><h3>`useradd`, `usermod`, `userdel`</h3><p class="panel-copy">Create, modify, and remove user accounts.</p></section>
+              <section class="lab-section"><h3>`groupadd`, `groupmod`, `groupdel`</h3><p class="panel-copy">Manage groups for access control.</p></section>
+              <section class="lab-section"><h3>`passwd`</h3><p class="panel-copy">Set or change account passwords.</p></section>
+              <section class="lab-section"><h3>`chmod`</h3><p class="panel-copy">Change file and directory permissions.</p></section>
+              <section class="lab-section"><h3>`chown`, `chgrp`</h3><p class="panel-copy">Change ownership and group assignment.</p></section>
+              <section class="lab-section"><h3>`umask`</h3><p class="panel-copy">Define default permissions for new files and directories.</p></section>
+            </div>
+          </article>
+
+          <article class="module-card lab-card" id="processes">
+            <div class="lab-header">
+              <div>
+                <p class="lab-tag">Processes and services</p>
+                <h3>Monitoring and controlling running systems</h3>
+              </div>
+            </div>
+            <div class="lab-grid">
+              <section class="lab-section"><h3>`ps`, `ps aux`</h3><p class="panel-copy">Inspect running processes.</p></section>
+              <section class="lab-section"><h3>`top`, `htop`</h3><p class="panel-copy">View live CPU, memory, and process activity.</p></section>
+              <section class="lab-section"><h3>`kill`, `pkill`, `killall`</h3><p class="panel-copy">Terminate processes by PID or name.</p></section>
+              <section class="lab-section"><h3>`systemctl`</h3><p class="panel-copy">Start, stop, restart, enable, and inspect services on systemd systems.</p></section>
+              <section class="lab-section"><h3>`service`</h3><p class="panel-copy">Manage services on older distributions or compatibility layers.</p></section>
+              <section class="lab-section"><h3>`journalctl`</h3><p class="panel-copy">View systemd logs and service logs.</p></section>
+              <section class="lab-section"><h3>`uptime`</h3><p class="panel-copy">Check load average and system uptime.</p></section>
+              <section class="lab-section"><h3>`free -h`</h3><p class="panel-copy">Inspect memory usage quickly.</p></section>
+            </div>
+          </article>
+
+          <article class="module-card lab-card" id="networking">
+            <div class="lab-header">
+              <div>
+                <p class="lab-tag">Networking</p>
+                <h3>Connectivity, addressing, and remote access commands</h3>
+              </div>
+            </div>
+            <div class="lab-grid">
+              <section class="lab-section"><h3>`ip a`, `ip r`</h3><p class="panel-copy">Inspect IP addresses and routing tables.</p></section>
+              <section class="lab-section"><h3>`ping`</h3><p class="panel-copy">Test basic connectivity to hosts.</p></section>
+              <section class="lab-section"><h3>`traceroute` or `tracepath`</h3><p class="panel-copy">Trace the path packets take across networks.</p></section>
+              <section class="lab-section"><h3>`nslookup`, `dig`, `host`</h3><p class="panel-copy">Query DNS and inspect name resolution.</p></section>
+              <section class="lab-section"><h3>`ss`, `netstat`</h3><p class="panel-copy">Inspect listening ports and active connections.</p></section>
+              <section class="lab-section"><h3>`curl`, `wget`</h3><p class="panel-copy">Test web endpoints and retrieve remote files.</p></section>
+              <section class="lab-section"><h3>`ssh`</h3><p class="panel-copy">Remote login and command execution.</p></section>
+              <section class="lab-section"><h3>`scp`, `rsync`</h3><p class="panel-copy">Secure file transfer and synchronization.</p></section>
+              <section class="lab-section"><h3>`iptables`, `nft`</h3><p class="panel-copy">Inspect and manage firewall rules depending on the distribution.</p></section>
+            </div>
+          </article>
+
+          <article class="module-card lab-card" id="storage">
+            <div class="lab-header">
+              <div>
+                <p class="lab-tag">Storage and logs</p>
+                <h3>Disk usage, filesystems, and logging commands</h3>
+              </div>
+            </div>
+            <div class="lab-grid">
+              <section class="lab-section"><h3>`df -h`</h3><p class="panel-copy">Check mounted filesystems and free disk space.</p></section>
+              <section class="lab-section"><h3>`du -sh`</h3><p class="panel-copy">Measure directory and file usage.</p></section>
+              <section class="lab-section"><h3>`lsblk`</h3><p class="panel-copy">List block devices and partitions.</p></section>
+              <section class="lab-section"><h3>`mount`, `umount`</h3><p class="panel-copy">Mount and unmount filesystems.</p></section>
+              <section class="lab-section"><h3>`fdisk`, `parted`</h3><p class="panel-copy">Inspect and manage disk partition layouts.</p></section>
+              <section class="lab-section"><h3>`tar`</h3><p class="panel-copy">Archive and extract files for backup and transfer.</p></section>
+              <section class="lab-section"><h3>`gzip`, `gunzip`, `zip`, `unzip`</h3><p class="panel-copy">Compress and decompress files.</p></section>
+              <section class="lab-section"><h3>`tail -f`</h3><p class="panel-copy">Watch logs in real time during troubleshooting.</p></section>
+              <section class="lab-section"><h3>`dmesg`</h3><p class="panel-copy">Read kernel messages for hardware and boot issues.</p></section>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
