@@ -53,14 +53,14 @@
         </div>
         <div class="sidebar-group">
           <p class="sidebar-title">Sections</p>
-          <a class="sidebar-link" href="#core-docs">Core documentation</a>
-          <a class="sidebar-link" href="#security-docs">Security and governance</a>
-          <a class="sidebar-link" href="#operations-docs">Operations and recovery</a>
+          <a class="sidebar-link" href="#foundation-artifacts">Foundation and design</a>
+          <a class="sidebar-link" href="#platform-artifacts">Platform and service delivery</a>
+          <a class="sidebar-link" href="#operations-artifacts">Operations and optimization</a>
         </div>
         <div class="sidebar-group">
           <p class="sidebar-title">Use</p>
           <p class="sidebar-note">
-            These are the written records and documents a systems administrator should maintain for stable, secure, and supportable infrastructure.
+            This page tracks the core written artifacts used in the course. The model is one main artifact per lab, aligned to the topic being studied.
           </p>
         </div>
       </aside>
@@ -69,178 +69,188 @@
         <section class="page-banner">
           <div>
             <p class="eyebrow">Documentation</p>
-            <h1>Written artifacts every systems administrator should maintain</h1>
+            <h1>Core written artifacts for SAM10 lab work</h1>
             <p class="section-copy">
-              A systems administrator is not only responsible for systems, but also for the written records that make those systems understandable, auditable, and recoverable.
+              The course now focuses on the most important written artifacts only. Each laboratory activity produces one main artifact, so students build a realistic systems administration documentation portfolio over the term.
             </p>
           </div>
           <div class="page-banner-actions">
-            <a class="primary-button" href="#core-docs">Open reference</a>
+            <a class="primary-button" href="#foundation-artifacts">Open reference</a>
             <a class="secondary-button" href="lectures.html">Back to lectures</a>
           </div>
         </section>
 
         <section class="metrics-grid">
           <article class="metric-card">
-            <p class="metric-label">Core areas</p>
+            <p class="metric-label">Course groups</p>
             <h2>3</h2>
-            <p class="metric-copy">Architecture, security, and operations documentation.</p>
+            <p class="metric-copy">Foundation, platform delivery, and operations-oriented artifacts.</p>
           </article>
           <article class="metric-card">
-            <p class="metric-label">Artifact types</p>
-            <h2>15+</h2>
-            <p class="metric-copy">Common written deliverables maintained across the system lifecycle.</p>
+            <p class="metric-label">Required artifacts</p>
+            <h2>15</h2>
+            <p class="metric-copy">One main written artifact per lab activity.</p>
           </article>
           <article class="metric-card">
-            <p class="metric-label">Purpose</p>
-            <h2>Audit</h2>
-            <p class="metric-copy">Support accountability, continuity, recovery, and secure administration.</p>
+            <p class="metric-label">Delivery rule</p>
+            <h2>1:1</h2>
+            <p class="metric-copy">One topic-aligned artifact for each published lab.</p>
           </article>
         </section>
 
-        <section class="module-list" id="core-docs">
+        <section class="panel">
+          <div class="section-head">
+            <p class="section-label">Course rule</p>
+            <h2>What students are expected to produce</h2>
+          </div>
+          <p class="panel-copy">
+            Not every document a professional systems administrator might eventually maintain should be a separate graded submission in this course. To keep the workload realistic, each lab produces one main artifact only. Some professional document types are therefore embedded inside broader course artifacts instead of being required as separate standalone submissions.
+          </p>
+        </section>
+
+        <section class="module-list" id="foundation-artifacts">
           <article class="module-card lab-card">
             <div class="lab-header">
               <div>
-                <p class="lab-tag">Core documentation</p>
-                <h3>Architecture and environment records</h3>
+                <p class="lab-tag">Foundation and design</p>
+                <h3>Topics 1 to 5</h3>
                 <p class="module-summary">
-                  Documents that explain what exists, how it is connected, and what each system is for.
+                  Early-course artifacts focused on system understanding, cloud models, access design, networking, and compute planning.
                 </p>
               </div>
             </div>
             <div class="lab-grid">
               <section class="lab-section">
-                <h3>System inventory</h3>
+                <h3>Topic 1: Infrastructure overview document</h3>
                 <ul class="outcome-list">
-                  <li>List of servers, endpoints, network devices, cloud resources, and owners</li>
-                  <li>Hostnames, IP addresses, locations, operating systems, and service roles</li>
+                  <li>Main purpose: document the environment, major components, ownership, and shared-responsibility boundaries</li>
+                  <li>Closest professional artifact: system overview and starter inventory</li>
                 </ul>
               </section>
               <section class="lab-section">
-                <h3>Network diagrams</h3>
+                <h3>Topic 2: Deployment recommendation memo</h3>
                 <ul class="outcome-list">
-                  <li>Physical and logical network maps</li>
-                  <li>Subnets, gateways, firewalls, security zones, and service paths</li>
+                  <li>Main purpose: justify deployment and virtualization choices with cost-aware reasoning</li>
+                  <li>Closest professional artifact: architecture decision memo</li>
                 </ul>
               </section>
               <section class="lab-section">
-                <h3>System architecture diagrams</h3>
+                <h3>Topic 3: Access control and governance policy note</h3>
                 <ul class="outcome-list">
-                  <li>Application flow, dependencies, storage, compute, and external integrations</li>
-                  <li>Useful for onboarding, support, and change planning</li>
+                  <li>Main purpose: define roles, permissions, MFA expectations, and governance rules</li>
+                  <li>Closest professional artifact: access control matrix with policy notes</li>
                 </ul>
               </section>
               <section class="lab-section">
-                <h3>Configuration baselines</h3>
+                <h3>Topic 4: Network design brief</h3>
                 <ul class="outcome-list">
-                  <li>Standard server builds, approved software, naming conventions, and default settings</li>
-                  <li>Reference point for compliance and troubleshooting</li>
+                  <li>Main purpose: explain VPC layout, subnet roles, route intent, and traffic controls</li>
+                  <li>Closest professional artifact: logical network design document</li>
+                </ul>
+              </section>
+              <section class="lab-section">
+                <h3>Topic 5: Compute provisioning runbook</h3>
+                <ul class="outcome-list">
+                  <li>Main purpose: capture provisioning steps, instance decisions, and introductory IaC planning</li>
+                  <li>Closest professional artifact: provisioning SOP or server build runbook</li>
                 </ul>
               </section>
             </div>
           </article>
 
-          <article class="module-card lab-card" id="security-docs">
+          <article class="module-card lab-card" id="platform-artifacts">
             <div class="lab-header">
               <div>
-                <p class="lab-tag">Security and governance</p>
-                <h3>Control, policy, and access records</h3>
+                <p class="lab-tag">Platform and service delivery</p>
+                <h3>Topics 6 to 10</h3>
                 <p class="module-summary">
-                  Documents that define who can do what, what is allowed, and how systems stay governed.
+                  Mid-course artifacts focused on Linux administration, storage, databases, application delivery, and monitoring.
                 </p>
               </div>
             </div>
             <div class="lab-grid">
               <section class="lab-section">
-                <h3>Access control matrix</h3>
+                <h3>Topic 6: Linux administration quick guide</h3>
                 <ul class="outcome-list">
-                  <li>Users, roles, groups, systems, and permission levels</li>
-                  <li>Supports least privilege and access reviews</li>
+                  <li>Main purpose: summarize shell, file-system, permission, process, package, and remote-access checks</li>
+                  <li>Closest professional artifact: Linux administration checklist</li>
                 </ul>
               </section>
               <section class="lab-section">
-                <h3>Account and credential procedures</h3>
+                <h3>Topic 7: Storage strategy brief</h3>
                 <ul class="outcome-list">
-                  <li>User provisioning, deprovisioning, password standards, MFA requirements</li>
-                  <li>May include emergency access handling and account recovery rules</li>
+                  <li>Main purpose: document storage choices based on architecture, performance, and lifecycle needs</li>
+                  <li>Closest professional artifact: storage planning note</li>
                 </ul>
               </section>
               <section class="lab-section">
-                <h3>Security policies and standards</h3>
+                <h3>Topic 8: Database strategy brief</h3>
                 <ul class="outcome-list">
-                  <li>Patch policy, acceptable use, remote access, encryption, logging, and backup policy</li>
-                  <li>Defines the expected operational security posture</li>
+                  <li>Main purpose: justify relational or NoSQL choices, backup approach, and managed-service fit</li>
+                  <li>Closest professional artifact: database design recommendation</li>
                 </ul>
               </section>
               <section class="lab-section">
-                <h3>Risk and exception register</h3>
+                <h3>Topic 9: Application deployment architecture brief</h3>
                 <ul class="outcome-list">
-                  <li>Known risks, compensating controls, temporary exceptions, approvals, and review dates</li>
-                  <li>Useful for audit and governance follow-up</li>
+                  <li>Main purpose: explain multi-tier deployment, load balancing, DNS, TLS, and application flow</li>
+                  <li>Closest professional artifact: application deployment design document</li>
                 </ul>
               </section>
               <section class="lab-section">
-                <h3>Audit and compliance evidence</h3>
+                <h3>Topic 10: Monitoring and observability strategy brief</h3>
                 <ul class="outcome-list">
-                  <li>Review logs, policy reviews, hardening checklists, and control verification records</li>
-                  <li>Supports internal and external compliance checks</li>
+                  <li>Main purpose: define priority metrics, log visibility, alerts, and operational monitoring choices</li>
+                  <li>Closest professional artifact: monitoring plan</li>
                 </ul>
               </section>
             </div>
           </article>
 
-          <article class="module-card lab-card" id="operations-docs">
+          <article class="module-card lab-card" id="operations-artifacts">
             <div class="lab-header">
               <div>
-                <p class="lab-tag">Operations and recovery</p>
-                <h3>Day-to-day and incident documentation</h3>
+                <p class="lab-tag">Operations and optimization</p>
+                <h3>Topics 11 to 15</h3>
                 <p class="module-summary">
-                  Documents that help the team operate, troubleshoot, recover, and improve services over time.
+                  Late-course artifacts focused on security, resilience, recovery, maintenance, and optimization.
                 </p>
               </div>
             </div>
             <div class="lab-grid">
               <section class="lab-section">
-                <h3>Standard operating procedures</h3>
+                <h3>Topic 11: Cloud security strategy brief</h3>
                 <ul class="outcome-list">
-                  <li>Routine tasks such as patching, backups, onboarding, monitoring checks, and maintenance</li>
-                  <li>Should be step-by-step and repeatable</li>
+                  <li>Main purpose: explain layered security controls, risks, and AWS security-service use</li>
+                  <li>Closest professional artifact: security control summary and policy support note</li>
                 </ul>
               </section>
               <section class="lab-section">
-                <h3>Runbooks and troubleshooting guides</h3>
+                <h3>Topic 12: Reliability and scaling strategy brief</h3>
                 <ul class="outcome-list">
-                  <li>Known failure modes, diagnostics, escalation steps, and recovery actions</li>
-                  <li>Designed for fast response during incidents</li>
+                  <li>Main purpose: document availability, scaling, fault-tolerance, and health-check decisions</li>
+                  <li>Closest professional artifact: reliability design note</li>
                 </ul>
               </section>
               <section class="lab-section">
-                <h3>Change records</h3>
+                <h3>Topic 13: Business continuity and disaster recovery strategy brief</h3>
                 <ul class="outcome-list">
-                  <li>What changed, why it changed, who approved it, when it happened, and rollback details</li>
-                  <li>Critical for accountability and incident review</li>
+                  <li>Main purpose: define backup scope, RPO/RTO thinking, recovery choices, and continuity planning</li>
+                  <li>Closest professional artifact: backup and recovery plan</li>
                 </ul>
               </section>
               <section class="lab-section">
-                <h3>Backup and recovery plans</h3>
+                <h3>Topic 14: Operations maintenance and service management brief</h3>
                 <ul class="outcome-list">
-                  <li>Backup scope, frequency, retention, restore steps, and test outcomes</li>
-                  <li>Should include recovery objectives where possible</li>
+                  <li>Main purpose: document maintenance approach, patching, change handling, automation, and service expectations</li>
+                  <li>Closest professional artifact: operations plan combining SOP and runbook elements</li>
                 </ul>
               </section>
               <section class="lab-section">
-                <h3>Incident reports and postmortems</h3>
+                <h3>Topic 15: Architecture optimization and Well-Architected review brief</h3>
                 <ul class="outcome-list">
-                  <li>Timeline, impact, root cause, resolution, and follow-up actions</li>
-                  <li>Transforms outages into learning and prevention</li>
-                </ul>
-              </section>
-              <section class="lab-section">
-                <h3>Service handover and onboarding guides</h3>
-                <ul class="outcome-list">
-                  <li>Introduces new administrators to systems, contacts, tools, and responsibilities</li>
-                  <li>Reduces knowledge loss when staff change</li>
+                  <li>Main purpose: assess architecture quality and prioritize improvements across the AWS Well-Architected pillars</li>
+                  <li>Closest professional artifact: architecture review report</li>
                 </ul>
               </section>
             </div>
