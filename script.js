@@ -434,6 +434,40 @@ const modules = [
       ],
       answer: "Root Cause Analysis"
     }
+  },
+  {
+    title: "Cloud Architecture, Infrastructure Optimization, and the AWS Well-Architected Framework",
+    summary: "Architectural quality attributes, AWS Well-Architected pillars, optimization strategy, and cloud architecture evaluation.",
+    topics: [
+      "Software Architecture Principles",
+      "Quality Attributes",
+      "Operational Excellence",
+      "Security",
+      "Reliability",
+      "Performance Efficiency",
+      "Cost Optimization",
+      "Sustainability",
+      "AWS Well-Architected Framework",
+      "AWS Well-Architected Tool",
+      "AWS Cost Explorer",
+      "Trusted Advisor"
+    ],
+    checks: [
+      "Explain architectural quality attributes for cloud systems.",
+      "Describe the six pillars of the AWS Well-Architected Framework.",
+      "Analyze cloud architectures using established architectural principles.",
+      "Recommend improvements for security, reliability, performance, operational excellence, cost optimization, and sustainability.",
+      "Evaluate cloud solutions using the AWS Well-Architected Framework."
+    ],
+    quiz: {
+      question: "Which AWS Well-Architected pillar focuses on reducing unnecessary expenses while meeting system requirements?",
+      options: [
+        "Cost Optimization",
+        "Reliability",
+        "Operational Excellence"
+      ],
+      answer: "Cost Optimization"
+    }
   }
 ];
 
@@ -501,6 +535,10 @@ const flashcards = [
   {
     question: "How does automation improve systems maintenance?",
     answer: "Automation reduces manual repetition, improves consistency, speeds response, and helps enforce operational procedures at scale."
+  },
+  {
+    question: "What is the purpose of the AWS Well-Architected Framework?",
+    answer: "It provides a structured way to evaluate cloud architectures and improve them across operational excellence, security, reliability, performance, cost, and sustainability."
   }
 ];
 
