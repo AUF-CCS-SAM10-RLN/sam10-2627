@@ -16,7 +16,10 @@
       <div class="console-topbar-left console-topbar-left-compact">
         <div class="console-product-title">AWS Management Console Demo</div>
         <div class="console-context-row">
-          <span class="console-context-pill">Region: us-east-1</span>
+          <label class="aws-region-control">
+            <span class="aws-region-label">Region</span>
+            <select class="aws-region-select" aria-label="AWS Region selector"></select>
+          </label>
           <span class="console-context-pill">Account: sam10-demo</span>
           <span class="console-context-pill">Role: AdministratorAccess</span>
         </div>
@@ -43,7 +46,6 @@
       <a class="aws-service-link " href="aws-s3.html">S3</a>
       <a class="aws-service-link " href="aws-cloudwatch.html">CloudWatch</a>
       <a class="aws-service-link " href="aws-billing.html">Billing</a>
-      <a class="aws-service-link " href="aws-provisioning.html">Provisioning</a>
     </div>
     <div class="console-shell">
       <aside class="console-sidebar console-sidebar-console">
@@ -56,7 +58,6 @@
           <a class="sidebar-link " href="aws-s3.html">S3 Dashboard</a>
           <a class="sidebar-link " href="aws-cloudwatch.html">CloudWatch Dashboard</a>
           <a class="sidebar-link " href="aws-billing.html">Billing Dashboard</a>
-          <a class="sidebar-link " href="aws-provisioning.html">Provisioning Simulator</a>
         </div>
         <div class="sidebar-group">
           <p class="sidebar-title">Course links</p>
@@ -71,8 +72,13 @@
       </aside>
       <main class="console-main aws-main">
         <section class="page-banner aws-page-banner"><div><p class="eyebrow">Identity</p><h1>AWS IAM dashboard</h1><p>Inspect users, roles, MFA posture, and least-privilege guidance for the sample account.</p></div><div class="page-banner-actions"><a class="primary-button" href="aws-console.html">Back to overview</a><a class="secondary-button" href="aws-s3.html">Open S3</a></div></section><section class="aws-panel-grid"><article class="aws-panel"><div class="aws-panel-head"><div><p class="aws-panel-kicker">Identity summary</p><h3>Users and roles</h3></div><span class="aws-badge">Governed</span></div><ul class="aws-billing-list"><li><span>IAM users</span><strong>6</strong></li><li><span>Roles</span><strong>9</strong></li><li><span>Groups</span><strong>4</strong></li><li><span>MFA enabled</span><strong>5 / 6 users</strong></li></ul></article><article class="aws-panel"><div class="aws-panel-head"><div><p class="aws-panel-kicker">Priority actions</p><h3>Access posture</h3></div></div><ul class="outcome-list"><li>Rotate inactive access keys.</li><li>Require MFA for all interactive console users.</li><li>Reduce wildcard permissions in two legacy policies.</li><li>Prefer IAM roles over long-lived user credentials.</li></ul></article></section><section class="aws-panel"><div class="aws-panel-head"><div><p class="aws-panel-kicker">Learning note</p><h3>Student focus</h3></div></div><div class="aws-split-grid"><div class="aws-split-card"><h4>Preventive controls</h4><ul class="outcome-list"><li>MFA enforcement</li><li>Least-privilege role design</li><li>Scoped resource policies</li></ul></div><div class="aws-split-card"><h4>Governance controls</h4><ul class="outcome-list"><li>Quarterly access review</li><li>Policy review and change tracking</li><li>Federated identity preference</li></ul></div></div></section>
+        <section class="aws-panel aws-sim-root" data-service-sim="iam">
+          <div class="aws-panel-head"><div><p class="aws-panel-kicker">Interactive workflow</p><h3>Create and manage IAM roles</h3></div><span class="aws-badge">Simulated actions</span></div>
+          <p class="panel-copy">Use this training panel to simulate creating, modifying, disabling, and removing IAM roles while reviewing least-privilege decisions.</p>
+        </section>
       </main>
     </div>
   </div>
+  <script src="aws-console-sim.js"></script>
 </body>
 </html>

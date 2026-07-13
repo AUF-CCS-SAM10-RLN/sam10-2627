@@ -16,7 +16,10 @@
       <div class="console-topbar-left console-topbar-left-compact">
         <div class="console-product-title">AWS Management Console Demo</div>
         <div class="console-context-row">
-          <span class="console-context-pill">Region: us-east-1</span>
+          <label class="aws-region-control">
+            <span class="aws-region-label">Region</span>
+            <select class="aws-region-select" aria-label="AWS Region selector"></select>
+          </label>
           <span class="console-context-pill">Account: sam10-demo</span>
           <span class="console-context-pill">Role: AdministratorAccess</span>
         </div>
@@ -43,7 +46,6 @@
       <a class="aws-service-link " href="aws-s3.html">S3</a>
       <a class="aws-service-link " href="aws-cloudwatch.html">CloudWatch</a>
       <a class="aws-service-link " href="aws-billing.html">Billing</a>
-      <a class="aws-service-link " href="aws-provisioning.html">Provisioning</a>
     </div>
     <div class="console-shell">
       <aside class="console-sidebar console-sidebar-console">
@@ -56,7 +58,6 @@
           <a class="sidebar-link " href="aws-s3.html">S3 Dashboard</a>
           <a class="sidebar-link " href="aws-cloudwatch.html">CloudWatch Dashboard</a>
           <a class="sidebar-link " href="aws-billing.html">Billing Dashboard</a>
-          <a class="sidebar-link " href="aws-provisioning.html">Provisioning Simulator</a>
         </div>
         <div class="sidebar-group">
           <p class="sidebar-title">Course links</p>
@@ -77,8 +78,8 @@
     <p>This demo is split into dedicated service dashboards so students can inspect one AWS administration surface at a time without a cluttered layout.</p>
   </div>
   <div class="page-banner-actions">
-    <a class="primary-button" href="aws-provisioning.html">Open provisioning lab</a>
-    <a class="secondary-button" href="aws-ec2.html">Open EC2</a>
+    <a class="primary-button" href="aws-ec2.html">Open EC2</a>
+    <a class="secondary-button" href="aws-cloudwatch.html">Open CloudWatch</a>
   </div>
 </section>
 <section class="aws-overview aws-overview-wide">
@@ -105,5 +106,6 @@
       </main>
     </div>
   </div>
+  <script src="aws-console-sim.js"></script>
 </body>
 </html>

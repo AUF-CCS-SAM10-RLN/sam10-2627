@@ -16,7 +16,10 @@
       <div class="console-topbar-left console-topbar-left-compact">
         <div class="console-product-title">AWS Management Console Demo</div>
         <div class="console-context-row">
-          <span class="console-context-pill">Region: us-east-1</span>
+          <label class="aws-region-control">
+            <span class="aws-region-label">Region</span>
+            <select class="aws-region-select" aria-label="AWS Region selector"></select>
+          </label>
           <span class="console-context-pill">Account: sam10-demo</span>
           <span class="console-context-pill">Role: AdministratorAccess</span>
         </div>
@@ -43,7 +46,6 @@
       <a class="aws-service-link " href="aws-s3.html">S3</a>
       <a class="aws-service-link " href="aws-cloudwatch.html">CloudWatch</a>
       <a class="aws-service-link " href="aws-billing.html">Billing</a>
-      <a class="aws-service-link " href="aws-provisioning.html">Provisioning</a>
     </div>
     <div class="console-shell">
       <aside class="console-sidebar console-sidebar-console">
@@ -56,7 +58,6 @@
           <a class="sidebar-link " href="aws-s3.html">S3 Dashboard</a>
           <a class="sidebar-link " href="aws-cloudwatch.html">CloudWatch Dashboard</a>
           <a class="sidebar-link " href="aws-billing.html">Billing Dashboard</a>
-          <a class="sidebar-link " href="aws-provisioning.html">Provisioning Simulator</a>
         </div>
         <div class="sidebar-group">
           <p class="sidebar-title">Course links</p>
@@ -71,8 +72,13 @@
       </aside>
       <main class="console-main aws-main">
         <section class="page-banner aws-page-banner"><div><p class="eyebrow">Networking</p><h1>Amazon VPC dashboard</h1><p>Inspect subnets, route intent, gateways, and network security structure for the sample environment.</p></div><div class="page-banner-actions"><a class="primary-button" href="aws-console.html">Back to overview</a><a class="secondary-button" href="aws-iam.html">Open IAM</a></div></section><section class="aws-panel"><div class="aws-panel-head"><div><p class="aws-panel-kicker">Network summary</p><h3>VPC layout</h3></div><span class="aws-badge">1 VPC</span></div><div class="aws-network-grid"><div class="aws-network-card"><h4>VPC</h4><p>sam10-prod-vpc</p><p class="aws-service-text">CIDR 10.0.0.0/16</p></div><div class="aws-network-card"><h4>Public subnets</h4><p>10.0.1.0/24, 10.0.2.0/24</p><p class="aws-service-text">ALB and bastion entry points</p></div><div class="aws-network-card"><h4>Private subnets</h4><p>10.0.20.0/24, 10.0.21.0/24</p><p class="aws-service-text">Application and DB support</p></div><div class="aws-network-card"><h4>Gateways</h4><p>Internet Gateway + NAT Gateway</p><p class="aws-service-text">Public ingress, private egress</p></div><div class="aws-network-card"><h4>Route tables</h4><p>2 active</p><p class="aws-service-text">Split public and private intent</p></div><div class="aws-network-card"><h4>Security layers</h4><p>Security Groups + NACLs</p><p class="aws-service-text">Instance and subnet boundaries</p></div></div></section><section class="aws-panel-grid"><article class="aws-panel"><div class="aws-panel-head"><div><p class="aws-panel-kicker">Traffic controls</p><h3>Security review</h3></div></div><ul class="outcome-list"><li>Only the ALB and bastion expose public routes.</li><li>Private workloads use outbound-only internet access through NAT.</li><li>Database support traffic is restricted to application and admin sources.</li></ul></article><article class="aws-panel"><div class="aws-panel-head"><div><p class="aws-panel-kicker">Learning note</p><h3>Student focus</h3></div></div><ul class="outcome-list"><li>Distinguish public from private subnets by route target, not name alone.</li><li>Relate security groups to instance-level policy and NACLs to subnet policy.</li><li>Map VPC components to traditional networking concepts.</li></ul></article></section>
+        <section class="aws-panel aws-sim-root" data-service-sim="vpc">
+          <div class="aws-panel-head"><div><p class="aws-panel-kicker">Interactive workflow</p><h3>Create and manage VPC environments</h3></div><span class="aws-badge">Simulated actions</span></div>
+          <p class="panel-copy">Use this training panel to simulate creating, modifying, disabling, and deleting VPC environments for the selected Region.</p>
+        </section>
       </main>
     </div>
   </div>
+  <script src="aws-console-sim.js"></script>
 </body>
 </html>

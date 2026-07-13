@@ -16,7 +16,10 @@
       <div class="console-topbar-left console-topbar-left-compact">
         <div class="console-product-title">AWS Management Console Demo</div>
         <div class="console-context-row">
-          <span class="console-context-pill">Region: us-east-1</span>
+          <label class="aws-region-control">
+            <span class="aws-region-label">Region</span>
+            <select class="aws-region-select" aria-label="AWS Region selector"></select>
+          </label>
           <span class="console-context-pill">Account: sam10-demo</span>
           <span class="console-context-pill">Role: AdministratorAccess</span>
         </div>
@@ -43,7 +46,6 @@
       <a class="aws-service-link " href="aws-s3.html">S3</a>
       <a class="aws-service-link " href="aws-cloudwatch.html">CloudWatch</a>
       <a class="aws-service-link is-active" href="aws-billing.html">Billing</a>
-      <a class="aws-service-link " href="aws-provisioning.html">Provisioning</a>
     </div>
     <div class="console-shell">
       <aside class="console-sidebar console-sidebar-console">
@@ -56,7 +58,6 @@
           <a class="sidebar-link " href="aws-s3.html">S3 Dashboard</a>
           <a class="sidebar-link " href="aws-cloudwatch.html">CloudWatch Dashboard</a>
           <a class="sidebar-link is-active" href="aws-billing.html">Billing Dashboard</a>
-          <a class="sidebar-link " href="aws-provisioning.html">Provisioning Simulator</a>
         </div>
         <div class="sidebar-group">
           <p class="sidebar-title">Course links</p>
@@ -70,9 +71,10 @@
         </div>
       </aside>
       <main class="console-main aws-main">
-        <section class="page-banner aws-page-banner"><div><p class="eyebrow">Cost Management</p><h1>Billing and cost dashboard</h1><p>Inspect service-level spend, forecast signals, and optimization cues for the sample environment.</p></div><div class="page-banner-actions"><a class="primary-button" href="aws-console.html">Back to overview</a><a class="secondary-button" href="aws-ec2.html">Open EC2</a></div></section><section class="aws-overview"><article class="aws-metric-card"><p class="aws-metric-label">Month-to-date</p><h2>$214.80</h2><p class="aws-metric-text">Sample operating spend across six service domains</p></article><article class="aws-metric-card"><p class="aws-metric-label">Forecast</p><h2>$286.00</h2><p class="aws-metric-text">End-of-month projection based on current trend</p></article><article class="aws-metric-card"><p class="aws-metric-label">Optimization flags</p><h2>4</h2><p class="aws-metric-text">Rightsizing and unused resource signals</p></article></section><section class="aws-panel-grid"><article class="aws-panel"><div class="aws-panel-head"><div><p class="aws-panel-kicker">Service breakdown</p><h3>Current estimate</h3></div><span class="aws-badge">Forecast</span></div><ul class="aws-billing-list"><li><span>EC2 compute</span><strong>$96.40</strong></li><li><span>EBS volumes and snapshots</span><strong>$34.20</strong></li><li><span>NAT Gateway</span><strong>$39.10</strong></li><li><span>Data transfer</span><strong>$18.80</strong></li><li><span>CloudWatch metrics and logs</span><strong>$12.30</strong></li><li><span>S3 storage and lifecycle requests</span><strong>$14.00</strong></li></ul></article><article class="aws-panel"><div class="aws-panel-head"><div><p class="aws-panel-kicker">Optimization notes</p><h3>Trusted Advisor style observations</h3></div></div><ul class="outcome-list"><li>Downsize one underused support instance.</li><li>Review NAT usage during low-traffic periods.</li><li>Expire unneeded log retention after 90 days.</li><li>Archive historical backups more aggressively.</li></ul></article></section><section class="aws-panel"><div class="aws-panel-head"><div><p class="aws-panel-kicker">Learning note</p><h3>Student focus</h3></div></div><ul class="outcome-list"><li>Connect design choices directly to service cost.</li><li>Use cost views alongside reliability and security requirements, not in isolation.</li><li>Recognize cost optimization as one architectural pillar among several.</li></ul></section>
+        <section class="page-banner aws-page-banner"><div><p class="eyebrow">Cost Management</p><h1>Billing and cost dashboard</h1><p>Inspect service-level spend, forecast signals, and optimization cues for the sample environment.</p></div><div class="page-banner-actions"><a class="primary-button" href="aws-console.html">Back to overview</a><a class="secondary-button" href="aws-cloudwatch.html">Open CloudWatch</a></div></section><section class="aws-overview"><article class="aws-metric-card"><p class="aws-metric-label">Month-to-date</p><h2>$214.80</h2><p class="aws-metric-text">Sample operating spend across six service domains</p></article><article class="aws-metric-card"><p class="aws-metric-label">Forecast</p><h2>$286.00</h2><p class="aws-metric-text">End-of-month projection based on current trend</p></article><article class="aws-metric-card"><p class="aws-metric-label">Optimization flags</p><h2>4</h2><p class="aws-metric-text">Rightsizing and unused resource signals</p></article></section><section class="aws-panel-grid"><article class="aws-panel"><div class="aws-panel-head"><div><p class="aws-panel-kicker">Service breakdown</p><h3>Current estimate</h3></div><span class="aws-badge">Forecast</span></div><ul class="aws-billing-list"><li><span>EC2 compute</span><strong>$96.40</strong></li><li><span>EBS volumes and snapshots</span><strong>$34.20</strong></li><li><span>NAT Gateway</span><strong>$39.10</strong></li><li><span>Data transfer</span><strong>$18.80</strong></li><li><span>CloudWatch metrics and logs</span><strong>$12.30</strong></li><li><span>S3 storage and lifecycle requests</span><strong>$14.00</strong></li></ul></article><article class="aws-panel"><div class="aws-panel-head"><div><p class="aws-panel-kicker">Optimization notes</p><h3>Trusted Advisor style observations</h3></div></div><ul class="outcome-list"><li>Downsize one underused support instance.</li><li>Review NAT usage during low-traffic periods.</li><li>Expire unneeded log retention after 90 days.</li><li>Archive historical backups more aggressively.</li></ul></article></section><section class="aws-panel"><div class="aws-panel-head"><div><p class="aws-panel-kicker">Learning note</p><h3>Student focus</h3></div></div><ul class="outcome-list"><li>Connect design choices directly to service cost.</li><li>Use cost views alongside reliability and security requirements, not in isolation.</li><li>Recognize cost optimization as one architectural pillar among several.</li></ul></section>
       </main>
     </div>
   </div>
+  <script src="aws-console-sim.js"></script>
 </body>
 </html>

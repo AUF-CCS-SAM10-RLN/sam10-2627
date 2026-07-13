@@ -16,7 +16,10 @@
       <div class="console-topbar-left console-topbar-left-compact">
         <div class="console-product-title">AWS Management Console Demo</div>
         <div class="console-context-row">
-          <span class="console-context-pill">Region: us-east-1</span>
+          <label class="aws-region-control">
+            <span class="aws-region-label">Region</span>
+            <select class="aws-region-select" aria-label="AWS Region selector"></select>
+          </label>
           <span class="console-context-pill">Account: sam10-demo</span>
           <span class="console-context-pill">Role: AdministratorAccess</span>
         </div>
@@ -43,7 +46,6 @@
       <a class="aws-service-link " href="aws-s3.html">S3</a>
       <a class="aws-service-link is-active" href="aws-cloudwatch.html">CloudWatch</a>
       <a class="aws-service-link " href="aws-billing.html">Billing</a>
-      <a class="aws-service-link " href="aws-provisioning.html">Provisioning</a>
     </div>
     <div class="console-shell">
       <aside class="console-sidebar console-sidebar-console">
@@ -56,7 +58,6 @@
           <a class="sidebar-link " href="aws-s3.html">S3 Dashboard</a>
           <a class="sidebar-link is-active" href="aws-cloudwatch.html">CloudWatch Dashboard</a>
           <a class="sidebar-link " href="aws-billing.html">Billing Dashboard</a>
-          <a class="sidebar-link " href="aws-provisioning.html">Provisioning Simulator</a>
         </div>
         <div class="sidebar-group">
           <p class="sidebar-title">Course links</p>
@@ -71,8 +72,13 @@
       </aside>
       <main class="console-main aws-main">
         <section class="page-banner aws-page-banner"><div><p class="eyebrow">Observability</p><h1>Amazon CloudWatch dashboard</h1><p>Inspect metrics, alarms, service health patterns, and operational visibility for the sample environment.</p></div><div class="page-banner-actions"><a class="primary-button" href="aws-console.html">Back to overview</a><a class="secondary-button" href="aws-billing.html">Open Billing</a></div></section><section class="aws-overview"><article class="aws-metric-card"><p class="aws-metric-label">Active alarms</p><h2>3</h2><p class="aws-metric-text">1 critical, 2 warning thresholds</p></article><article class="aws-metric-card"><p class="aws-metric-label">Dashboards</p><h2>2</h2><p class="aws-metric-text">Ops overview and web performance</p></article><article class="aws-metric-card"><p class="aws-metric-label">Log groups</p><h2>7</h2><p class="aws-metric-text">Application, VPC, and admin activity streams</p></article></section><section class="aws-panel-grid"><article class="aws-panel"><div class="aws-panel-head"><div><p class="aws-panel-kicker">Metrics</p><h3>Performance snapshot</h3></div><span class="aws-badge">5 minute view</span></div><div class="aws-chart"><div class="aws-bars aws-bars-rich"><span style="height:28%"></span><span style="height:47%"></span><span style="height:62%"></span><span style="height:76%"></span><span style="height:58%"></span><span style="height:81%"></span><span style="height:49%"></span><span style="height:37%"></span><span style="height:63%"></span><span style="height:55%"></span><span style="height:42%"></span><span style="height:31%"></span></div><div class="aws-chart-legend"><p><strong>CPUUtilization:</strong> sustained elevation on `db-support-01`.</p><p><strong>RequestCount:</strong> periodic class-hour bursts on the web tier.</p><p><strong>StatusCheckFailed:</strong> 1 active recovery-related alarm.</p></div></div></article><article class="aws-panel"><div class="aws-panel-head"><div><p class="aws-panel-kicker">Alerting</p><h3>Notification flow</h3></div></div><ul class="aws-billing-list"><li><span>High CPU alarm</span><strong>SNS -> ops-team</strong></li><li><span>Failed status checks</span><strong>SNS -> on-call</strong></li><li><span>Budget warning</span><strong>Email report</strong></li></ul></article></section><section class="aws-panel"><div class="aws-panel-head"><div><p class="aws-panel-kicker">Learning note</p><h3>Student focus</h3></div></div><ul class="outcome-list"><li>Separate metrics, logs, and alerts in operational reasoning.</li><li>Use CloudWatch as the main service-health and alarm surface.</li><li>Relate observability data to reliability and performance decisions.</li></ul></section>
+        <section class="aws-panel aws-sim-root" data-service-sim="cloudwatch">
+          <div class="aws-panel-head"><div><p class="aws-panel-kicker">Interactive workflow</p><h3>Create and manage CloudWatch alarms</h3></div><span class="aws-badge">Simulated actions</span></div>
+          <p class="panel-copy">Use this training panel to simulate creating, tuning, disabling, and removing CloudWatch alarms in the selected Region.</p>
+        </section>
       </main>
     </div>
   </div>
+  <script src="aws-console-sim.js"></script>
 </body>
 </html>

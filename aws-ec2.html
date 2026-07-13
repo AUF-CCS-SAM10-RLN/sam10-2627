@@ -16,7 +16,10 @@
       <div class="console-topbar-left console-topbar-left-compact">
         <div class="console-product-title">AWS Management Console Demo</div>
         <div class="console-context-row">
-          <span class="console-context-pill">Region: us-east-1</span>
+          <label class="aws-region-control">
+            <span class="aws-region-label">Region</span>
+            <select class="aws-region-select" aria-label="AWS Region selector"></select>
+          </label>
           <span class="console-context-pill">Account: sam10-demo</span>
           <span class="console-context-pill">Role: AdministratorAccess</span>
         </div>
@@ -43,7 +46,6 @@
       <a class="aws-service-link " href="aws-s3.html">S3</a>
       <a class="aws-service-link " href="aws-cloudwatch.html">CloudWatch</a>
       <a class="aws-service-link " href="aws-billing.html">Billing</a>
-      <a class="aws-service-link " href="aws-provisioning.html">Provisioning</a>
     </div>
     <div class="console-shell">
       <aside class="console-sidebar console-sidebar-console">
@@ -56,7 +58,6 @@
           <a class="sidebar-link " href="aws-s3.html">S3 Dashboard</a>
           <a class="sidebar-link " href="aws-cloudwatch.html">CloudWatch Dashboard</a>
           <a class="sidebar-link " href="aws-billing.html">Billing Dashboard</a>
-          <a class="sidebar-link " href="aws-provisioning.html">Provisioning Simulator</a>
         </div>
         <div class="sidebar-group">
           <p class="sidebar-title">Course links</p>
@@ -71,8 +72,13 @@
       </aside>
       <main class="console-main aws-main">
         <section class="page-banner aws-page-banner"><div><p class="eyebrow">Compute</p><h1>Amazon EC2 dashboard</h1><p>Review instances, templates, attached storage, and health signals for the sample environment.</p></div><div class="page-banner-actions"><a class="primary-button" href="aws-console.html">Back to overview</a><a class="secondary-button" href="aws-vpc.html">Open VPC</a></div></section><section class="aws-overview"><article class="aws-metric-card"><p class="aws-metric-label">Running instances</p><h2>4</h2><p class="aws-metric-text">2 web, 1 bastion, 1 db-support</p></article><article class="aws-metric-card"><p class="aws-metric-label">Launch templates</p><h2>3</h2><p class="aws-metric-text">Reusable launch parameters for consistent scaling</p></article><article class="aws-metric-card"><p class="aws-metric-label">Elastic IPs</p><h2>2</h2><p class="aws-metric-text">Allocated to public edge and admin access</p></article></section><section class="aws-panel"><div class="aws-panel-head"><div><p class="aws-panel-kicker">Instances</p><h3>Running compute resources</h3></div><span class="aws-badge aws-badge-live">Healthy</span></div><div class="aws-table-wrap"><table class="aws-table"><thead><tr><th>Name</th><th>Instance ID</th><th>Type</th><th>AZ</th><th>Private IP</th><th>Status</th></tr></thead><tbody><tr><td>web-01</td><td>i-0ad41f1c8b2</td><td>t3.micro</td><td>use1-az2</td><td>10.0.1.10</td><td><span class="aws-status ok">running</span></td></tr><tr><td>web-02</td><td>i-0ad41f1c8b3</td><td>t3.micro</td><td>use1-az4</td><td>10.0.1.11</td><td><span class="aws-status ok">running</span></td></tr><tr><td>bastion-01</td><td>i-0ad41f1c8b4</td><td>t3.small</td><td>use1-az2</td><td>10.0.10.5</td><td><span class="aws-status ok">running</span></td></tr><tr><td>db-support-01</td><td>i-0ad41f1c8b5</td><td>t3.medium</td><td>use1-az4</td><td>10.0.20.12</td><td><span class="aws-status warn">impaired</span></td></tr></tbody></table></div></section><section class="aws-panel-grid"><article class="aws-panel"><div class="aws-panel-head"><div><p class="aws-panel-kicker">Templates</p><h3>Provisioning assets</h3></div></div><ul class="aws-billing-list"><li><span>web-tier-template</span><strong>AMI + user data + SG</strong></li><li><span>bastion-template</span><strong>SSH access and logging</strong></li><li><span>db-support-template</span><strong>Higher memory footprint</strong></li></ul></article><article class="aws-panel"><div class="aws-panel-head"><div><p class="aws-panel-kicker">Learning note</p><h3>Student focus</h3></div></div><ul class="outcome-list"><li>Connect instance sizing to workload requirements.</li><li>Notice how AMIs, templates, and security groups shape repeatable provisioning.</li><li>Relate impaired health checks to reliability and monitoring topics.</li></ul></article></section>
+        <section class="aws-panel aws-sim-root" data-service-sim="ec2">
+          <div class="aws-panel-head"><div><p class="aws-panel-kicker">Interactive workflow</p><h3>Launch and manage EC2 instances</h3></div><span class="aws-badge">Simulated actions</span></div>
+          <p class="panel-copy">Use this training panel to simulate launching, resizing, stopping, and terminating EC2 instances in the selected Region.</p>
+        </section>
       </main>
     </div>
   </div>
+  <script src="aws-console-sim.js"></script>
 </body>
 </html>
