@@ -28,23 +28,32 @@ const modules = [
     }
   },
   {
-    title: "Operating Systems Fundamentals",
-    summary: "Core OS concepts, installation paths, filesystems, and startup behavior.",
+    title: "Cloud Computing and Virtualization Fundamentals",
+    summary: "Cloud models, distributed systems, virtualization, compute options, and AWS cost basics.",
     topics: [
-      "Client and server operating systems",
-      "Boot process and startup services",
-      "File systems and partitions",
-      "Resource usage: CPU, memory, and storage"
+      "Cloud Computing Models",
+      "Distributed Systems",
+      "Virtualization Theory",
+      "Hypervisors",
+      "Containers vs Virtual Machines",
+      "AWS Compute Overview",
+      "AWS Pricing and Billing"
     ],
     checks: [
-      "Compare workstation and server operating systems.",
-      "Trace the startup process from power-on to login.",
-      "Recognize the purpose of file systems and partitions."
+      "Explain how distributed systems and virtualization enable cloud computing.",
+      "Compare public, private, hybrid, and multi-cloud deployment models.",
+      "Differentiate Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS) using AWS services.",
+      "Analyze the organizational benefits, limitations, and trade-offs of cloud adoption.",
+      "Interpret AWS pricing models and their implications for infrastructure planning."
     ],
     quiz: {
-      question: "What is the main purpose of a file system?",
-      options: ["Run network packets", "Organize and manage stored data", "Power the BIOS"],
-      answer: "Organize and manage stored data"
+      question: "Which statement best distinguishes containers from virtual machines?",
+      options: [
+        "Containers share the host OS kernel, while virtual machines emulate full guest environments",
+        "Virtual machines always cost less than containers",
+        "Containers require their own hypervisor hardware"
+      ],
+      answer: "Containers share the host OS kernel, while virtual machines emulate full guest environments"
     }
   },
   {
