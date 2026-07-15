@@ -724,6 +724,27 @@ function getVideoLecture(moduleIndex) {
   return videoMap[moduleIndex] || null;
 }
 
+function getAdditionalVideoMaterials(module) {
+  const youtubeLectureQuery = encodeURIComponent(`${module.title} AWS lecture`);
+  const youtubeTutorialQuery = encodeURIComponent(`${module.title} tutorial`);
+  const youtubeCourseQuery = encodeURIComponent(`${module.title} systems administration`);
+
+  return [
+    {
+      title: `YouTube lecture results for ${module.title}`,
+      url: `https://www.youtube.com/results?search_query=${youtubeLectureQuery}`
+    },
+    {
+      title: `YouTube tutorial results for ${module.title}`,
+      url: `https://www.youtube.com/results?search_query=${youtubeTutorialQuery}`
+    },
+    {
+      title: `YouTube practice results for ${module.title}`,
+      url: `https://www.youtube.com/results?search_query=${youtubeCourseQuery}`
+    }
+  ];
+}
+
 function getAssessmentItems(module) {
   return [
     "Short quiz: A brief post-lecture knowledge check focused on the main concept of the topic.",
@@ -816,6 +837,7 @@ function renderModules() {
     const videoFrame = fragment.querySelector(".video-lecture-frame");
     const videoNote = fragment.querySelector(".video-lecture-note");
     const videoLink = fragment.querySelector(".video-lecture-link");
+    const videoMaterialList = fragment.querySelector(".video-material-list");
     const question = fragment.querySelector(".quiz-question");
     const options = fragment.querySelector(".quiz-options");
     const feedbackSlot = fragment.querySelector(".quiz-feedback");
@@ -881,8 +903,19 @@ function renderModules() {
       videoFrame.title = `${module.title} video lecture`;
       videoLink.href = videoLecture.url;
       videoLink.textContent = videoLecture.title;
-      videoNote.textContent = "If the embedded player does not load because of external site restrictions, use the direct link below.";
+      videoNote.textContent = "If the embedded player does not load because of external site restrictions, use the direct link below or the additional YouTube materials.";
     }
+
+    getAdditionalVideoMaterials(module).forEach((video) => {
+      const item = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = video.url;
+      link.target = "_blank";
+      link.rel = "noreferrer";
+      link.textContent = video.title;
+      item.append(link);
+      videoMaterialList.append(item);
+    });
 
     const quiz = createQuiz(module);
     options.replaceWith(quiz.wrapper);
