@@ -745,6 +745,101 @@ function getAdditionalVideoMaterials(module) {
   ];
 }
 
+function getRelatedTools(moduleIndex) {
+  const toolMap = {
+    0: [
+      "Ubuntu Server - common Linux server platform for foundational administration practice.",
+      "Windows Server - useful for comparing enterprise administration roles and services.",
+      "VMware Workstation or VirtualBox - useful for understanding system and OS fundamentals through virtual machines."
+    ],
+    1: [
+      "Docker - widely used container platform for comparing containers with virtual machines.",
+      "Podman - container engine worth comparing with Docker for rootless workflows.",
+      "VMware vSphere or VirtualBox - useful for virtualization demonstrations.",
+      "OpenStack - useful as a non-AWS cloud platform reference."
+    ],
+    2: [
+      "Okta - identity and federation platform for comparing IAM workflows.",
+      "Microsoft Entra ID - useful for access control, MFA, and federation comparison.",
+      "Keycloak - open-source identity and access management platform."
+    ],
+    3: [
+      "Wireshark - packet analysis tool for protocol and traffic inspection.",
+      "Cisco Packet Tracer - useful for networking concepts and topology practice.",
+      "pfSense - firewall and routing platform for security and gateway discussions.",
+      "Nmap - useful for host and service discovery."
+    ],
+    4: [
+      "Terraform - infrastructure provisioning and repeatable deployment automation.",
+      "OpenTofu - open-source Infrastructure as Code tool worth comparing with Terraform.",
+      "Packer - useful for image-building workflows alongside AMIs.",
+      "Ansible - useful for post-provision configuration and automation."
+    ],
+    5: [
+      "htop - interactive Linux process viewer for system inspection.",
+      "tmux - terminal multiplexer useful in remote administration workflows.",
+      "Cockpit - web-based Linux administration interface for comparison with CLI workflows.",
+      "Visual Studio Code Remote SSH - useful for structured remote Linux administration."
+    ],
+    6: [
+      "MinIO - object storage platform useful for comparing S3-style storage concepts.",
+      "TrueNAS - useful for storage administration and file-service discussions.",
+      "Ceph - distributed storage platform for scalable storage architecture comparison.",
+      "ZFS - important file-system and storage-management technology to know."
+    ],
+    7: [
+      "PostgreSQL - widely used relational database platform.",
+      "MySQL or MariaDB - common relational database systems for administration comparison.",
+      "MongoDB - useful NoSQL comparison platform.",
+      "Redis - useful for discussing in-memory data stores and application data patterns."
+    ],
+    8: [
+      "Nginx - common web server and reverse proxy platform.",
+      "Apache HTTP Server - classic web server for comparison with Nginx.",
+      "HAProxy - useful for load-balancing and traffic-distribution concepts.",
+      "Caddy - practical web server with simplified HTTPS workflows."
+    ],
+    9: [
+      "Prometheus - metrics collection and alerting platform.",
+      "Grafana - dashboarding and observability visualization tool.",
+      "Zabbix - integrated monitoring platform worth comparing with CloudWatch.",
+      "Elastic Stack or OpenSearch - useful for log collection and analysis workflows."
+    ],
+    10: [
+      "HashiCorp Vault - secrets management platform for comparison with AWS Secrets Manager.",
+      "Wazuh - open-source security monitoring and detection platform.",
+      "Suricata - intrusion detection and traffic analysis engine.",
+      "CrowdSec - collaborative security and threat-blocking tool."
+    ],
+    11: [
+      "HAProxy - useful for resilient traffic distribution design.",
+      "Keepalived - helpful for redundancy and failover discussion.",
+      "Kubernetes - useful for scalability, health checks, and workload resilience concepts.",
+      "Consul - useful for service discovery and resilience-oriented architecture discussion."
+    ],
+    12: [
+      "Veeam - backup and recovery platform worth comparing with AWS Backup workflows.",
+      "Restic - lightweight backup tool for versioned backup concepts.",
+      "BorgBackup - useful for backup efficiency and retention discussion.",
+      "rsync - practical tool for replication and backup scripting basics."
+    ],
+    13: [
+      "Ansible - automation and maintenance orchestration platform.",
+      "Rundeck - useful for scheduled operational runbooks and job automation.",
+      "GLPI - IT asset and service management platform.",
+      "Zammad - ticketing and incident workflow platform."
+    ],
+    14: [
+      "OpenTofu or Terraform - useful for architecture standardization and repeatable infrastructure design.",
+      "Infracost - useful for cost-estimation and optimization discussions.",
+      "Checkov - infrastructure policy and configuration review tool.",
+      "Grafana - useful for ongoing optimization visibility and service performance review."
+    ]
+  };
+
+  return toolMap[moduleIndex] || [];
+}
+
 function getAssessmentItems(module) {
   return [
     "Short quiz: A brief post-lecture knowledge check focused on the main concept of the topic.",
@@ -834,6 +929,7 @@ function renderModules() {
     const studentLearningList = fragment.querySelector(".student-learning-list");
     const assessmentList = fragment.querySelector(".assessment-list");
     const readingList = fragment.querySelector(".reading-list");
+    const toolList = fragment.querySelector(".tool-list");
     const videoFrame = fragment.querySelector(".video-lecture-frame");
     const videoNote = fragment.querySelector(".video-lecture-note");
     const videoLink = fragment.querySelector(".video-lecture-link");
@@ -895,6 +991,12 @@ function renderModules() {
       link.textContent = reading.title;
       item.append(link);
       readingList.append(item);
+    });
+
+    getRelatedTools(moduleIndex).forEach((tool) => {
+      const item = document.createElement("li");
+      item.textContent = tool;
+      toolList.append(item);
     });
 
     const videoLecture = getVideoLecture(moduleIndex);
