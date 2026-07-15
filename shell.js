@@ -31,7 +31,7 @@ const baseFs = {
               "iam-policy.txt": {
                 type: "file",
                 mode: "rw-r-----",
-                content: "role=cloud-admin\nscope=aws-account\nmfa=required\nreview=quarterly"
+                content: "role=cloud-admin\nscope=sam10-account\nmfa=required\nreview=quarterly"
               },
               "webapp.log": {
                 type: "file",
@@ -401,14 +401,14 @@ function handleSimpleLookup(command, args) {
     whoami: "student",
     id: "uid=1001(student) gid=1001(student) groups=1001(student),27(sudo),998(docker)",
     groups: "student sudo docker",
-    "uname -a": "Linux sam10-lab 6.5.0-1025-aws #25~22.04.1-Ubuntu SMP x86_64 GNU/Linux",
+    "uname -a": "Linux sam10-lab 6.5.0-1025-sam10 #25~22.04.1-Ubuntu SMP x86_64 GNU/Linux",
     hostnamectl: [
       " Static hostname: sam10-lab",
       "       Icon name: computer-vm",
       "         Chassis: vm",
       "      Machine ID: 77f1ce40f91d4f67b7f2f8d4d509cc1c",
       " Operating System: Ubuntu 22.04.4 LTS",
-      "           Kernel: Linux 6.5.0-1025-aws",
+      "           Kernel: Linux 6.5.0-1025-sam10",
       "     Architecture: x86-64"
     ].join("\n"),
     "ps aux": [
