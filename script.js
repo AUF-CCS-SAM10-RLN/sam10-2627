@@ -568,10 +568,10 @@ function getTeachingActivities(module) {
 
 function getStudentLearningActivities(module) {
   return [
-    `Listen and identify: Note the main concepts, AWS services, and administration terms introduced in ${module.title.toLowerCase()}.`,
-    "Participate and respond: Answer short guided questions during the lecture discussion and clarify misunderstandings.",
-    "Review the outline: Follow the topic sequence and connect each concept to a practical systems administration context.",
-    "Complete the short check: Answer a short quiz or complete a brief in-class activity before the session ends."
+    `List key terms: Write down 3 to 5 important concepts or AWS services introduced in ${module.title.toLowerCase()}.`,
+    "Answer quick prompts: Respond to 2 or 3 short guided questions during the lecture discussion.",
+    "Make one connection: Give one practical systems administration example related to the topic.",
+    "Finish the short check: Complete the brief quiz or a short in-class activity before the lecture ends."
   ];
 }
 
