@@ -566,6 +566,88 @@ function getTeachingActivities(module) {
   ];
 }
 
+function getReadingMaterials(moduleIndex) {
+  const readingMap = {
+    0: [
+      { title: "The NIST Definition of Cloud Computing", url: "https://www.nist.gov/publications/nist-definition-cloud-computing" },
+      { title: "AWS Global Infrastructure", url: "https://aws.amazon.com/about-aws/global-infrastructure/" },
+      { title: "AWS Shared Responsibility Model", url: "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/shared-responsibility.html" }
+    ],
+    1: [
+      { title: "Above the Clouds: A Berkeley View of Cloud Computing", url: "https://www.usenix.org/conference/lisa-09/above-clouds-berkeley-view-cloud-computing" },
+      { title: "AWS Cloud Essentials", url: "https://aws.amazon.com/getting-started/cloud-essentials/" },
+      { title: "Amazon EC2 Pricing", url: "https://aws.amazon.com/ec2/pricing/" }
+    ],
+    2: [
+      { title: "AWS IAM User Guide", url: "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html" },
+      { title: "AWS IAM Best Practices", url: "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html" },
+      { title: "NIST Digital Identity Guidelines", url: "https://www.nist.gov/itl/tig/projects/special-publication-800-63" }
+    ],
+    3: [
+      { title: "Amazon VPC User Guide", url: "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html" },
+      { title: "AWS VPC Connectivity Options", url: "https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html" },
+      { title: "How DNS Works", url: "https://aws.amazon.com/route53/what-is-dns/" }
+    ],
+    4: [
+      { title: "Amazon EC2 User Guide", url: "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html" },
+      { title: "AWS CloudFormation Getting Started", url: "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/GettingStarted.html" },
+      { title: "AWS Launch Templates", url: "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html" }
+    ],
+    5: [
+      { title: "How Linux Works, 3rd Edition", url: "https://nostarch.com/howlinuxworks3" },
+      { title: "UNIX and Linux System Administration Handbook", url: "https://www.oreilly.com/library/view/unix-and-linux/9780134278308/" },
+      { title: "AWS Systems Manager User Guide", url: "https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html" }
+    ],
+    6: [
+      { title: "Amazon S3 User Guide", url: "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html" },
+      { title: "Amazon EBS documentation", url: "https://docs.aws.amazon.com/ebs/" },
+      { title: "Amazon EFS documentation", url: "https://docs.aws.amazon.com/efs/" }
+    ],
+    7: [
+      { title: "Amazon RDS documentation", url: "https://docs.aws.amazon.com/rds/" },
+      { title: "Amazon DynamoDB documentation", url: "https://docs.aws.amazon.com/dynamodb/" },
+      { title: "Dynamo: Amazon’s Highly Available Key-value Store", url: "https://www.amazon.science/publications/dynamo-amazons-highly-available-key-value-store" }
+    ],
+    8: [
+      { title: "Elastic Load Balancing User Guide", url: "https://docs.aws.amazon.com/elasticloadbalancing/" },
+      { title: "Amazon Route 53 Developer Guide", url: "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html" },
+      { title: "AWS Certificate Manager documentation", url: "https://docs.aws.amazon.com/acm/" }
+    ],
+    9: [
+      { title: "Amazon CloudWatch documentation", url: "https://docs.aws.amazon.com/cloudwatch/" },
+      { title: "AWS CloudTrail documentation", url: "https://docs.aws.amazon.com/cloudtrail/" },
+      { title: "AWS Config documentation", url: "https://docs.aws.amazon.com/config/" }
+    ],
+    10: [
+      { title: "AWS Key Management Service documentation", url: "https://docs.aws.amazon.com/kms/" },
+      { title: "AWS Secrets Manager documentation", url: "https://docs.aws.amazon.com/secretsmanager/" },
+      { title: "AWS Well-Architected Security Pillar", url: "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html" }
+    ],
+    11: [
+      { title: "AWS Well-Architected Reliability Pillar", url: "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html" },
+      { title: "Amazon EC2 Auto Scaling documentation", url: "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html" },
+      { title: "Elastic Load Balancing User Guide", url: "https://docs.aws.amazon.com/elasticloadbalancing/" }
+    ],
+    12: [
+      { title: "AWS Backup documentation", url: "https://docs.aws.amazon.com/aws-backup/" },
+      { title: "Disaster Recovery of Workloads on AWS", url: "https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-workloads-on-aws.html" },
+      { title: "Amazon S3 Versioning", url: "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html" }
+    ],
+    13: [
+      { title: "AWS Systems Manager documentation", url: "https://docs.aws.amazon.com/systems-manager/" },
+      { title: "AWS Patch Manager", url: "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-patch.html" },
+      { title: "Google SRE Resources", url: "https://sre.google/resources/" }
+    ],
+    14: [
+      { title: "AWS Well-Architected Framework", url: "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html" },
+      { title: "AWS Cost Explorer", url: "https://aws.amazon.com/aws-cost-management/aws-cost-explorer/" },
+      { title: "AWS Trusted Advisor", url: "https://aws.amazon.com/premiumsupport/technology/trusted-advisor/" }
+    ]
+  };
+
+  return readingMap[moduleIndex] || [];
+}
+
 function getAssessmentItems(module) {
   return [
     "Short quiz: A brief post-lecture knowledge check focused on the main concept of the topic.",
@@ -650,8 +732,10 @@ function renderModules() {
     const moduleHours = fragment.querySelector(".module-hours");
     const moduleClo = fragment.querySelector(".module-clo");
     const objectiveList = fragment.querySelector(".objective-list");
+    const topicList = fragment.querySelector(".topic-list");
     const teachingList = fragment.querySelector(".teaching-list");
     const assessmentList = fragment.querySelector(".assessment-list");
+    const readingList = fragment.querySelector(".reading-list");
     const question = fragment.querySelector(".quiz-question");
     const options = fragment.querySelector(".quiz-options");
     const feedbackSlot = fragment.querySelector(".quiz-feedback");
@@ -676,6 +760,12 @@ function renderModules() {
       objectiveList.append(item);
     });
 
+    module.topics.forEach((topic) => {
+      const item = document.createElement("li");
+      item.textContent = topic;
+      topicList.append(item);
+    });
+
     getTeachingActivities(module).forEach((activity) => {
       const item = document.createElement("li");
       item.textContent = activity;
@@ -686,6 +776,17 @@ function renderModules() {
       const item = document.createElement("li");
       item.textContent = itemText;
       assessmentList.append(item);
+    });
+
+    getReadingMaterials(moduleIndex).forEach((reading) => {
+      const item = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = reading.url;
+      link.target = "_blank";
+      link.rel = "noreferrer";
+      link.textContent = reading.title;
+      item.append(link);
+      readingList.append(item);
     });
 
     const quiz = createQuiz(module);
