@@ -92,7 +92,7 @@
           <div class="page-banner-actions">
             <a class="primary-button" href="#module-tabs">Browse lectures</a>
             <a class="secondary-button" href="labs.html">Go to labs</a>
-            <button class="secondary-button" id="reset-progress" type="button">Reset progress</button>
+            <a class="secondary-button" href="references.html">Open references</a>
           </div>
         </section>
 
@@ -108,11 +108,9 @@
             <p class="metric-copy">Combined concepts across the fifteen lecture topics.</p>
           </article>
           <article class="metric-card">
-            <p class="metric-label">Completion</p>
-            <h2 id="completion-count">0%</h2>
-            <div class="progress-track" aria-hidden="true">
-              <div class="progress-fill" id="progress-fill"></div>
-            </div>
+            <p class="metric-label">Hours / Week</p>
+            <h2>2</h2>
+            <p class="metric-copy">Each lecture is scoped for a 2-hour weekly session with a short follow-up check.</p>
           </article>
         </section>
 
@@ -120,13 +118,13 @@
           <div class="panel">
             <p class="toolbar-title">Coverage</p>
             <p class="panel-copy">
-              Topics move from systems administration foundations to cloud, identity, governance, and cloud networking.
+              Topics move from systems administration foundations to AWS architecture, operations, maintenance, and optimization.
             </p>
           </div>
           <div class="panel">
             <p class="toolbar-title">Review mode</p>
             <p class="panel-copy">
-              Select a tab to focus on one lecture topic, then review outcomes and answer the short quiz.
+              Each lecture is scoped to 2 hours only, followed by a short quiz or a short in-class activity.
             </p>
           </div>
         </section>
@@ -197,36 +195,40 @@
         <div class="lecture-groups">
           <section class="lecture-group lecture-group-context">
             <div class="lecture-group-head">
-              <p class="lecture-group-kicker">Context</p>
-              <h3>Module scope</h3>
-              <p class="panel-copy">What this topic covers and how broad the current module is.</p>
+              <p class="lecture-group-kicker">Lecture overview</p>
+              <h3>Topic, objectives, and CLO alignment</h3>
+              <p class="panel-copy">Core lecture information for a realistic 2-hour weekly delivery block.</p>
             </div>
             <div class="module-columns">
               <section class="lecture-section">
-                <h4>Module focus</h4>
+                <h4>Topic</h4>
                 <p class="module-focus panel-copy"></p>
               </section>
               <section class="lecture-section">
-                <h4>Scope snapshot</h4>
-                <ul class="module-facts outcome-list"></ul>
+                <h4>Hours / Week</h4>
+                <p class="module-hours panel-copy"></p>
               </section>
               <section class="lecture-section lecture-section-wide">
-                <h4>Key topics</h4>
-                <ul class="topic-list"></ul>
+                <h4>CLO</h4>
+                <ul class="module-clo outcome-list"></ul>
               </section>
             </div>
           </section>
 
           <section class="lecture-group lecture-group-learning">
             <div class="lecture-group-head">
-              <p class="lecture-group-kicker">Learning</p>
-              <h3>Outcomes and progress</h3>
-              <p class="panel-copy">Track what students should know and mark completion as they review.</p>
+              <p class="lecture-group-kicker">Learning plan</p>
+              <h3>Objectives and teaching-learning activities</h3>
+              <p class="panel-copy">Lecture objectives should stay achievable within 2 hours and connect to a short follow-up check.</p>
             </div>
             <div class="module-columns">
               <section class="lecture-section lecture-section-wide">
-                <h4>Learning outcomes</h4>
-                <ul class="check-list"></ul>
+                <h4>Objective</h4>
+                <ul class="objective-list outcome-list"></ul>
+              </section>
+              <section class="lecture-section lecture-section-wide">
+                <h4>Teaching-learning activities</h4>
+                <ul class="teaching-list outcome-list"></ul>
               </section>
             </div>
           </section>
@@ -234,15 +236,23 @@
           <section class="lecture-group lecture-group-assessment">
             <div class="lecture-group-head">
               <p class="lecture-group-kicker">Assessment</p>
-              <h3>Knowledge check</h3>
-              <p class="panel-copy">A short quiz to verify the main operational principle of the module.</p>
+              <h3>Short post-lecture check</h3>
+              <p class="panel-copy">Each lecture ends with a brief quiz or a short guided activity only. No oversized lecture deliverables are assumed.</p>
             </div>
-            <section class="quiz-block">
-              <h4>Mini quiz</h4>
-              <p class="quiz-question"></p>
-              <div class="quiz-options"></div>
-              <p class="quiz-feedback" aria-live="polite"></p>
-            </section>
+            <div class="module-columns">
+              <section class="lecture-section lecture-section-wide">
+                <h4>Assessment</h4>
+                <ul class="assessment-list outcome-list"></ul>
+              </section>
+              <section class="lecture-section lecture-section-wide">
+                <div class="quiz-block">
+                  <h4>Mini quiz</h4>
+                  <p class="quiz-question"></p>
+                  <div class="quiz-options"></div>
+                  <p class="quiz-feedback" aria-live="polite"></p>
+                </div>
+              </section>
+            </div>
           </section>
         </div>
       </div>

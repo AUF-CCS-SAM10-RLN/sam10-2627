@@ -514,16 +514,12 @@ const flashcards = [
   }
 ];
 
-const progressKey = "sam10-progress";
 const moduleList = document.querySelector("#module-list");
 const moduleTemplate = document.querySelector("#module-template");
 const moduleTabs = document.querySelector("#module-tabs");
 const searchInput = document.querySelector("#module-search");
-const resetProgressButton = document.querySelector("#reset-progress");
 const moduleCount = document.querySelector("#module-count");
 const topicCount = document.querySelector("#topic-count");
-const completionCount = document.querySelector("#completion-count");
-const progressFill = document.querySelector("#progress-fill");
 const flashcard = document.querySelector("#flashcard");
 const flashcardQuestion = flashcard ? flashcard.querySelector(".flashcard-question") : null;
 const flashcardAnswer = flashcard ? flashcard.querySelector(".flashcard-answer") : null;
@@ -532,75 +528,63 @@ const nextCardButton = document.querySelector("#next-card");
 
 let currentFlashcard = 0;
 
-function loadProgress() {
-  try {
-    return JSON.parse(localStorage.getItem(progressKey)) || {};
-  } catch {
-    return {};
-  }
+const cloStatements = {
+  1: "Explain the fundamental concepts of systems administration, cloud computing, and AWS cloud infrastructure, including core cloud services and security principles.",
+  2: "Deploy and configure cloud computing resources, including networking, compute, storage, identity management, and database services using AWS, leveraging AI-assisted tools where appropriate while validating configurations against established best practices.",
+  3: "Administer and maintain Linux-based cloud systems by managing users, services, storage, web applications, and databases using standard systems administration practices, utilizing AI to support automation, scripting, and technical documentation.",
+  4: "Monitor, secure, troubleshoot, and optimize cloud-based systems by applying appropriate maintenance practices and AWS architectural best practices, and AI-assisted analysis while exercising professional judgment to verify recommendations and implement appropriate solutions."
+};
+
+function getLectureCLOs(moduleIndex) {
+  const cloMap = {
+    0: [1],
+    1: [1],
+    2: [1, 2],
+    3: [2],
+    4: [2],
+    5: [3],
+    6: [2, 3],
+    7: [2, 3],
+    8: [2, 3],
+    9: [4],
+    10: [1, 4],
+    11: [4],
+    12: [4],
+    13: [3, 4],
+    14: [4]
+  };
+
+  return (cloMap[moduleIndex] || []).map((number) => `CLO ${number}: ${cloStatements[number]}`);
 }
 
-function saveProgress(progress) {
-  localStorage.setItem(progressKey, JSON.stringify(progress));
+function getTeachingActivities(module) {
+  return [
+    `Topic briefing: Introduce the core lecture concepts and define the scope of ${module.title.toLowerCase()}.`,
+    `Guided discussion: Clarify key terms, AWS services, and administration decisions through short instructor-led questioning.`,
+    `Concept walkthrough: Use diagrams, console views, or short examples to explain how the topic works in practice.`,
+    `Short consolidation activity: Ask students to complete a brief check, comparison, or reflection before the lecture closes.`
+  ];
+}
+
+function getAssessmentItems(module) {
+  return [
+    "Short quiz: A brief post-lecture knowledge check focused on the main concept of the topic.",
+    "Short activity: A quick guided comparison, classification, or explanation task completed within the lecture period.",
+    "Expectation: Assessment remains light because the lecture block is only 2 hours long."
+  ];
 }
 
 function countTotals() {
   return {
     modules: modules.length,
-    topics: modules.reduce((total, module) => total + module.topics.length, 0),
-    checks: modules.reduce((total, module) => total + module.checks.length, 0)
+    topics: modules.reduce((total, module) => total + module.topics.length, 0)
   };
 }
 
-function renderStats(progress) {
+function renderStats() {
   const totals = countTotals();
-  const completedChecks = Object.values(progress).flat().filter(Boolean).length;
-  const percent = totals.checks ? Math.round((completedChecks / totals.checks) * 100) : 0;
-
   moduleCount.textContent = String(totals.modules);
   topicCount.textContent = String(totals.topics);
-  completionCount.textContent = `${percent}%`;
-  progressFill.style.width = `${percent}%`;
-}
-
-function createChecklist(moduleIndex, checks, progress) {
-  const list = document.createDocumentFragment();
-  const completed = progress[moduleIndex] || [];
-
-  checks.forEach((item, checkIndex) => {
-    const li = document.createElement("li");
-    li.className = "check-item";
-
-    const input = document.createElement("input");
-    input.type = "checkbox";
-    input.checked = Boolean(completed[checkIndex]);
-    input.addEventListener("change", () => {
-      const next = loadProgress();
-      next[moduleIndex] = next[moduleIndex] || [];
-      next[moduleIndex][checkIndex] = input.checked;
-      saveProgress(next);
-      updateProgressDisplays(next);
-    });
-
-    const label = document.createElement("label");
-    label.textContent = item;
-
-    li.append(input, label);
-    list.append(li);
-  });
-
-  return list;
-}
-
-function updateProgressDisplays(progress) {
-  renderStats(progress);
-
-  document.querySelectorAll(".module-card").forEach((card, moduleIndex) => {
-    const checks = modules[moduleIndex].checks.length;
-    const completed = (progress[moduleIndex] || []).filter(Boolean).length;
-    const progressLabel = card.querySelector(".module-progress");
-    progressLabel.textContent = `${completed}/${checks} done`;
-  });
 }
 
 function createQuiz(module) {
@@ -635,7 +619,6 @@ function createQuiz(module) {
 }
 
 function renderModules() {
-  const progress = loadProgress();
   moduleList.textContent = "";
   if (moduleTabs) {
     moduleTabs.textContent = "";
@@ -664,37 +647,46 @@ function renderModules() {
     const order = fragment.querySelector(".module-order");
     const progressLabel = fragment.querySelector(".module-progress");
     const moduleFocus = fragment.querySelector(".module-focus");
-    const moduleFacts = fragment.querySelector(".module-facts");
-    const topicList = fragment.querySelector(".topic-list");
-    const checkList = fragment.querySelector(".check-list");
+    const moduleHours = fragment.querySelector(".module-hours");
+    const moduleClo = fragment.querySelector(".module-clo");
+    const objectiveList = fragment.querySelector(".objective-list");
+    const teachingList = fragment.querySelector(".teaching-list");
+    const assessmentList = fragment.querySelector(".assessment-list");
     const question = fragment.querySelector(".quiz-question");
     const options = fragment.querySelector(".quiz-options");
     const feedbackSlot = fragment.querySelector(".quiz-feedback");
 
     title.textContent = module.title;
     summary.textContent = module.summary;
-    moduleFocus.textContent = module.summary;
+    moduleFocus.textContent = module.title;
+    moduleHours.textContent = "2 hours / week";
     order.textContent = `M${String(moduleIndex + 1).padStart(2, "0")}`;
+    progressLabel.textContent = "2-hour lecture";
     question.textContent = module.quiz.question;
 
-    [
-      `Topic count: ${module.topics.length}`,
-      `Outcome count: ${module.checks.length}`,
-      `Primary focus: ${module.topics[0]}`,
-      `Closing concept: ${module.topics[module.topics.length - 1]}`
-    ].forEach((fact) => {
+    getLectureCLOs(moduleIndex).forEach((clo) => {
       const item = document.createElement("li");
-      item.textContent = fact;
-      moduleFacts.append(item);
+      item.textContent = clo;
+      moduleClo.append(item);
     });
 
-    module.topics.forEach((topic) => {
+    module.checks.forEach((objective) => {
       const item = document.createElement("li");
-      item.textContent = topic;
-      topicList.append(item);
+      item.textContent = objective;
+      objectiveList.append(item);
     });
 
-    checkList.append(createChecklist(moduleIndex, module.checks, progress));
+    getTeachingActivities(module).forEach((activity) => {
+      const item = document.createElement("li");
+      item.textContent = activity;
+      teachingList.append(item);
+    });
+
+    getAssessmentItems(module).forEach((itemText) => {
+      const item = document.createElement("li");
+      item.textContent = itemText;
+      assessmentList.append(item);
+    });
 
     const quiz = createQuiz(module);
     options.replaceWith(quiz.wrapper);
@@ -722,7 +714,7 @@ function renderModules() {
     moduleList.append(panel);
   });
 
-  updateProgressDisplays(progress);
+  renderStats();
   initTabs();
   syncHashTarget();
 }
@@ -842,13 +834,6 @@ if (searchInput) {
 }
 
 window.addEventListener("hashchange", syncHashTarget);
-
-if (resetProgressButton) {
-  resetProgressButton.addEventListener("click", () => {
-    localStorage.removeItem(progressKey);
-    renderModules();
-  });
-}
 
 if (flipCardButton) {
   flipCardButton.addEventListener("click", flipFlashcard);
