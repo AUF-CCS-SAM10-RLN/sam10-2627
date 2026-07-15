@@ -648,6 +648,73 @@ function getReadingMaterials(moduleIndex) {
   return readingMap[moduleIndex] || [];
 }
 
+function getVideoLecture(moduleIndex) {
+  const videoMap = {
+    0: {
+      title: "New introduction to AWS instructional videos and labs",
+      url: "https://aws.amazon.com/about-aws/whats-new/2014/01/14/new-introduction-to-aws-instructional-videos-and-labs/"
+    },
+    1: {
+      title: "Compute innovations and AWS compute concepts",
+      url: "https://aws.amazon.com/video/watch/7357156143b/"
+    },
+    2: {
+      title: "IAM best practices for least privilege and account security",
+      url: "https://aws.amazon.com/video/watch/4836d72eb08/"
+    },
+    3: {
+      title: "Whiteboard with an SA: Amazon Virtual Private Cloud",
+      url: "https://aws.amazon.com/blogs/publicsector/whiteboard-with-an-sa-amazon-virtual-private-cloud/"
+    },
+    4: {
+      title: "Amazon EC2 and compute service overview",
+      url: "https://aws.amazon.com/video/watch/7357156143b/"
+    },
+    5: {
+      title: "Linux Essentials training video on users, groups, and administration concepts",
+      url: "https://www.learnlinux.tv/linux-essentials-managing-groups/"
+    },
+    6: {
+      title: "Amazon S3 videos and storage learning resources",
+      url: "https://aws.amazon.com/s3/videos/"
+    },
+    7: {
+      title: "DynamoDB core concepts: tables, items, and attributes",
+      url: "https://aws.amazon.com/video/watch/744140a5363/"
+    },
+    8: {
+      title: "Elastic Load Balancing overview and application delivery concepts",
+      url: "https://aws.amazon.com/elasticloadbalancing/"
+    },
+    9: {
+      title: "CloudWatch implementation and operations overview",
+      url: "https://aws.amazon.com/video/watch/c145d75ed20/"
+    },
+    10: {
+      title: "AWS security learning resources and guided videos",
+      url: "https://aws.amazon.com/security/security-learning/"
+    },
+    11: {
+      title: "Amazon EC2 Auto Scaling overview",
+      url: "https://aws.amazon.com/ec2/autoscaling/"
+    },
+    12: {
+      title: "AWS Backup and disaster recovery video resource",
+      url: "https://aws.amazon.com/video/watch/c28a7fb11e8/"
+    },
+    13: {
+      title: "Manage and automate operations with AWS Systems Manager",
+      url: "https://aws.amazon.com/video/watch/f600ef28976/"
+    },
+    14: {
+      title: "AWS Well-Architected Framework video overview",
+      url: "https://aws.amazon.com/tr/video/watch/883325fcd08/"
+    }
+  };
+
+  return videoMap[moduleIndex] || null;
+}
+
 function getAssessmentItems(module) {
   return [
     "Short quiz: A brief post-lecture knowledge check focused on the main concept of the topic.",
@@ -736,6 +803,9 @@ function renderModules() {
     const teachingList = fragment.querySelector(".teaching-list");
     const assessmentList = fragment.querySelector(".assessment-list");
     const readingList = fragment.querySelector(".reading-list");
+    const videoFrame = fragment.querySelector(".video-lecture-frame");
+    const videoNote = fragment.querySelector(".video-lecture-note");
+    const videoLink = fragment.querySelector(".video-lecture-link");
     const question = fragment.querySelector(".quiz-question");
     const options = fragment.querySelector(".quiz-options");
     const feedbackSlot = fragment.querySelector(".quiz-feedback");
@@ -788,6 +858,15 @@ function renderModules() {
       item.append(link);
       readingList.append(item);
     });
+
+    const videoLecture = getVideoLecture(moduleIndex);
+    if (videoLecture) {
+      videoFrame.src = videoLecture.url;
+      videoFrame.title = `${module.title} video lecture`;
+      videoLink.href = videoLecture.url;
+      videoLink.textContent = videoLecture.title;
+      videoNote.textContent = "If the embedded player does not load because of external site restrictions, use the direct link below.";
+    }
 
     const quiz = createQuiz(module);
     options.replaceWith(quiz.wrapper);
