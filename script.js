@@ -562,7 +562,16 @@ function getTeachingActivities(module) {
     `Topic briefing: Introduce the core lecture concepts and define the scope of ${module.title.toLowerCase()}.`,
     `Guided discussion: Clarify key terms, AWS services, and administration decisions through short instructor-led questioning.`,
     `Concept walkthrough: Use diagrams, console views, or short examples to explain how the topic works in practice.`,
-    `Short consolidation activity: Ask students to complete a brief check, comparison, or reflection before the lecture closes.`
+    "Short consolidation prompt: Prepare a brief question, classification task, or reflection task before the lecture closes."
+  ];
+}
+
+function getStudentLearningActivities(module) {
+  return [
+    `Listen and identify: Note the main concepts, AWS services, and administration terms introduced in ${module.title.toLowerCase()}.`,
+    "Participate and respond: Answer short guided questions during the lecture discussion and clarify misunderstandings.",
+    "Review the outline: Follow the topic sequence and connect each concept to a practical systems administration context.",
+    "Complete the short check: Answer a short quiz or complete a brief in-class activity before the session ends."
   ];
 }
 
@@ -801,6 +810,7 @@ function renderModules() {
     const objectiveList = fragment.querySelector(".objective-list");
     const topicList = fragment.querySelector(".topic-list");
     const teachingList = fragment.querySelector(".teaching-list");
+    const studentLearningList = fragment.querySelector(".student-learning-list");
     const assessmentList = fragment.querySelector(".assessment-list");
     const readingList = fragment.querySelector(".reading-list");
     const videoFrame = fragment.querySelector(".video-lecture-frame");
@@ -840,6 +850,12 @@ function renderModules() {
       const item = document.createElement("li");
       item.textContent = activity;
       teachingList.append(item);
+    });
+
+    getStudentLearningActivities(module).forEach((activity) => {
+      const item = document.createElement("li");
+      item.textContent = activity;
+      studentLearningList.append(item);
     });
 
     getAssessmentItems(module).forEach((itemText) => {
