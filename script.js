@@ -748,92 +748,92 @@ function getAdditionalVideoMaterials(module) {
 function getRelatedTools(moduleIndex) {
   const toolMap = {
     0: [
-      "Ubuntu Server - common Linux server platform for foundational administration practice.",
-      "Windows Server - useful for comparing enterprise administration roles and services.",
-      "VMware Workstation or VirtualBox - useful for understanding system and OS fundamentals through virtual machines."
+      { name: "Ubuntu Server", description: "Common Linux server platform for foundational administration practice.", url: "https://ubuntu.com/server" },
+      { name: "Windows Server", description: "Useful for comparing enterprise administration roles and services.", url: "https://www.microsoft.com/en-us/windows-server" },
+      { name: "VirtualBox", description: "Useful for understanding system and OS fundamentals through virtual machines.", url: "https://www.virtualbox.org/" }
     ],
     1: [
-      "Docker - widely used container platform for comparing containers with virtual machines.",
-      "Podman - container engine worth comparing with Docker for rootless workflows.",
-      "VMware vSphere or VirtualBox - useful for virtualization demonstrations.",
-      "OpenStack - useful as a non-AWS cloud platform reference."
+      { name: "Docker", description: "Widely used container platform for comparing containers with virtual machines.", url: "https://www.docker.com/" },
+      { name: "Podman", description: "Container engine worth comparing with Docker for rootless workflows.", url: "https://podman.io/" },
+      { name: "VMware vSphere", description: "Useful for virtualization demonstrations and enterprise hypervisor comparison.", url: "https://www.vmware.com/products/vsphere.html" },
+      { name: "OpenStack", description: "Useful as a non-AWS cloud platform reference.", url: "https://www.openstack.org/" }
     ],
     2: [
-      "Okta - identity and federation platform for comparing IAM workflows.",
-      "Microsoft Entra ID - useful for access control, MFA, and federation comparison.",
-      "Keycloak - open-source identity and access management platform."
+      { name: "Okta", description: "Identity and federation platform for comparing IAM workflows.", url: "https://www.okta.com/" },
+      { name: "Microsoft Entra ID", description: "Useful for access control, MFA, and federation comparison.", url: "https://www.microsoft.com/en-us/security/business/microsoft-entra" },
+      { name: "Keycloak", description: "Open-source identity and access management platform.", url: "https://www.keycloak.org/" }
     ],
     3: [
-      "Wireshark - packet analysis tool for protocol and traffic inspection.",
-      "Cisco Packet Tracer - useful for networking concepts and topology practice.",
-      "pfSense - firewall and routing platform for security and gateway discussions.",
-      "Nmap - useful for host and service discovery."
+      { name: "Wireshark", description: "Packet analysis tool for protocol and traffic inspection.", url: "https://www.wireshark.org/" },
+      { name: "Cisco Packet Tracer", description: "Useful for networking concepts and topology practice.", url: "https://www.netacad.com/courses/packet-tracer" },
+      { name: "pfSense", description: "Firewall and routing platform for security and gateway discussions.", url: "https://www.pfsense.org/" },
+      { name: "Nmap", description: "Useful for host and service discovery.", url: "https://nmap.org/" }
     ],
     4: [
-      "Terraform - infrastructure provisioning and repeatable deployment automation.",
-      "OpenTofu - open-source Infrastructure as Code tool worth comparing with Terraform.",
-      "Packer - useful for image-building workflows alongside AMIs.",
-      "Ansible - useful for post-provision configuration and automation."
+      { name: "Terraform", description: "Infrastructure provisioning and repeatable deployment automation.", url: "https://www.terraform.io/" },
+      { name: "OpenTofu", description: "Open-source Infrastructure as Code tool worth comparing with Terraform.", url: "https://opentofu.org/" },
+      { name: "Packer", description: "Useful for image-building workflows alongside AMIs.", url: "https://www.packer.io/" },
+      { name: "Ansible", description: "Useful for post-provision configuration and automation.", url: "https://www.ansible.com/" }
     ],
     5: [
-      "htop - interactive Linux process viewer for system inspection.",
-      "tmux - terminal multiplexer useful in remote administration workflows.",
-      "Cockpit - web-based Linux administration interface for comparison with CLI workflows.",
-      "Visual Studio Code Remote SSH - useful for structured remote Linux administration."
+      { name: "htop", description: "Interactive Linux process viewer for system inspection.", url: "https://htop.dev/" },
+      { name: "tmux", description: "Terminal multiplexer useful in remote administration workflows.", url: "https://github.com/tmux/tmux/wiki" },
+      { name: "Cockpit", description: "Web-based Linux administration interface for comparison with CLI workflows.", url: "https://cockpit-project.org/" },
+      { name: "Visual Studio Code Remote SSH", description: "Useful for structured remote Linux administration.", url: "https://code.visualstudio.com/docs/remote/ssh" }
     ],
     6: [
-      "MinIO - object storage platform useful for comparing S3-style storage concepts.",
-      "TrueNAS - useful for storage administration and file-service discussions.",
-      "Ceph - distributed storage platform for scalable storage architecture comparison.",
-      "ZFS - important file-system and storage-management technology to know."
+      { name: "MinIO", description: "Object storage platform useful for comparing S3-style storage concepts.", url: "https://min.io/" },
+      { name: "TrueNAS", description: "Useful for storage administration and file-service discussions.", url: "https://www.truenas.com/" },
+      { name: "Ceph", description: "Distributed storage platform for scalable storage architecture comparison.", url: "https://ceph.io/" },
+      { name: "OpenZFS", description: "Important file-system and storage-management technology to know.", url: "https://openzfs.org/" }
     ],
     7: [
-      "PostgreSQL - widely used relational database platform.",
-      "MySQL or MariaDB - common relational database systems for administration comparison.",
-      "MongoDB - useful NoSQL comparison platform.",
-      "Redis - useful for discussing in-memory data stores and application data patterns."
+      { name: "PostgreSQL", description: "Widely used relational database platform.", url: "https://www.postgresql.org/" },
+      { name: "MySQL", description: "Common relational database system for administration comparison.", url: "https://www.mysql.com/" },
+      { name: "MongoDB", description: "Useful NoSQL comparison platform.", url: "https://www.mongodb.com/" },
+      { name: "Redis", description: "Useful for discussing in-memory data stores and application data patterns.", url: "https://redis.io/" }
     ],
     8: [
-      "Nginx - common web server and reverse proxy platform.",
-      "Apache HTTP Server - classic web server for comparison with Nginx.",
-      "HAProxy - useful for load-balancing and traffic-distribution concepts.",
-      "Caddy - practical web server with simplified HTTPS workflows."
+      { name: "Nginx", description: "Common web server and reverse proxy platform.", url: "https://nginx.org/" },
+      { name: "Apache HTTP Server", description: "Classic web server for comparison with Nginx.", url: "https://httpd.apache.org/" },
+      { name: "HAProxy", description: "Useful for load-balancing and traffic-distribution concepts.", url: "https://www.haproxy.org/" },
+      { name: "Caddy", description: "Practical web server with simplified HTTPS workflows.", url: "https://caddyserver.com/" }
     ],
     9: [
-      "Prometheus - metrics collection and alerting platform.",
-      "Grafana - dashboarding and observability visualization tool.",
-      "Zabbix - integrated monitoring platform worth comparing with CloudWatch.",
-      "Elastic Stack or OpenSearch - useful for log collection and analysis workflows."
+      { name: "Prometheus", description: "Metrics collection and alerting platform.", url: "https://prometheus.io/" },
+      { name: "Grafana", description: "Dashboarding and observability visualization tool.", url: "https://grafana.com/" },
+      { name: "Zabbix", description: "Integrated monitoring platform worth comparing with CloudWatch.", url: "https://www.zabbix.com/" },
+      { name: "OpenSearch", description: "Useful for log collection, search, and analysis workflows.", url: "https://opensearch.org/" }
     ],
     10: [
-      "HashiCorp Vault - secrets management platform for comparison with AWS Secrets Manager.",
-      "Wazuh - open-source security monitoring and detection platform.",
-      "Suricata - intrusion detection and traffic analysis engine.",
-      "CrowdSec - collaborative security and threat-blocking tool."
+      { name: "HashiCorp Vault", description: "Secrets management platform for comparison with AWS Secrets Manager.", url: "https://www.vaultproject.io/" },
+      { name: "Wazuh", description: "Open-source security monitoring and detection platform.", url: "https://wazuh.com/" },
+      { name: "Suricata", description: "Intrusion detection and traffic analysis engine.", url: "https://suricata.io/" },
+      { name: "CrowdSec", description: "Collaborative security and threat-blocking tool.", url: "https://www.crowdsec.net/" }
     ],
     11: [
-      "HAProxy - useful for resilient traffic distribution design.",
-      "Keepalived - helpful for redundancy and failover discussion.",
-      "Kubernetes - useful for scalability, health checks, and workload resilience concepts.",
-      "Consul - useful for service discovery and resilience-oriented architecture discussion."
+      { name: "HAProxy", description: "Useful for resilient traffic distribution design.", url: "https://www.haproxy.org/" },
+      { name: "Keepalived", description: "Helpful for redundancy and failover discussion.", url: "https://www.keepalived.org/" },
+      { name: "Kubernetes", description: "Useful for scalability, health checks, and workload resilience concepts.", url: "https://kubernetes.io/" },
+      { name: "Consul", description: "Useful for service discovery and resilience-oriented architecture discussion.", url: "https://www.consul.io/" }
     ],
     12: [
-      "Veeam - backup and recovery platform worth comparing with AWS Backup workflows.",
-      "Restic - lightweight backup tool for versioned backup concepts.",
-      "BorgBackup - useful for backup efficiency and retention discussion.",
-      "rsync - practical tool for replication and backup scripting basics."
+      { name: "Veeam", description: "Backup and recovery platform worth comparing with AWS Backup workflows.", url: "https://www.veeam.com/" },
+      { name: "Restic", description: "Lightweight backup tool for versioned backup concepts.", url: "https://restic.net/" },
+      { name: "BorgBackup", description: "Useful for backup efficiency and retention discussion.", url: "https://www.borgbackup.org/" },
+      { name: "rsync", description: "Practical tool for replication and backup scripting basics.", url: "https://rsync.samba.org/" }
     ],
     13: [
-      "Ansible - automation and maintenance orchestration platform.",
-      "Rundeck - useful for scheduled operational runbooks and job automation.",
-      "GLPI - IT asset and service management platform.",
-      "Zammad - ticketing and incident workflow platform."
+      { name: "Ansible", description: "Automation and maintenance orchestration platform.", url: "https://www.ansible.com/" },
+      { name: "Rundeck", description: "Useful for scheduled operational runbooks and job automation.", url: "https://www.rundeck.com/" },
+      { name: "GLPI", description: "IT asset and service management platform.", url: "https://glpi-project.org/" },
+      { name: "Zammad", description: "Ticketing and incident workflow platform.", url: "https://zammad.com/" }
     ],
     14: [
-      "OpenTofu or Terraform - useful for architecture standardization and repeatable infrastructure design.",
-      "Infracost - useful for cost-estimation and optimization discussions.",
-      "Checkov - infrastructure policy and configuration review tool.",
-      "Grafana - useful for ongoing optimization visibility and service performance review."
+      { name: "OpenTofu", description: "Useful for architecture standardization and repeatable infrastructure design.", url: "https://opentofu.org/" },
+      { name: "Infracost", description: "Useful for cost-estimation and optimization discussions.", url: "https://www.infracost.io/" },
+      { name: "Checkov", description: "Infrastructure policy and configuration review tool.", url: "https://www.checkov.io/" },
+      { name: "Grafana", description: "Useful for ongoing optimization visibility and service performance review.", url: "https://grafana.com/" }
     ]
   };
 
@@ -995,7 +995,13 @@ function renderModules() {
 
     getRelatedTools(moduleIndex).forEach((tool) => {
       const item = document.createElement("li");
-      item.textContent = tool;
+      const link = document.createElement("a");
+      link.href = tool.url;
+      link.target = "_blank";
+      link.rel = "noreferrer";
+      link.textContent = tool.name;
+      item.append(link);
+      item.append(` - ${tool.description}`);
       toolList.append(item);
     });
 
