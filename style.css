@@ -73,7 +73,7 @@ a {
   gap: 1rem;
   align-items: center;
   padding: 0.85rem 1.15rem;
-  background: var(--aws-nav-alt);
+  background: linear-gradient(180deg, #182434 0%, #101a28 100%);
   color: var(--aws-nav-text);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -110,7 +110,14 @@ a {
 
 .console-title {
   font-size: 0.95rem;
-  color: #d8e2ef;
+  color: #eef4fb;
+  font-weight: 600;
+}
+
+.console-subtitle {
+  margin-top: 0.15rem;
+  font-size: 0.78rem;
+  color: #9fb0c4;
 }
 
 .console-product-title {
@@ -194,17 +201,18 @@ a {
   width: 100%;
   padding: 0.8rem 1rem;
   border-radius: 12px;
-  border: 1px solid #32445a;
-  background: #182636;
-  color: var(--aws-nav-text);
+  border: 1px solid #2f4358;
+  background: #0f1926;
+  color: #f4f7fb;
 }
 
 .console-chip {
   padding: 0.45rem 0.7rem;
   border-radius: 999px;
-  background: #1d2936;
-  color: #d3dce6;
+  background: rgba(255, 255, 255, 0.08);
+  color: #e6edf5;
   font-size: 0.82rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .console-topbar-right {
@@ -370,7 +378,7 @@ a {
 .secondary-button,
 .flashcard-actions button,
 .quiz-option {
-  background: var(--aws-surface);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .primary-button {
@@ -386,6 +394,16 @@ a {
 .quiz-option:hover {
   transform: translateY(-1px);
   border-color: var(--aws-blue);
+}
+
+.console-topbar .nav-link {
+  color: #d8e3ef;
+  border-color: rgba(191, 206, 223, 0.22);
+}
+
+.console-topbar .nav-link:hover {
+  background: rgba(9, 114, 211, 0.16);
+  color: #ffffff;
 }
 
 .section-head {
