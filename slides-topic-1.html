@@ -139,6 +139,30 @@
                   <li>Administration requires understanding relationships, not just individual tools.</li>
                 </ul>
               </section>
+              <section class="slides-visual">
+                <h3>Simple systems view</h3>
+                <div class="slides-flow">
+                  <div class="slides-flow-step">
+                    <span class="slides-mini-label">Input</span>
+                    User requests
+                  </div>
+                  <div class="slides-flow-arrow">→</div>
+                  <div class="slides-flow-step">
+                    <span class="slides-mini-label">Process</span>
+                    System services
+                  </div>
+                  <div class="slides-flow-arrow">→</div>
+                  <div class="slides-flow-step">
+                    <span class="slides-mini-label">Output</span>
+                    Delivered service
+                  </div>
+                  <div class="slides-flow-arrow">↺</div>
+                  <div class="slides-flow-step">
+                    <span class="slides-mini-label">Feedback</span>
+                    Logs, alerts, user reports
+                  </div>
+                </div>
+              </section>
             </div>
           </article>
 
@@ -278,6 +302,23 @@
                   resilience, lower latency choices, and workload distribution across failures.
                 </p>
               </section>
+              <section class="slides-visual">
+                <h3>Region and Availability Zones</h3>
+                <div class="slides-cloud-visual">
+                  <div class="slides-cloud-region">
+                    <span class="slides-mini-label">Region</span>
+                    One geographic area containing multiple isolated Availability Zones
+                  </div>
+                  <div class="slides-cloud-zone">
+                    <span class="slides-mini-label">AZ 1</span>
+                    Workloads can run here
+                  </div>
+                  <div class="slides-cloud-zone">
+                    <span class="slides-mini-label">AZ 2</span>
+                    Workloads can fail over here
+                  </div>
+                </div>
+              </section>
             </div>
           </article>
 
@@ -300,6 +341,19 @@
                   <li>Identity and access configuration</li>
                   <li>Operating systems, data, and workload settings where applicable</li>
                 </ul>
+              </section>
+              <section class="slides-visual">
+                <h3>Responsibility split</h3>
+                <div class="slides-responsibility-grid">
+                  <div class="slides-responsibility-card aws-side">
+                    <span class="slides-mini-label">SAM10 on AWS side</span>
+                    Facilities, hardware, and core cloud platform protection
+                  </div>
+                  <div class="slides-responsibility-card customer-side">
+                    <span class="slides-mini-label">Customer side</span>
+                    Accounts, data, OS settings, and workload configuration
+                  </div>
+                </div>
               </section>
             </div>
           </article>
