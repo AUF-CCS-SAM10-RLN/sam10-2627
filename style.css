@@ -1471,6 +1471,13 @@ a {
   line-height: 1.7;
 }
 
+.slides-source-note {
+  margin-top: 1rem;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--aws-text-muted);
+}
+
 .slides-visual {
   padding: 1.1rem;
   border-radius: 18px;
